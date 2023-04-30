@@ -5,24 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIKE</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            background-color: #333;
+            width: 1500px;
+            margin: 0 auto; 
+            overflow: hidden;
+        }
+
+        .di {
+            float: right;
+            display: inline-block;
+            width: auto;
+            height: auto;
+            margin: 10px;
+        }
+
+        .li {
+            float: left;
+            width: 360px;
+            height: 240px;
+            background: #ccc;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+                
+        li:not(:nth-of-type(4n)) {
+            margin-right: 20;
+        }
+
+        li:not(:nth-of-type(4)~li) {
+            margin-bottom: 20;
+        }
+        
+        .li, a:hover {
+            background-color: white; color: #888;
+        }
+               
+    </style>
 </head>
 
 <body>
-    <ul>
-        <li><img src="images/ps/nike.svg" alt=""></li>
-        <li>매장찾기</li>
-        <li>고객센터</li>
-        <li>가입하기</li>
-        <li>로그인</li>
-    </ul>
+    <header>
+        <nav>
+            <h1>
+                <a href="#" class="logo">
+                    <b>Nike</b>
+                </a>
+            </h1>
+        </nav>
+        <ul>
+            <li>
+                <a href="#" class="di">
+                    <i class="fa-solid fa-camera">
 
-<img src="images/ps/메인.jpg" alt="메인이미지">
+                    </i>
+                    매장찾기
+                </a>
+            </li>
 
+            <li>
+                <a href="#" class="di">
+                    <i class="fa-solid fa-camera">
+
+                    </i>
+                    고객센터
+                </a>
+            </li>
+
+            <li>
+                    
+                <a href="#" class="di">
+                    <i class="fa-solid fa-camera">
+
+                    </i>
+                    가입하기
+                </a>
+            </li>
+            <li>
+                <a href="#" class="di">
+                    <i class="fa-solid fa-camera">
+                        
+                    </i>
+                    로그인
+                </a>
+            </li>
+        </ul>
+    </header>
 
 
 
 <!-- 섹션1 -->
-<h1>MEMBER DAYS</h1>
+<br>
+<h2>MEMBER DAYS</h2>
+<section></section>
+<!-- 메인 이미지 -->
+<video autoplay loop muted>
+<source src="images/ps/NIKE.mp4">
+
+</video>
 
 <!-- 섹션2 -->
 <section id="section 2"></section>
@@ -30,36 +117,37 @@
 <h2 id="project">새로운 제품들</h2>
 <hr>
 
-<ul>
-    <li><img src="images/ps/1.jpg" alt="신발1"></li>
-    <li><img src="images/ps/2.jpg" alt="신발2"></li>
-    <li><img src="images/ps/3.jpg" alt="신발3"></li>
-    <li><img src="images/ps/4.jpg" alt="신발4"></li>
-    <li><img src="images/ps/5.jpg" alt="신발5"></li>
-    <li><img src="images/ps/6.jpg" alt="신발6"></li>
-    <li><img src="images/ps/7.jpg" alt="신발7"></li>
-    <li><img src="images/ps/8.jpg" alt="신발8"></li>
-</ul>
+<div class="wrap">
+    <li class="shoes"><img src="images/ps/11.png" alt="신발1"></li>
+    <li class="shoes"><img src="images/ps/22.png" alt="신발2"></li>
+    <li class="shoes"><img src="images/ps/33.png" alt="신발3"></li>
+    <li class="shoes"><img src="images/ps/44.png" alt="신발4"></li>
+    <li class="shoes"><img src="images/ps/55.png" alt="신발5"></li>
+    <li class="shoes"><img src="images/ps/66.png" alt="신발6"></li>
+    <li class="shoes"><img src="images/ps/77.png" alt="신발7"></li>
+    <li class="shoes"><img src="images/ps/88.png" alt="신발8"></li>
+</div>
+<!-- 섹션3 -->
 
 <h2 id="about">About</h2>
 <p>나이키닷컴, 나이키 앱 그리고 매장에서 7일간 진행되는 멤버데이즈에 여러분을 초대합니다. 오직 나이키 멤버만을 위한 다양한 혜택으로 온 가족이 함께 스포츠를 즐겨보세요.
 </p>
 
 <ul>
-    <li><img src="images/john.jpg" alt="John Doe"></li>
-    <p>CEO & Founder</p>
+    <li><img src="images/ps/11.png" alt="에어 조던 1 레트로 하이 OG"></li>
+    <p>에어 조던 1 레트로 하이 OG</p>
     <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     <a href="#">Contact</a>
-    <li><img src="images/jane.jpg" alt="Jane Doe"></li>
-    <p>Architect</p>
+    <li><img src="images/ps/22.png" alt="나이키 덩크 로우 레트로"></li>
+    <p>나이키 덩크 로우 레트로</p>
     <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     <a href="#">Contact</a>
-    <li><img src="images/mike.jpg" alt="Mike Ross"></li>
-    <p>Architect</p>
+    <li><img src="images/ps/33.png" alt="나이키 에어 포스 1 '07 LV8"></li>
+    <p>나이키 에어 포스 1 '07 LV8</p>
     <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     <a href="#">Contact</a>
-    <li><img src="images/dan.jpg" alt="Dan Star"></li>
-    <p>Architect</p>
+    <li><img src="images/ps/44.png" alt="에어 조던 1 로우 플라이이즈"></li>
+    <p>에어 조던 1 로우 플라이이즈</p>
     <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     <a href="#">Contact</a>
 
@@ -67,10 +155,16 @@
     <hr>
     <p>Lets get in touch and talk about your next project.</p>
 
-    <a href="#">SEND MESSAGE</a>
+    <a class="a" href="#">SEND MESSAGE</a>
+    <br>
 
-    <img src="images/map.jpg" alt="지도">
-
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.370907954479!2d127.03582301876132!3d37.499169248963646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fe39a2dc29%3A0x239109db591c538f!2z64KY7J207YKk7L2U66as7JWE!5e0!3m2!1sko!2skr!4v1682866977119!5m2!1sko!2skr" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 </ul>
 
