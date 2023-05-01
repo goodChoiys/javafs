@@ -19,25 +19,39 @@
 
             부모: 플렉스 컨테이너
                 1. display:flex;
-                2. flex-direction: 방향;
-                3. flex-wrap: 줄바꿈;
-                4. flex-flow: direction wrap
-                5. justify-content: 주축 정렬
-                6. align-items: 교차축 정렬
-                7. align-content: 교차축 블록 방향 정렬 (2개의 라인)
+                    2. flex-direction: 방향;
+                    3. flex-wrap: 줄바꿈;
+                    4. flex-flow: direction wrap (2~3을 줄임, 속기형)
+                    5. justify-content: 주축 정렬
+                    6. align-items: 교차축 정렬
+                    7. align-content: 교차축 블록 방향 정렬 (2개의 라인)
+
+                    우선 순위(명령어 중복시 참고)
+                    align-self > align-content -> align-items
 
             자식: 플렉스 아이템
-                8. align-self: 교차축 정렬, align-items 보다 우선 적용된다.
-                9. flex-grow: 커진다.
-                10. flex-shrink: 작아진다.
-                11. flex-basis: 처음 크기
-                12. flex: grow shrink basis
-                13. order: 순서, 숫자가 작을수록 앞에 배치
+                    8. align-self: 교차축 정렬, align-items 보다 우선 적용된다.
+                    9. flex-grow: 숫자; 커진다. (팽창)
+                       기본값은 0이며 표현단위는 없다.
+                    
+                       flex-grow: 0; (기본값) 성장하지 않는다.
+                       flex-grow: 1; 성장한다, 커진다.
+                       
+                    10. flex-shrink: 숫자; 작아진다. (수축)
+                        기본값은 1이며 표현단위는 없다.
+
+                        flex-shrink: 1; (기본값) 수축된다.
+                        flex-shrink: 0; 수축되지 않는다.
+
+                    11. flex-basis: 처음 크기
+                    12. flex: grow shrink basis (9~11을 줄임, 속기형)
+                    13. order: 순서, 숫자가 작을수록 앞에 배치
         */
 
 
         /* 부모 요소인 .container의 display를 flex로 적용해 보세요. */
         .container {
+            display: flex;
             outline: 1px solid red;
         }
 
@@ -57,8 +71,21 @@
         부모 요소에 display:flex;를 지정하면 
         이 부모 요소를 플렉스 컨테이너라고 부른다.
         그리고, 자식 요소는 플렉스 아이템이라고 부른다.
+        손자는 해당 x
     -->
     <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <br>
+    <div>
         <div>1</div>
         <div>2</div>
         <div>3</div>

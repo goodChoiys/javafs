@@ -1,134 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CYS</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
-
-<!-- 
-    shift+alt+f: 자동 들여쓰기 정렬 
-    ctrl+alt+위,아래: 같은 열 활성화
-    
-    <a>
-    <b>
-    <p>
-    <i>
-    <img>
-    <address>
-    <link>
-
-        fonrt-awesome 사용시 cdnjs 사이트 활용
-        ->코드 복사 후 헤드에다가 link 태그를 이용하여 사용
--->
 
 <body>
     <!-- 헤더 -->
-    <!-- 내비게이션 -->
-    <ul>
-        <li><a href="homr">HOME</a></li>
-        <li><a href="about"><i class="fa-solid fa-user"></i>ABOUT</a></li>
-        <li><a href="portfolio"><i class="fa-solid fa-grid"></i></i>PORTPOLIO</a></li>
-        <li><a href="contact"><i class="fa-solid fa-envelope"></i></i>CONTACT</a></li>
-    </ul>
-
-    <img src="" alt="">
+    <header>
+        <!-- 내비게이션 -->
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about"><i class="fa-solid fa-user"></i>ABOUT</a></li>
+                <li><a href="#portfolio"><i class="fa-solid fa-grip"></i>PORTFOLIO</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope"></i>CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- 섹션1 -->
-    <!-- 로고 -->
-    <h1><a href="#">CYS</a></h1>
-    <img src="images/parallax1.jpg" alt="패럴렉스 배경 이미지1">
+    <section id="home">
+        <!-- 로고 -->
+        <h1><a href="#">CYS</a></h1>
+        <img src="images/parallax1.jpg" alt="패럴렉스 배경 이미지1">
+    </section>
 
     <!-- 섹션2 -->
-    <h2 id="about">ABOUT ME</h2>
-    <p><em>I love coding</em></p>
-    <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <b><i class="fa-solid fa-user">CYS</b>
-    <img src="images/photo.jpg" alt="내 사진">
+    <section id="about">
+        <h2>소개(ABOUT ME)</h2>
+        <p><em>I love coding</em></p>
+        <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <i class="fa-solid fa-user"></i><b>CYS</b>
+        <img src="images/photo.jpg" alt="내 사진">
+        <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h3>Im really good at:</h3>
+        <div>
+            <div>
+                <i class="fa-brands fa-figma"></i><p>planning with Figma</p>
+                <div><span>90%</span></div>
+            </div>
+            <div>
+                <i class="fa-solid fa-laptop-code"></i><p>Frontend Development</p>
+                <div><span>85%</span></div>
+            </div>
+            <div>
+                <i class="fa-brands fa-java"></i><p>Backend Development</p>
+                <div><span>75%</span></div>
+            </div>
+        </div>
 
-    <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-    <h3>Im really good at:</h3>
-    <ul>
-        <li><i class="fa-brands fa-figma"></i><p>Plaaning with Figma</p></li>
-        <li><i class="fa-solid fa-laptop"></i><p>Frontend Development</p></li>
-        <li><i class="fa-brands fa-java"></i><p>Backend Development</p></li>
-    </ul>
-    <ul>
-        <li>Plaaning</li>
-        <li>Frontend Project Done</li>
-        <li>Backend Project Done</li>
-        <li>National Technical QuaLification</li>
-    </ul>
-
-    <!-- 70번 폴더 안의 파일은 전부 소문자로 -->
+        <ul>
+            <li><span>3+</span>Planning</li>
+            <li><span>4+</span>Frontend Projects Done</li>
+            <li><span>3+</span>Backend Projects Done</li>
+            <li><span>2+</span>National Technical Qualification</li>
+        </ul>
+    </section>
 
     <!-- 섹션3 -->
-    <b id="portfolio">PORTPOLIO</b>
-    <img src="images/parallax2.jpg" alt="패럴렉스 배경 이미지2">
-    <h2>MY WORK</h2>
-    <p>Here are some of my latest lorem work ipsum tipsum.</p>
-    <br>Click on the images to make them bigger
-
-    <ul>
-        <li><img src="images/PF1.jpg" alt="포트폴리오1"></li>
-        <li><img src="images/PF2.jpg" alt="포트폴리오2"></li>
-        <li><img src="images/PF3.jpg" alt="포트폴리오3"></li>
-        <li><img src="images/PF4.jpg" alt="포트폴리오4"></li>
-        <li><img src="images/PF5.jpg" alt="포트폴리오5"></li>
-        <li><img src="images/PF6.jpg" alt="포트폴리오6"></li>
-        <li><img src="images/PF7.jpg" alt="포트폴리오7"></li>
-        <li><img src="images/PF8.jpg" alt="포트폴리오8"></li>
-    </ul>
-
-    <a href="#">LOAD MORE</a>
-
+    <section id="portfolio">
+        <b>PORTFOLIO</b>
+        <img src="images/parallax2.jpg" alt="패럴렉스 배경 이미지2">
+        <h2>MY WORK</h2>
+        <p>Here are some of my latest lorem work ipsum tipsum.<br>Click on the images to make them bigger</p>
+        <ul>
+            <li><img src="images/pf1.jpg" alt="포트폴리오1"></li>
+            <li><img src="images/pf2.jpg" alt="포트폴리오2"></li>
+            <li><img src="images/pf3.jpg" alt="포트폴리오3"></li>
+            <li><img src="images/pf4.jpg" alt="포트폴리오4"></li>
+            <li><img src="images/pf5.jpg" alt="포트폴리오5"></li>
+            <li><img src="images/pf6.jpg" alt="포트폴리오6"></li>
+            <li><img src="images/pf7.jpg" alt="포트폴리오7"></li>
+            <li><img src="images/pf8.jpg" alt="포트폴리오8"></li>
+        </ul>
+        <a href="#">LOAD MORE</a>
+    </section>
+    
     <!-- 섹션4 -->
-    <b id="contact">CONTACT</b>
-    <img src="images/parallax3.jpg" alt="패럴렉스 배경 이미지3">
-    <h2>WHERE I WORK</h2>
-    <p>I’d love your feedback!</p>
+    <section id="contact">
+        <b>CONTACT</b>
+        <li><img src="images/parallax3.jpg" alt="포토"></li>
+        <h2>WHERE I WORK</h2>
+        <p>I'd love your feedback!</p>
+        <!-- 구글 맵 -->
+        <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.246578618464!2d126.91126779357913!3d37.39874020000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b60d1eba1f981%3A0x7e2aebe0591be746!2z7JWI7JaR6rOg7Jqp67O17KeAK-yEvO2EsA!5e0!3m2!1sko!2skr!4v1682405732005!5m2!1sko!2skr"></iframe>
+        </div>
+        <address>
+            경기도 안양시<br>
+            Phone: +82 10-1234-1234<br>
+            Email: hong@google.com
+        </address>
+        <p>Swing by for a cup of, or leave me a note:</p>
+        <form action="message.php" method="post">
+            <input type="text" name="user_name" placeholder="이름을 입력하세요.">
+            <input type="email" name="user_email" placeholder="이메일을 입력하세요.">
+            <input type="text" name="user_message" placeholder="메시지를 간단하게 기록하세요.">
+            <button type="submit"><i class="fa-solid fa-paper-plane"></i>SEND MESSAGE</button>
+        </form>
+    </section>
 
-    <img src="images/map.jpg" alt="지도">
-
-    <address>
-        경기도 안양시<br>
-        Phone: +82 10-3XXX-XXXX<br>
-        E-mail: choXXXXXXX@Xmail.com
-    </address>
-
-    <p>Swing by for a cup of <i class="fa-solid fa-mug-saucer"></i>, or leave me a note:</p>
-
-    <!-- 풋터 -->
-
-    <a href="#top"><i class="fa-solid fa-arrow-up"></i>To the top</a>
-    <a href="#" target="_blank"><i class="fa-brands fa-facebook">facebook</i></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-instagram">instagram</i></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-square-snapchat">snapchat</i></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-pinterest-p">pintertest</i></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-twitter">twitter</i></a>
-    <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in">linkedin</i></a>
-    <p>Copyright 2023 CYS. Allrights reserved.</p>
-
-
+    <!-- 푸터 -->
+    <footer>
+        <a href="#top"><i class="fa-solid fa-arrow-up"></i>To the top</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-square-facebook">facebook</i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-instagram">instagram</i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-snapchat">snapchat</i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-pinterest-p">pinterest-p</i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-twitter">twitter</i></a>
+        <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in">linkedin-in</i></a>
+        <p>Copyright 2023 CYS. Allrights reserved.</p>
+    </footer>
 </body>
-
-
-
 </html>

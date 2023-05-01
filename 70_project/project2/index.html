@@ -19,15 +19,7 @@
             overflow: hidden;
         }
 
-        .di {
-            float: right;
-            display: inline-block;
-            width: auto;
-            height: auto;
-            margin: 10px;
-        }
-
-        .li {
+        li {
             float: left;
             width: 360px;
             height: 240px;
@@ -36,10 +28,11 @@
             margin-bottom: 20px;
         }
                 
-        li:not(:nth-of-type(4n)) {
-            margin-right: 20;
+        
+        li:nth-of-type(4n) {
+            margin-right: 0;
         }
-
+        
         li:not(:nth-of-type(4)~li) {
             margin-bottom: 20;
         }
@@ -47,12 +40,35 @@
         .li, a:hover {
             background-color: white; color: #888;
         }
-               
+             
+        
+
+        /* .container {
+            display: flex;
+            flex-wrap: wrap;
+            border:1px solid orange;
+        }
+
+        .container div {
+            background-color: gray;
+        }
+
+        /* 교차축 세로 */
+        .wrap1 .container {
+            height:200px;
+        }
+        .wrap1 .container div {
+            width:100px;
+        }
+
+        .di {align-content: space-evenly;} */
+
     </style>
 </head>
 
 <body>
-    <header>
+<!-- <header> -->
+    <div class="wrap1">
         <nav>
             <h1>
                 <a href="#" class="logo">
@@ -97,10 +113,7 @@
                 </a>
             </li>
         </ul>
-    </header>
-
-
-
+    </div>
 <!-- 섹션1 -->
 <br>
 <h2>MEMBER DAYS</h2>
@@ -133,9 +146,9 @@
 <p>나이키닷컴, 나이키 앱 그리고 매장에서 7일간 진행되는 멤버데이즈에 여러분을 초대합니다. 오직 나이키 멤버만을 위한 다양한 혜택으로 온 가족이 함께 스포츠를 즐겨보세요.
 </p>
 
-<ul>
+<ul class="R">
     <li><img src="images/ps/11.png" alt="에어 조던 1 레트로 하이 OG"></li>
-    <p>에어 조던 1 레트로 하이 OG</p>
+    <p><b>에어 조던 1 레트로 하이 OG</b></p>
     <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
     <a href="#">Contact</a>
     <li><img src="images/ps/22.png" alt="나이키 덩크 로우 레트로"></li>
@@ -157,6 +170,7 @@
 
     <a class="a" href="#">SEND MESSAGE</a>
     <br>
+</ul>
 
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.370907954479!2d127.03582301876132!3d37.499169248963646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3fe39a2dc29%3A0x239109db591c538f!2z64KY7J207YKk7L2U66as7JWE!5e0!3m2!1sko!2skr!4v1682866977119!5m2!1sko!2skr" 
     width="600" 
@@ -166,9 +180,11 @@
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-</ul>
-
 <!-- 섹션3 -->
+
+
+
+<!-- 섹션4 -->
 <section id="section 3"></section>
 
 <p>Copyright 2023 CYS. Allrights reserved.</p>
