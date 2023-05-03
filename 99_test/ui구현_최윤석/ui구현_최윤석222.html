@@ -15,143 +15,224 @@
         }
 
         body {
-            width: 1920px;
-            height: 5000px;
+            display: flex;
+            flex-direction: column;
 
+        }
+
+        a {
+            margin: 0 auto;
         }
 
         .container {
-            display: flex;
-            border: 1px solid;
-
+            height: 243px;
         }
 
         .container div {
-            width: 100px;
-            height: 100px;
+            width: 362px;
+            height: 243px;
+            z-index: 9999;
+            border: 1px solid #000;
+        }
 
+        .n1 {
+            margin: 0 auto;
             display: flex;
             flex-direction: row;
-            outline: 1px solid red;
+            z-index: 9997;
+        }
+
+        .n2 {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row; 
+            z-index: 9996;
         }
 
         .wrap {
             display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 1496px;
+            height: 630px;
         }
-
         .wrap .container {
-            width:200px;
+            width: 362px;
+            margin: 8px auto;
+            display: flex;
+            flex-direction: row;
+            
         }
         .wrap .container div {
-            height:100px;
+            width: 362px;
+            margin: 0 auto;
+            justify-content: space-evenly;
+            flex-direction: row;
         }
+
+        .wrap2 {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            width: 1496px;
+            height: 630px;
+            outline: 20px solid red;
+        }
+        .wrap2 .container {
+            width: 362px;
+            margin: 8px auto;
+            display: flex;
+            outline: 20px solid red;
+            
+        }
+        .wrap2 .container div {
+            width: 362px;
+            margin: 0 auto;
+            justify-content: space-evenly;
+            flex-direction: row;
+            outline: 20px solid red;
+        }
+
+        p {
+            margin-top: 16px;
+        }
+
 
         header {
             display: flex;
             position: fixed;
             top: 0;
-            z-index: 9999;
+            z-index: 99999;
             width: 100%;
             padding: 0 32px;
             height: 54px;
             border: 1px solid #000;
             justify-content: space-between;
-
+            align-items: center
         }
+
+        
         #main {
-            margin-top: 54px;
+            margin: 0 auto;
+            height: 960px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        #item {
+            margin: 0 auto;
+            height: 880px;
         }
 
         #main div{
-            position: absolute;
-            left: 50%;
-            top: 560px;
+            margin: 0 auto;
             width: 1496px;
             height: 810px;
-            transform: translate(-50%, -50%);
-            border: 1px solid black;
+            /* border-left: 1px solid black; */
+            /* border-right: 1px solid black; */
+            /* border-bottom: 1px solid black; */
         }
 
-        ul {
+
+
+        nav ul {
             display: flex;
             list-style: none;
         }
 
-        #sh {
-            position: absolute;
-            left: 50%;
-            top: 1200px;
-            transform: translate(-50%, -50%);
-            width: 1002px;
-            height: 243px;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        #nav1 {
+            width: 280px;      
+            justify-content: space-between;      
         }
 
-        #cl {
-            position: absolute;
-            left: 50%;
-            top: 1530px;
-            transform: translate(-50%, -50%);
-            width: 1002px;
-            height: 243px;
-            justify-content: space-between;
+        #main b {
+            background: #555;
         }
 
-        #ev {
+        #main h2 {
             position: absolute;
             left: 50%;
-            top: 1860px;
+            bottom: 67.5%;
             transform: translate(-50%, -50%);
-            width: 1002px;
-                        height: 243px;
-            justify-content: space-between;
+            padding: 8px 16px;
         }
 
-        #contact h2{
-            position: absolute;
-            left: 50%;
-            top: 80%;
-            transform: translate(-50%, -50%);
-            width: 1002px;
-            height: 243px;
-            border: 1px solid black;
-            justify-content: space-evenly;
+        h3 {
+            padding-top: 16px;
+            margin-bottom: 0;
+            width: 100%;
         }
-        
-        h2 {
-            border: 1px solid #000;
-        }
+
         .section1 {
             width: 1920px;
-            height: 810px;
-            border: 1px solid #000;
-
         }
 
         .section2 {
             width: 1920px;
-            height: 810px;
-            border: 1px solid #000;
+            margin: 0 auto;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
         }
 
         .section3 {
             width: 1920px;
             height: 810px;
-            border: 1px solid #000;
+            margin: 0 auto;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
         }
 
         .section4 {
             width: 1920px;
             height: 810px;
+            margin: 0 auto;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+
+        #event li {
+            display: flex;
+            list-style: none;
+            width: 1496px;
+        }
+
+        #event li a {
+            padding: 8px 0;
+            margin: 0 auto;
+            text-align: center;
+            border: 1px solid #000;
+            
+        }
+
+        #contact input {
+            margin-top: 16px;
+            padding: 16px 8px;
+            width: 100%;
+            height: 32px;
+            display: block;
             border: 1px solid #000;
         }
 
-        footer {
-            width: 1920px;
-            height: 810px;
+        #contact button {
+            margin-top: 32px;
+            margin-bottom: 40px;
+            padding: 8px 8px;
             border: 1px solid #000;
         }
+        
+        footer {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #000;
+            padding: 16px 0;
+            text-align: center;
+        }
+        
+
 
     </style>
 
@@ -161,10 +242,11 @@
     <header>
         <h1 class="logo"><a href="#"><b>Nike</b> korea</a></h1>
         <nav>
-            <ul>
-                <li><a href="#">둘러보기</a></li>
-                <li><a href="#">이벤트</a></li>
+            <ul id="nav1">
+                <li><a href="#">매장찾기</a></li>
                 <li><a href="#">고객센터</a></li>
+                <li><a href="#">가입하기</a></li>
+                <li><a href="#">로그인</a></li>
             </ul>
         </nav>
     </header>
@@ -174,14 +256,18 @@
         <div>
             <img src="https://dummyimage.com/1496x810&" alt="슬라이드 이미지">
             <h2><b>Nike</b> korea</h2>
+            <h3>MEMBER DAYS</h3>
+            <div>
+            <p>05.01 – 05.07</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aut ullam soluta reiciendis. Vitae reiciendis voluptatibus tempora qui, iure dicta architecto similique quasi explicabo? Quia ad veniam </p>
+            </div>
         </div>
     </section>
 
     <!-- 섹션2 -->
     <section id="item" class="section2">
         <div id="sh" class="wrap">
-            <h2>신발</h2>
+            <h3>신제품</h3>
             <div class="container 1">
                 <div><img src="https://dummyimage.com/362x243" alt="더미1"></div>
             </div>
@@ -192,33 +278,29 @@
                 <div><img src="https://dummyimage.com/362x243" alt="더미3"></div>
             </div>
             <div class="container 4">
-                <div><img src="https://dummyimage.com/362x243" alt="더미2"></div>
+                <div><img src="https://dummyimage.com/362x243" alt="더미4"></div>
+            </div>
+            <div class="container 5">
+                <div><img src="https://dummyimage.com/362x243" alt="더미5"></div>
+            </div>
+            <div class="container 6">
+                <div><img src="https://dummyimage.com/362x243" alt="더미6"></div>
+            </div>
+            <div class="container 7">
+                <div><img src="https://dummyimage.com/362x243" alt="더미7"></div>
+            </div>
+            <div class="container 8">
+                <div><img src="https://dummyimage.com/362x243" alt="더미8"></div>
             </div>
         </div> 
 
-        
-        <div id="cl" class="wrap">
-            <h2>옷</h2>
-            <div class="container 1">
-                <div><img src="https://dummyimage.com/362x243" alt="더미1"></div>
-            </div>
-            <div class="container 2">
-                <div><img src="https://dummyimage.com/362x243" alt="더미2"></div>
-            </div>
-            <div class="container 3">
-                <div><img src="https://dummyimage.com/362x243" alt="더미3"></div>
-            </div>
-            <div class="container 4">
-                <div><img src="https://dummyimage.com/362x243" alt="더미2"></div>
-            </div>
-        </div> 
     </section>
 
     <!-- 섹션3 -->
     <section id="event"" class="section3">
-        
-        <div id="ev" class="wrap">
-            <h2>이벤트</h2>
+        <div id="sh" class="wrap">
+            <h3>이벤트</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ducimus quo sequi ut accusantium. Quo rerum sit ducimus laboriosam inventore cupiditate, itaque voluptates. Ut soluta fugit non ipsam sapiente pariatur harum libero, voluptate excepturi cum, ipsum expedita amet dicta totam dolore nihil nisi? Eligendi eveniet rerum maxime enim placeat? Cupiditate repellendus quas consequuntur, esse id, iure praesentium recusandae necessitatibus velit tenetur veniam quo ullam accusantium iste. Tempore, numquam libero. Ab!</p>
             <div class="container 1">
                 <div><img src="https://dummyimage.com/362x243" alt="더미1"></div>
             </div>
@@ -229,25 +311,69 @@
                 <div><img src="https://dummyimage.com/362x243" alt="더미3"></div>
             </div>
             <div class="container 4">
-                <div><img src="https://dummyimage.com/362x243" alt="더미2"></div>
+                <div><img src="https://dummyimage.com/362x243" alt="더미4"></div>
             </div>
-        </div> 
-    </section>
 
-    
-    <section id="contact" class="wrap">
-        <h2>연락하기</h2>
-            <form action="message.php" method="post">
-                <input type="text" name="user_name" placeholder="Name" class="container 1">
-                <input type="email" name="user_email" placeholder="Email" class="container 2">
-                <input type="text" name="user_subject" placeholder="Subject" class="container 3">
-                <input type="text" name="user_comment" placeholder="Comment" class="container 4">
-                <button type="submit">SEND MESSAGE</button>
-            </form>
-        <img src="https://dummyimage.com/1496x837&" alt="지도" class="container 5">
-    </section>
-    
+                <div class="container 6">
+                    <div><h4>이벤트1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae, tempore ipsa. Pariatur,</p>
+                        <p>05.01 – 05.07</p></div>
+                </div>
+                <div class="container 7">
+                    <div><h4>이벤트2</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae, tempore ipsa. Pariatur,</p>
+                        <p>05.01 – 05.07</p>
+                    </div>
+                </div>
+                <div class="container 8">
+                    <div><h4>이벤트3</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae, tempore ipsa. Pariatur,</p>
+                        <p>05.01 – 05.07</p>
+                    </div>
+                </div>
+                <div class="container 9">
+                    <div><h4>이벤트4</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae, tempore ipsa. Pariatur,</p>
+                        <p>05.01 – 05.07</p>
+                    </div>
+                </div>
+                
+                <li>
+                    <a href="#">자세히보기</a>
+                    <a href="#">자세히보기</a>
+                    <a href="#">자세히보기</a>
+                    <a href="#">자세히보기</a>
+                </li>
+            </div> 
+        </section>
 
+    <section id="contact" class="section4">
+        <div class="wrap2">
+            <h3>연락하기</h3>
+                <!-- <form action="message.php" method="post"> -->
+                    <div class="container 1>
+                        <input type="text" name="user_name" placeholder="Name"">
+                    </div>
+                    <div class="container 2">
+                        <input type="email" name="user_email" placeholder="Email">
+                    </div>
+                    <div class="container 3">
+                        <input type="text" name="user_subject" placeholder="Subject">
+                    </div>
+                    <div class="container 4">
+                        <input type="text" name="user_comment" placeholder="Comment">
+                    </div>
+                    <div>
+                        <button type="submit">SEND MESSAGE</button></div>
+
+                    <img src="https://dummyimage.com/1496x810&" alt="지도">
+                </form>
+        </div>
+    </section>
+        
+    <footer>
+        <p>Copyright 2023 CYS Nike korea. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
