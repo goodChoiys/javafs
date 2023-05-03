@@ -162,15 +162,7 @@ section {
 #event li:not(:nth-of-type(4n)) {
     margin-right: 16px;
 } */
-#news {
-    border: 1px solid red;
-}
 
-/* #news h2{
-    margin-top: 442px;
-
-    
-} */
 
 #news input {
     margin-top: 16px;
