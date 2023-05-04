@@ -15,9 +15,33 @@
             font-family: 'Courier New', Courier, monospace;
         }
 
-        /* font: [스타일] [굵기] 크기[/줄간격] 글꼴; */
+        /* 
+            font-style: 기울임;
+            font-weight: 굵기;
+            font-size: 크기;
+            font-family: 글꼴;
 
-        
+            (속기형)
+            크기와 글꼴은 무조건 써야함.
+            font: [스타일] [굵기] 크기[/줄간격] 글꼴; 
+
+            선택 속성의 경우 순서는 바꿔도 됨.
+            크기와 글꼴 위치는 고정
+            font: [굵기] [스타일] 크기[/줄간격] 글꼴; 
+        */
+
+        .font2 {
+            font: italic bold 16px 'Courier New', Courier, monospace;
+        }
+
+        /* 
+            글꼴의 크기와 종류는 반드시 지정해야 한다.
+        */
+        .font3 {
+            font: 16px 'Courier New';
+        }
+
+
     </style>
 </head>
 
@@ -25,6 +49,7 @@
     <h1>글꼴 속기 속성</h1>
     <p class="font1">font-family, font-size, font-style, font-weight 속성 등이 있다.</p>
     <p class="font2">font-family, font-size, font-style, font-weight 속성 등이 있다.</p>
+    <p class="font3">font-family, font-size, font-style, font-weight 속성 등이 있다.</p>
 </body>
 
 </html>

@@ -6,8 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        /* display 속성이 inline, inline-block 요소에 적용된다. */
-        p {text-decoration: underline overline; font-size: 3rem; line-height: 3em;}
+                
+        /* 
+        1. vertical-align 속성은 
+            inline, inline-block, table-cell에 적용된다. -> 인라인 요소와 <th>, <td>에 적용 시킨다. 
+        2. 인라인 요소와 인라인 요소 간의 수직 정렬
+        3. 이미지의 경우 vertical-align:top;을 지정하여
+            아래쪽에 여백이 생기는 현상을 제거한다.
+        */
+
+        /* 
+        display: 표시 방식;
+        display: inline;
+        display: inline-block;
+        display: table-cell;    -> <th>, <td>        
+        */
+       
+
+        /*         
+        display: inline;
+        display: inline-block;
+        display: block;
+        display: table;         -> <table>
+        display: table-row;     -> <tr>
+        display: table-cell;    -> <th>, <td>
+        display: list-item;     -> <li>
+        display: none;
+        display: flex;
+        display: grid;
+        */
+
+
+        p {
+            text-decoration: underline overline; 
+            font-size: 3rem; 
+            line-height: 1em;
+        }
 
         /* 
             baseline: 부모 요소의 기준선(baseline)에 맞춤(기본값)
@@ -24,16 +58,57 @@
         /* % 단위는 부모 요소의 줄 간격 기준, 음수 가능 */
         /* em 단위는 부모 요소의 글꼴 크기, 음수 가능 */
 
+        body {
+            background: rgba(000, 000, 545, 0.5);
+        }
+        .vat{
+            vertical-align: top;
+            background: rgba(000, 000, 511, 0.5);
+        }
+        .vam{
+            vertical-align: middle;
+            background: rgba(000, 000, 511, 0.5);
+        }
+        .vab{
+            vertical-align: bottom;
+            background: rgba(000, 000, 511, 0.5);
+        }
+        
+        /* .vapx{
+            vertical-align: top;
+            background: rgba(555, 000, 222, 0.5);
+        }
+        .vaem{
+            vertical-align: middle;
+            background: rgba(444, 000, 222, 0.5);
+        }
+        .vap{
+            vertical-align: bottom;
+            background: rgba(333, 000, 222, 0.5);
+        } */
+        .vapx{
+            vertical-align: 48px;
+            background: rgba(555, 000, 222, 0.5);
+        }
+        .vaem{
+            vertical-align: 2em;
+            background: rgba(444, 000, 222, 0.5);
+        }
+        .vap{
+            vertical-align: 200%;
+            background: rgba(333, 000, 222, 0.5);
+        }
+
     </style>
 </head>
 <body>
     <h1>수직 정렬</h1>
-    <p class="vat">vertical-align:top; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vam">vertical-align:middle; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vab">vertical-align:bottom; <img src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p>vertical-align:top; <img  class="vat" src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p>vertical-align:middle; <img  class="vam" src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p>vertical-align:bottom; <img  class="vab" src="/51_css/assets/star2.png" alt="스타2"></p>
 
-    <p class="vapx">vertical-<sub>align</sub>: px; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vaem">vertical-<sub>align</sub>: em; <img src="/51_css/assets/star2.png" alt="스타2"></p>
-    <p class="vaper">vertical-<sub>align</sub>: %; <img src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p>vertical-<sub>align</sub>: px; <img class="vapx" src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p>vertical-<sub>align</sub>: em; <img  class="vaem" src="/51_css/assets/star2.png" alt="스타2"></p>
+    <p>vertical-<sub>align</sub>: %; <img  class="vap" src="/51_css/assets/star2.png" alt="스타2"></p>
 </body>
 </html>
