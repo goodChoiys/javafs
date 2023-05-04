@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+    <style>
+        /* 
+평가 후 정렬 무조건 할 것!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+shift art f 
+*/
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #000;
+            background: #fff;
+        }
+
+        a {
+            color: #000;
+        }
+
+        /* 목록의 마커 제거 */
+        li {
+            list-style: none;
+        }
+
+        /* header */
+        header {
+            position: fixed;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            padding: 0 32px;
+            height: 54px;
+            background: #fff;
+            border: 1px solid #000;
+        }
+
+
+        header nav {
+            text-align: center;
+            margin: 16px auto;
+
+        }
+
+        .logo {
+            display: flex;
+            position: absolute;
+            left: 36px;
+        }
+
+        nav {
+            display: flex;
+            position: absolute;
+            right: 32px;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        /* section common */
+        section {
+            width: 1496px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding-top: 81px;
+        }
+
+        .section h2 {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border: 1px solid #000;
+        }
+
+        .section h2+p {
+            margin-bottom: 48px;
+        }
+
+        /* section1 */
+        #main_img {
+            position: relative;
+            border: 1px solid #000;
+        }
+
+        #main_img b {
+            border: 1px solid black;
+        }
+
+
+        #main_img h2 {
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-50%, -50%);
+            padding: 8px 16px;
+        }
+
+
+        #new li {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100%;
+            border: 1px solid #000;
+
+        }
+
+        #1 {
+            position: absolute;
+            top: 1000px;
+            left: 1000px;
+            flex; 1 0
+        }
+
+
+        #event li {
+            display: flex;
+            border: 1px solid #000;
+        }
+
+        #new ul::after,
+        #event ul::after {
+            content: '';
+            clear: both;
+            display: flex;
+        }
+
+        /* #new ul {
+    overflow: hidden;
+} */
+
+        #new li:not(:nth-of-type(4n)),
+        #event li:not(:nth-of-type(4n)) {
+            margin-right: 16px;
+        }
+
+        /* section2 */
+        #new h2 {
+            position: relative;
+            margin-bottom: 48px;
+        }
+
+        #new h3 {
+            position: absolute;
+            background: #000;
+            color: #fff;
+            width: 80px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        /* section3 */
+
+        #event li h3 {
+            margin: 16px 0 8px;
+        }
+
+        #event li p {
+            margin: 8px 0 8px;
+        }
+
+        #event li a {
+            display: block;
+            background: #ccc;
+            text-align: center;
+            padding: 8px 0;
+            margin-top: 16px;
+        }
+
+
+        /* #event li {
+    float: left;
+    width: 362px;
+}
+
+#event ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+#event li:not(:nth-of-type(4n)) {
+    margin-right: 16px;
+} */
+
+
+        #news input {
+            margin-top: 16px;
+            padding: 16px 8px;
+            width: 100%;
+            display: block;
+        }
+
+        #news button {
+            margin-top: 32px;
+            margin-bottom: 40px;
+            background: #000;
+            color: #fff;
+            padding: 8px 8px;
+        }
+
+
+        /* footer */
+        footer {
+            height: 81px;
+            background: #000;
+            color: #fff;
+            padding: 32px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="logo"><a href="#"><b>Nike</b> korea</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#new">신제품</a></li>
+                <li><a href="#event">이벤트</a></li>
+                <li><a href="#news">소식</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- section1 -->
+    <section id="main_img">
+        <!-- main image -->
+        <!-- https://dummyimage.com/1496x810&text=+ -->
+        <img src="https://dummyimage.com/1496x810" alt="슬라이드 이미지">
+        <!-- main title -->
+        <h2><b>Nike</b> korea</h2>
+    </section>
+
+    <!-- section2 -->
+    <section id="new" class="section">
+        <h2>신제품</h2>
+        <ul>
+            <li>
+                <h3>상품1</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품1" id="1">
+            </li>
+            <li>
+                <h3>상품2</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품2" id="2">
+            </li>
+            <li>
+                <h3>상품3</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품3">
+            </li>
+            <li>
+                <h3>상품4</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품4">
+            </li>
+            <li>
+                <h3>상품5</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품5">
+            </li>
+            <li>
+                <h3>상품6</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품6">
+            </li>
+            <li>
+                <h3>상품7</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품7">
+            </li>
+            <li>
+                <h3>상품8</h3>
+                <img src="https://dummyimage.com/362x243" alt="상품8">
+            </li>
+        </ul>
+    </section>
+
+    <!-- section3 -->
+    <section id="event" class="section">
+        <h2>이벤트</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta possimus quod a veniam ea! Dolores fugiat
+            ipsam et earum at similique vel, laudantium architecto, atque enim aliquam, inventore repellendus vero eaque
+            dolore ad rem possimus distinctio modi officiis? Non iure maiores similique repudiandae possimus. Repellat
+            laudantium animi sit, alias incidunt nostrum vel fugit blanditiis similique ipsum inventore. Quisquam,
+            facere doloribus!</p>
+
+        <ul>
+            <li>
+                <img src="https://dummyimage.com/362x243" alt="event1">
+                <h3>이벤트1</h3>
+                <p>2023.05.01 ~ 05.03</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio assumenda quod harum doloribus
+                    molestiae voluptatum!</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243" alt="event2">
+                <h3>이벤트2</h3>
+                <p>2023.05.01 ~ 05.03</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio assumenda quod harum doloribus
+                    molestiae voluptatum!</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243" alt="event3">
+                <h3>이벤트3</h3>
+                <p>2023.05.01 ~ 05.03</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio assumenda quod harum doloribus
+                    molestiae voluptatum!</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243" alt="event4">
+                <h3>이벤트4</h3>
+                <p>2023.05.01 ~ 05.03</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio assumenda quod harum doloribus
+                    molestiae voluptatum!</p>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- section4 -->
+    <section id="news" class="section">
+        <h2>소식</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, qui.</p>
+        <form action="message.php" method="post">
+            <input type="text" name="user_name" placeholder="Name">
+            <input type="email" name="user_email" placeholder="Email">
+            <input type="text" name="user_subject" placeholder="Subject">
+            <input type="text" name="user_comment" placeholder="Comment">
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+        <img src="https://dummyimage.com/1496x837" alt="지도">
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p>Copyright 2023 MC MagaCoffee. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
