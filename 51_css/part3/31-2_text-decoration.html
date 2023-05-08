@@ -6,17 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
-        /* .tdn에 텍스트 장식을 제거해 보세요. */
 
+        a {
+            color: slateblue;
+        }
+
+        a:hover {
+            color: hotpink;
+            text-decoration: underline;
+        }
+
+        /* 
+        
+            (속기형)
+            text-decoration: line [thickness] [style] [color];
+                             -line 은 필수 속성 나머지 3속성은 선택사항
+
+            1. text-decoration-line: 라인종류;
+                -값: none, underline, overline, line-through
+            2. text-decoration-thickness: 두께;
+                -값: auto, px(em, rem) , %
+            3. text-decoration-style: 스타일;
+                -값: solid, dotted, dashed, double, wavy
+                     아래값은 없으니 적용 x
+                     (hidden, groove, ridge, inset, outset, none)
+            4. text-decoration-color: 현재색;
+
+        */
+
+        /* .tdn에 텍스트 장식을 제거해 보세요. */
+        .tdn {
+            text-decoration: none;
+            text-decoration-line: none;
+            text-decoration-style: solid;
+            text-decoration-color: black;
+            text-decoration-thickness: auto; /* ver CSS4 */
+        }
 
         /* .tdu에 텍스트 밑줄을 지정해 보세요. */
-
+        .tdu {
+            text-decoration: underline;
+            text-decoration-thickness: 5px;
+            text-decoration-style: dashed;
+            text-decoration-color: red;
+            text-decoration: underline 5px dashed red;
+        }
 
         /* .tdo에 텍스트 윗줄을 지정해 보세요. */
+        .tdo {
+            text-decoration: overline;
+            text-decoration-style: dotted;
+        }
 
 
         /* .tdl에 텍스트 취소선을 지정해 보세요. */
-
+        .tdl {
+            text-decoration: line-through;
+            text-decoration-style: wavy;
+        }
         
     </style>
 </head>
