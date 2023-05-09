@@ -77,7 +77,7 @@
     /* section1 */
     .home {
         position: relative;
-        background-image: url(../images/nike-just-do-it.jpg);
+        background-image: url(../images/ps/nike-just-do-it.jpg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: contain;
@@ -93,11 +93,12 @@
     }
     
     .home p {
+        display: block  ;
         z-index: 9998;
         color: #fff;
-        text-align: center;
         background: rgba(333, 000, 222, 0.5);
-        vertical-align: text-bottom;
+        text-align: center;
+        white-space: pre;
     }
 
     /* 요소를 부모 안에 정가운데 배치 */
@@ -117,14 +118,12 @@
 
     /* section2 */
     #about {
-        position: relative;
+        /* position: relative; */
         /* background-image: url(../images/메인.jpg); */
         background-repeat: no-repeat;
         /* background-position: 50% 50%; */
         /* background-size: cover; */
         /* background-attachment: fixed; */
-        /* height: 1920px; */
-        width: 1080px;
         white-space: normal;
         margin: 0 auto;
         color: red;
