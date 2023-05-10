@@ -12,22 +12,47 @@
             height:100px;
             background: yellow;
             margin:20px;
-            left:0px; top:0px;
+            left:0px; 
+            top:0px;
         }
-
         /* 
+
+            transition-property(CSS속성)
+            transition-duration(진행시간)
+            transition-timing-function(가속도)
+            transition-delay(지연시간)
+
+            (속기형)
+            transition: property dutaion tf delay;
+
             animation-name: 애니메이션 이름;
             animation-duration: 애니메이션 시간(단위: s(초));
             animation-iteration-count: 애니메이션 반복 여부;
             animation-direction: 애니메이션 방향;
-            animation-timing-function: 애니메이션 시간 함수;
+            animation-timing-function: 애니메이션 시간 함수(가속도);
             animation-delay: 애니메이션 지연 시간(단위: s(초));
+            animntion-fill-mode: 필 모드
+            animntion-play-state: 상태;
+
+            (속기형)
+            animation: 이름 진행시간 반복 방향 가속도 지연시간 필모드 상태
+
         */
 
-
+        /* 애니메이션의작업 단위는? frame (프레임) */
+        
         /* .anim에 애니메이션의 이름은 move, 시간은 1초, 무한 반복(infinite), 좌우 왕복(alternate), 등속도(linear), 지연 시간은 2초로 지정하시오. */
 
+        .anim {
+            /* animation: move;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+            animation-delay: 2s; */
 
+            animation: move 1s infinite alternate linear 2s;
+        }
         
         /* 
             애니메이션 코드 형식
@@ -44,10 +69,26 @@
             }
         */
 
-        @keyframes move {
+        /* @keyframes move {
             0% {left:0;}
             100% {left:200px;}
         }
+         */
+        
+        @keyframes move {
+            from {left:0;}
+            to {left:200px;}
+        }
+/* 
+        alternate 안쓸경우 아래와 같이 구현도 가능하다.
+
+        @keyframes move {
+            0 {left:0;}
+            from {left: 200px;}
+            100% {left:0px;}
+        }
+ */
+
 
     </style>
 </head>

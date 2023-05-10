@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+
+        p {
+            width: 300px;
+            border: solid;
+        }
+
+        p:nth-of-type(1) {
+            border: rgba(0, 0, 0, .5);
+            color: rgba(0, 0, 0, .5);
+            background: rgba(255, 0, 0, 0.5);
+        }
+        
+        p:nth-of-type(2) {
+            background: red;
+            opacity: .5;
+        }
+
+        /* 
+            rgba()의 a는 alpha(투명도)
+            rgba()의 경우 글자색, 배경색, 테두리색을 선택적으로 지정할 수 있다.
+            opacity(불투명도)는 0(투명) ~ 1(불투명, 기본값)의 값으로 지정하며, 요소의 글자색, 배경색, 테두리색에 모두 적용된다. */
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            background: rgba(100, 100, 255, 0.4);
+        }
+
+        .anim {
+            animation: move 5s infinite alternate linear;
+            opacity: 0.8;
+        }
+
+        div {
+            position: relative;
+            width:178px;
+            height:100px;
+            background: url(../assets/bg-main0-0.png) no-repeat;
+            margin:20px;
+            left:0px; 
+            top:100px;
+            text-indent: -9999em;
+        }
+        
+        @keyframes move{
+            0% {top: 100px;}
+            25% {top: 25px; left: 100px;}
+            50% {top: 150px; left: 200px;} 
+            75% {top: 50px; left: 300px;}
+            100% {top: 175px; left: 400px;}
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <h1>애니메이션</h1>
+        <div class="anim">구름이 뭉게뭉게</div>
+        <p>background: rgba(255, 0, 0, 0);</p>
+        <p>opacity: .5;</p>
+</body>
+</html>

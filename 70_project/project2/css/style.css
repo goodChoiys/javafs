@@ -15,7 +15,7 @@
     /* 바디에 글자색상을 주면 a태그는 상속받지못한다. 따라서 별도 지정해야한다. */
     body {
         font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
-        width: 1920px;
+        width: 100%;
         column-rule: #333;
         margin: 0 auto;
 
@@ -40,38 +40,33 @@
     /* header */
     header {
         height: 54px;
-        width: 1920px;
+        width: 100%;
         position: fixed;
         z-index: 9999;
         outline: 10px solid blue;
         background: #fff;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     }
-
     header ul {
         height: 54px;
         padding: 0 16px;
         display: flex;
         align-items: center;
     }
-
     header a {
         padding: 4px 16px;
-        
+        margin: 0 auto;
     }
-
     header a:hover {
         background: black;
         color: white;
         text-decoration: underline;
     }
-
     header i {
         margin-right: 8px;
     }
-
     section {
-        border: 1px solid black;
+        border: 25px solid black;
     }
 
     /* section1 */
@@ -80,23 +75,25 @@
         background-image: url(../images/ps/nike-just-do-it.jpg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
         /* background: url(../images/nike-just-do-it.jpg) no-repeat 50% 50% cover fixed;/ */
         width: 1920px;
         height: 1080px;
-        /* margin: 0 auto; */
+        margin: 0 auto;
         outline: 10px solid purple;
         z-index: 9997;
         vertical-align: top;
-
     }
     
     .home p {
-        display: block  ;
+        position: absolute;
         z-index: 9998;
+        left: 50%;
+        bottom: 32px;
+        transform: translate(-50%, -50%);
         color: #fff;
-        background: rgba(333, 000, 222, 0.5);
+        background: rgba(100, 100, 100, 0.8);
         text-align: center;
         white-space: pre;
     }
@@ -109,7 +106,7 @@
         transform: translate(-50%, -50%);
         background: rgba(0, 0, 0, 0.5);
         padding: 8px 24px;
-        z-index: 9999;
+        z-index: 9998;
     }
     
     .logo a{
@@ -119,11 +116,13 @@
     /* section2 */
     #about {
         /* position: relative; */
-        /* background-image: url(../images/메인.jpg); */
+        
+        /* background-image: url(../images/ps/메인.jpg); */
         background-repeat: no-repeat;
         /* background-position: 50% 50%; */
         /* background-size: cover; */
-        /* background-attachment: fixed; */
+        background-attachment: fixed;
+        width: 1920px;
         white-space: normal;
         margin: 0 auto;
         color: red;
@@ -133,8 +132,67 @@
     
 
     /* section3 */
+    #portfolio {
+        margin: 0 auto;
+        width: 1920px;
+        height: 1080px;
+    }
+
+    .s3 {
+        display: flex;
+        width: 1496px;
+        border: 20px solid lime;       
+        margin: 0 auto;
+
+    }
+    .s3 li{
+        width: 450px;
+        border: 5px solid hotpink;
+
+    }
+    
     /* background: url(../images/nike-just-do-it.jpg) no-repeat 50% 50% cover fixed;/ */
 
     /* section4 */
+    #contact {
+        width: 1920px;
+        height: 1080px;
+        margin: 0 auto;
+    }
+
+    #contact h2{
+        padding: 16px;
+    }
     
+    #contact p{
+        padding-left: 16px;
+    }
+
+    #contact input, button{
+        margin: 8px 0;
+    }
+
+    .psinfo {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        width: 800px;
+        /* border: 10px solid red; */
+    }
+
+    .map {
+
+        margin: 0 auto;
+    }
+
     /* footer */
+
+    footer {
+        margin: 0 auto;
+        text-align: center;
+        border: 10px solid black;
+        height: 108px;
+    }
+
+    footer a{
+    }

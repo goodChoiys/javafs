@@ -71,7 +71,8 @@
     }
 
     section {
-        border: 1px solid black;
+        border: 15px solid black;
+        width: 1920px;
     }
 
     /* section1 */
@@ -80,7 +81,7 @@
         background-image: url(/70_project/project2/images/ps/nike-just-do-it.jpg);
         background-repeat: no-repeat;
         background-position: 50% 50%;
-        background-size: contain;
+        background-size: cover;
         background-attachment: fixed;
         /* background: url(../images/nike-just-do-it.jpg) no-repeat 50% 50% cover fixed;/ */
         width: 1920px;
@@ -89,9 +90,15 @@
         outline: 10px solid purple;
         z-index: 9997;
         vertical-align: top;
-
     }
     
+    #home {
+        width: 1920px;
+        height: 1080px;
+
+        outline: 40px solid gold;
+    }
+
     .home p {
         z-index: 9998;
         color: #fff;
@@ -101,7 +108,7 @@
     }
 
     /* 요소를 부모 안에 정가운데 배치 */
-    .logo {
+    #home .logo {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -109,6 +116,7 @@
         background: rgba(0, 0, 0, 0.5);
         padding: 8px 24px;
         z-index: 9999;
+        border: 30px solid red;
     }
     
     .logo a{
@@ -128,7 +136,7 @@
         white-space: normal;
         margin: 0 auto;
         color: red;
-        border: 20px solid green;
+        /* border: 20px solid green; */
 
     }
     
