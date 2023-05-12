@@ -1,328 +1,281 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
 
-    /* 초기화 */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html {
-        font-size: 10px;
-        scroll-behavior: smooth;
-    }
+/* 전체 기본 폰트사이즈 계산하기 쉽게 10px로 설정,
+    a태그 링크 클릭시 부드러운 스크롤 적용 */
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
 
-    /* 바디에 글자색상을 주면 a태그는 상속받지못한다. 따라서 별도 지정해야한다. */
-    body {
-        font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
-        width: 100%;
-        column-rule: #333;
-        margin: 0 auto;
-
-        /* margin: 0 auto; */
-    }
-
-    /* a태그와 button태그 글자색은 body 글자 색을 상속받지 않는다. */
-    a { 
-        color: #333; 
-        text-decoration: none;
-    }
-
-    img {
-        width: 100%;
-        vertical-align: top;
-    }
-
-    li {
-        list-style: none;
-    }
-
-    
-    iframe {
+/* 본문 전체 글씨 크기, 색상 및 글씨체 적용,
+    페이지 너비 및 여백 조정 */
+body {
+    font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
     width: 100%;
+    column-rule: #333;
+    margin: 0 auto;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+li {
+    list-style: none;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!header!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 헤더 영역 전체 설정 */
+header {
+    position: fixed;
+    height: 54px;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 안의 ul 높이 설정, 자식 요소가 플렉스 정렬 되도록 지정 */
+header ul {
     height: 100%;
-    border: 0;
+    display: flex;
+    background: #000;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 ul의 자식 속성 */
+header li {
+    height: 100%;
+    width: 88px;
+    text-align: center;
+    padding: 1rem 0;
     }
 
-    /* header */
-    header {
-        height: 54px;
-        width: 100%;
-        position: fixed;
-        z-index: 9999;
-        background: #fff;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+/* 네비 안의 li 요소 호버시 rgba효과 지정 */
+header li:hover {
+    background: rgba(100, 100, 100, 0.8);
+}
 
-    }
-    header ul {
-        height: 54px;
-        padding: 0 16px;
-        display: flex;
-    }
+/* 네비 자식 요소 플렉스 정렬되도록 지정 */
+nav {
+    display: flex;
+}
 
-    header li {
-        height: 54px;
-        width: 88px;
-        text-align: center;
-        padding: 1rem 0;
-        /* border: 1px solid red; */
-    }
+/* 네비 안의 div 너비 및 여백 지정 */
+nav div {
+    margin: 1.5rem 0 1.5rem 2rem;
+    width: 88px;
+}
 
-    header li:hover {
-        background: rgba(100, 100, 100, 0.8);
-    }
+/* 네비 안의 div 안의 a태그 설정,
+    크기 조절을 위해 블록요소로 지정,
+    이미지를 불러왔고 크기가 부모보다 커서 
+    크기를 div의 80%크기가 되도록 조정
+     */
+nav div a {
+    display: block;
+    width: 80%;
+}
 
-    header i {
-        margin-right: 8px;
-    }
+/* 네비게이션 우측 부분 설정 */
+nav .right {
+    display: flex;
+    height: 54px;
+    width: 400px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transform: translateX(1040px);
+}
 
-    /* section1 */
+/* 네비게이션 우측 안의 버튼(a태그) 정렬 */
+.right a {
+    width: 200px;
+    padding-top: 12px;
+    text-align: center;
+}
 
+/* 우측 네비의 가로 폭 지정,
+   자식요소인 a태그, i(아이콘)와 input태그를 
+   플렉스 정렬되도록 지정 */
+.right .deep {
+    display: flex;
+    width: 480px;
+    height: 54px;
+    margin: 0;
+}
 
-    .home {
-        position: relative;
-        background-image: url(../images/ps/nike-just-do-it.jpg);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: cover;
-        background-attachment: fixed;
-        width: 1496px;
-        height: 810px;
-        margin: 0 auto;
-        /* outline: 10px solid red; */
-        z-index: 9997;
-        vertical-align: top;
-    }
-    
-    .home a {
-        position: absolute;
-        z-index: 9998;
-        left: 50%;
-        top: 50%;
-        width: 100%;
-        height: 1080px;
-        margin: 0 auto;
-        transform: translate(-50%, -50%);
-        color: rgba(0, 0, 0, 0);
-        /* border: 10px solid firebrick; */
-    }
+/* 우측 네비 자식 요소인 i(아이콘) 영역 설정 */
+.deep i {
+    width: 48px;
+    text-align: center;
+    padding-top: 18px;
+}
 
-    .home p {
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        bottom: 50%;
-        padding: 16px;
-        margin: 0 auto;
-        width: 800px;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        background: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        white-space: pre;
-    }
-    
-    .home:hover p {
-        animation: light 2s 1 forwards;
-    }
-
-    @keyframes light {
-        0%{animation-timing-function: ease-in;
-            background: rgba(0, 0, 0, .8);}
-        25%{animation-timing-function: ease-in;
-            background: rgba(255, 255, 255, .8);
-            color: #333;}
-        50%{animation-timing-function: ease-in;
-            background: rgba(0, 0, 0, .8);}
-        75%{animation-timing-function: ease-in;
-            background: rgba(255, 255, 255, .8);
-            color: #333;}
-        100%{animation-timing-function: ease-in;
-            background: rgba(0, 0, 0, .8);}
-    }
-
-    /* 요소를 부모 안에 정가운데 배치 */
-    /* .logo {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.5);
-        padding: 8px 24px;
-        z-index: 9998;
-    }
-    
-    .logo a{
-        color: #fff;
-    } */
-
-    /* section2 */
-    #news {
-        width: 1496px;
-        height: 810px;
-        margin: 0 auto;
-        /* color: red; */
-        /* border: 20px solid orange; */
-    }
-    
-    .carousel {
-        position: relative;
-        height: 700px;
-        background: url(../images/ps/메인.jpg);
-    }
-
-    .controls {
-        position: absolute;
-        width: 100%;
-        height: 78px;
-        /* position: relative; */
-        top: 50%;
-        transform: translateY(-50%);
-        /* background: #999; */
-    }
-
-    .controls a {
-        position: absolute;
-        transform: translateX(-50%);
-    }
-
-    .pager {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 100px;
-
-        /* position: relative;
-        background: red;
-        width: 100%;
-        top: 70%;
-        transform: translateX(50%); */
-    }
-    .pager a {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        margin: 0 8px;
-        border-radius: 50%;
-        background: black;
-        /* 짧은 텍스트를 숨기기 */
-        
-        text-indent: -9999em;
-    }
-
-    .pager a.active {
-        background: white;
-
-    }
-    #prev {left: calc(50% - 480px);}
-    #next {left: calc(50% + 480px);}
+/* 우측 네비 자식 요소인 input 설정 */
+.deep input {
+    width: 240px;
+    height: 32px;
+    margin-top: 12px;
+}
 
 
-    /* section3 */
-    #section3 {
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        width: 1496px;
-        /* border: 20px solid yellow; */
-    }
-    
-    #section3 .sec3img {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 1488px;
-        margin: 0 auto;
-        z-index: 5;
-        /* border: 20px solid lime;        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section1!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 섹션1 설정 */
+#section1 {
+    height: 880px;
+    margin-bottom: 32px;
+    font-size: 8px;
+}
+
+/* 섹션1의 h1(로고) 설정*/
+#section1 .logo {
+    height: 32px;
+    /* outline: 10px solid red; */
+}
+
+/* 섹션1안의 div인 section1의 설정 */
+.section1 {
+    display: flex;
+    /* position: relative; */
+    /* background-image: url(../images/main1.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-attachment: fixed; */
+    width: 1496px;
+    height: 880px;
+    margin: 0 auto;
+    /* outline: 10px solid red; */
+    z-index: 9997;
+    vertical-align: top;
+}
+
+
+.section1 p {
+    /* position: absolute; */
+    z-index: 1;
+    left: 50%;
+    bottom: 50%;
+    padding: 16px;
+    margin: 0 auto;
+    width: 800px;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-size: 1.5rem;
+    white-space: pre;
+}
+
+.section1:hover p {
+    animation: light 1s 2 forwards;
+}
+
+@keyframes light {
+    0% {
+        opacity: .8;
+        animation-timing-function: ease-out;
     }
 
-    .sec3img .low{
-        width: 360px;
-        padding: 8px;
+    50% {
+        opacity: .4;
+        animation-timing-function: ease-in;
     }
 
-
-    .low div{
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        /* border: 5px solid hotpink; */
+    100% {
+        opacity: .8;
+        animation-timing-function: ease-in;
     }
-    
-    .sprite {
-        overflow: hidden;
-        background-image: url(../images/ps/spriteimage.jpg);
-        background-repeat: no-repeat;
-        color: blue;
-    }
-    /* background: url(../images/nike-just-do-it.jpg) no-repeat 50% 50% cover fixed;/ */
-    
-    /* section4 */
-    #csc{
-        width: 1496px;
-        height: 810px;
-        margin: 0 auto;
-        border: 10px solid red;
-
-    }
-
-    #csc h2{
-        padding: 16px;
-        border: 10px solid orange;
-
-    }
-    
-    #csc p{
-        padding-left: 16px;
-        border: 10px solid yellow;
-        
-    }
-
-    #csc address{
-        border: 10px solid green;
-    }
-
-    .psinfo {
-        display: flex;
-        flex-direction: column;
-        padding: 16px;
-        width: 1496px;
-        margin: 0 auto;
-        border: 10px solid blue;
-    }
-
-    #csc input, button{
-        margin: 8px 0;
-        border: 10px solid darkblue;
-    }
+}
 
 
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
-    /* section5 */
-    #map {
-        width: 1496px;
-        height: 810px;
-        margin: 0 auto;
-    }
 
-    .map {
-        width: 724px;
-        height: 486px;
-        margin: 32px;
-        border: 10px solid red;
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 푸터 설정 */
+/* footer {
+    height: 108px;
+    margin: 0 auto;
+    padding: 24px;
+    text-align: center;
+    color: #fff;
+    background: #000;
+} */
 
-    }
-    /* footer */
-
-    footer {
-        margin: 0 auto;
-        padding: 24px;
-        text-align: center;
-        background: #fff;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-        height: 108px;
-        /* border: 10px solid black; */
-    }
-
+/* 푸터 영역이 검은색이라 글씨 흰색 적용 */
+footer a {
+    color: #fff;
+}

@@ -8,26 +8,56 @@
     <title>RWD</title>
     <style>
         /* 
-            @meida [not|only] [mediatype] [and|,] (expressions) {
+
+            width: 너비;
+            height: 높이;
+            min-width: 최소 너비;
+            max-width: 최대 너비;
+            min-height: 최소 높이;
+            max-height: 최대 높이;
+
+            ------------------------------------------------------------------------
+            -미디어쿼리 작성 형식-
+
+            조건에 만족하는 장치에 대해 CSS-code 를 적용시킨다.
+
+            @media (조건) {
                 CSS-code;
             }
 
-            mediatype: all, screen, tv, projection, print, ...
-            and: 그리고
-            , : 또는
-            expressions: 조건으로 min-width, max-width, orientation, ...
+            @media [not|only] [mediatype] [and|,] (expressions) {
+                CSS-code;
+            }
+            * [not|only]: not, only(기본값)
+            * [mediatype]: all(기본값), screen, tv, projection, print, ...
+            * [and|,]: and(그리고), ,(또는) 
+            * (expressions): 조건으로 min-width, max-width, orientation, ...
+            ------------------------------------------------------------------------
         */
 
-        /* 데스크탑의 배경색은 blue, 테블릿의 배경색은 green, 폰의 배경색은 red이 되도록 반응형 웹을 만들어 보세요. 미디어쿼리의 중단점은 768, 1200으로 지정합니다. */
+        /* 데스크탑의 배경색은 blue, 테블릿의 배경색은 green, 폰의 배경색은 red이 되도록 반응형 웹을 만들어 보세요. 미디어쿼리의 중단점(breakpoint)은 768, 1200으로 지정합니다. */
 
-        /* phone */
-        
+        /* 모바일의 경우 미디어쿼리 안써도 된다.(상위 설정이 있다면 생략해도 문제없다.)
+            body {background: red;} */
 
-        /* tablet */
-
-
-        /* desktop */
-
+        /* 모바일 우선 제작 */
+        /* 576px 미만 */
+        /* phone: 최소 너비가 576px -> 576px 이상 */
+        @media (min-width: 576px) {
+                body {background: red;}
+            }
+            
+        /* tablet: 768px 이상 */
+        @media (min-width: 768px) {
+                body {background: green;}
+            }
+                
+                
+        /* desktop: 1200px 이상 */
+        @media (min-width: 1200px) {
+                body {background: blue;}
+            }
+                
 
     </style>
 </head>

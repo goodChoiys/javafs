@@ -18,6 +18,9 @@
     width: 1200px;
     margin: 0 auto;
 }
+img {
+    width: 100%;
+}
 
 header, #contents, footer {
     display: flex;
@@ -41,11 +44,35 @@ nav {
     background: lightsalmon;
 }
 
+nav ul{
+    display: inline;
+}
+
 /* 슬라이드 */
 #slide {
     width: 1200px;
     height: 300px;    
-    background: lightcoral;
+    overflow: hidden;
+}
+
+#slide ul {
+    position: relative;
+    left: 0;
+    width: 400%;
+    display: flex;
+    animation: slide 16s infinite;
+}
+
+@keyframes slide {
+    0% {left: 0;}
+    5% {left: -100%;}
+    33% {left: -100%;}
+    38% {left: -200%;}
+    66% {left: -200%;}
+    71% {left: -300%;}
+    /* 소숫점 5자리 까지 적용 가능 */
+    99.99999% {left: -300%;}
+    100% {left: 0;}
 }
 
 /* 메인 콘텐츠 */

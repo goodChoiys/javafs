@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD</title>
+    <style>
+
+        /* reset */
+        body {margin: 0;}
+
+        ul {margin: 0; padding: 0;}
+
+        li {list-style: none;}
+
+        img {
+            width: 100%;
+            /* baseline을 top으로 변경 그림 위치 정렬 */
+            vertical-align: top;
+        }
+
+        section {
+            padding: 0 30px ;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1496px;
+            margin: 0 auto;
+            /* border: 10px solid red; */
+
+            }
+
+        /* box size */
+        li {
+            width: 100%;
+            margin-bottom: 16px;
+            }
+
+
+        /* 공통 */
+
+        /* tablet: 600px 이상 */
+        @media (min-width: 600px) {
+            li {
+            width: calc(50% - 8px);
+            }
+
+            }
+                
+                
+        /* desktop: 992px 이상 */
+        @media (min-width: 992px) {
+            li {
+            width: calc(25% - 8px);
+            }
+            max-width: 362px;
+            }
+            }
+                
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>반응형웹</h1>
+        <ul>
+            <li><img src="../assets/20220511_1124.jpg" alt="박스1"></li>
+            <li><img src="../assets/20220511_1124.jpg" alt="박스2"></li>
+            <li><img src="../assets/20220511_1124.jpg" alt="박스3"></li>
+            <li><img src="../assets/20220511_1124.jpg" alt="박스4"></li>
+        </ul>
+    </section>
+</body>
+
+</html>
