@@ -10,7 +10,7 @@
 <body>
     <div id="wrap">
         <!-- header -->
-        <header class="clearfix">
+        <header>
             <h1 class="logo">
                 <a href="#">
                     <img src="images/logo.png" alt="JUST 쇼핑몰">
@@ -21,14 +21,14 @@
                     <li>
                         <a href="#">New Releases</a>
                         <ul class="sub">
-                            <li><a href="">New & Featured</a></li>
-                            <li><a href="">남성 신제품</a></li>
-                            <li><a href="">여성 신제품</a></li>
-                            <li><a href="">키즈 신제품</a></li>
+                            <li><a href="">남성</a></li>
+                            <li><a href="">여성</a></li>
+                            <li><a href="">키즈</a></li>
+                            <li><a href="">키즈</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"> Men</a>
+                        <a href="#">Men</a>
                         <ul class="sub">
                             <li><a href="">신발</a></li>
                             <li><a href="">의류</a></li>
@@ -98,47 +98,42 @@
                 </li>
             </ul>
         </div><!-- //slide -->
-
+        
         <!-- main contents -->
-        <div id="contents" class="clearfix">
+        <div id="contents">
             <div class="tabs">
-                <div>
+                <!-- 제목/버튼 -->
+                <input type="radio" name="tabs" id="btn1" checked>
+                <label for="btn1">공지사항</label>
+                <input type="radio" name="tabs" id="btn2">
+                <label for="btn2">갤러리</label>
+
+                <!-- 공지사항 -->
+                <div id="tab1">
                     <ul>
-                        <li><a href="#">네이버페이 머니 충전 및 간편 결제 서비스 이용 불가 안내</a></li>
-                        <li><a href="#">멤버데이즈 참여 감사 10% 할인 혜택 제공</a></li>
-                        <li><a href="#">멤버데이즈 이벤트 안내 (05월 01일 - 05월 07일)</a></li>
-                        <li><a href="#">2023년 05월 카드사 무이자 할부 혜택 안내</a></li>
+                        <li><a href="#">네이버페이 머니 충전 및 간편 결제 서비스 이용 불가 안내</a><span>2023-05-15</span></li>
+                        <li><a href="#">멤버데이즈 참여 감사 10% 할인 혜택 제공</a> <span>2023-05-10</span></li>
+                        <li><a href="#">멤버데이즈 이벤트 안내</a><span>2023-05-05</span></li>
+                        <li><a href="#">2023년 05월 카드사 무이자 할부 혜택 안내</a><span>2023-05-01</span></li>
                     </ul>
-                    <!-- <div>
-                        <p>맞춤 플랜을 제안하는 크리에이티브..</p>
-                        <p>JUST 쇼핑몰과 함께 하실 가슴 따뜻한..</p>
-                        <p>코리아웨딩페어 결혼박람회가 열립니다.</p>
-                        <p>마진없이 아낌없이 드리는 마지막 찬스!</p>
-                    </div>
-                    <div>
-                        <p>2019.03.20</p>
-                        <p>2019.05.15</p>
-                        <p>2019.07.13</p>
-                        <p>2019.09.28</p>
-                    </div> -->
                 </div>
-                <div>
-                    <a href="#">
-                        <img src="images/i1.jpg" alt="모자">
-                    </a>
-                    <a href="#">
-                        <img src="images/i2.jpg" alt="클러치백">
-                    </a>
-                    <a href="#">
-                        <img src="images/i3.jpg" alt="장갑">
-                    </a>
+
+                <!-- 갤러리 -->
+                <div id="tab2">
+                    <a href="#"><img src="images/i1.jpg" alt="모자"></a>
+                    <a href="#"><img src="images/i2.jpg" alt="클러치백"></a>
+                    <a href="#"><img src="images/i3.jpg" alt="장갑"></a>
                 </div>
             </div>
+
+            <!-- 배너 -->
             <div class="banner">
                     <a href="#">
                         <img src="images/banner.jpg" alt="Dress 1+1 보러가기">
                     </a>
             </div>
+
+            <!-- 바로가기 -->
             <div class="shortcut">
                 <a href="#">
                     <img src="images/quick.jpg" alt="무료 배송 쿠폰 안내">
@@ -147,7 +142,7 @@
         </div><!-- //main contents -->
 
         <!-- footer -->
-        <footer class="clearfix">
+        <footer>
             <div class="b_logo">
                 <img src="images/logo2.png" alt="JUST 쇼핑몰">
             </div>
