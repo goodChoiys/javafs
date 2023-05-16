@@ -79,9 +79,17 @@ nav li {
     /* background: #111111; 16진수 코드 */
 }
 
+nav .main > li:hover {
+    background: #000000;
+}
+
+nav .main > li:hover > a {
+    color: #ffffff;
+}
+
+
 nav .main > li > a {
     font-size: 1.8rem;
-    /* color: #fff; */
     color: #000000;
 }
 
