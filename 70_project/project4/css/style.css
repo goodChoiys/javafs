@@ -19,6 +19,8 @@ li {
 
 img {
     width: 100%;
+    vertical-align: top;
+
 }
 
 body {
@@ -166,7 +168,7 @@ nav .sub {
     margin-bottom: 8px;
     cursor: pointer;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 #btn1:checked + label, #btn2:checked + label {
@@ -174,6 +176,7 @@ nav .sub {
     color: #000000;
     font-size: 1.6rem;
     font-weight: 400;
+    
 }
 
 
@@ -186,11 +189,11 @@ nav .sub {
 }
 
 #tab1 a {
-    width: 300px;
+    width: 280px;
     white-space: nowrap;
+    overflow: hidden;
     /* 말 줄임 ...효과 */
     text-overflow: ellipsis;
-    /* border: 1px solid red; */
 }
 
 #tab1 a:hover {
@@ -202,7 +205,6 @@ nav .sub {
     display: inline-block;
     width: 110px;
     margin-right: 8px;
-    background: #000000;
 }
 
 /* 배너 */
