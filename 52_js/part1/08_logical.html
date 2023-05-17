@@ -14,6 +14,27 @@
         /* 
             논리 연산자: ||(또는), &&(그리고), !(아니다)
             
+            // 논리 연산의 결과는 true 또는 false이다.
+
+            true || true -> true
+            true || false -> true
+            false || true -> true
+            false || false -> flase
+            
+            true && true -> true
+            true && false -> false
+            false && true -> true
+            false && false -> flase
+            
+            
+
+            연산자의 우선순위
+            1. ()
+            2. 산술
+            3. 비교
+            4. 논리
+            5. 대입(할당)
+
             연산자의 우선순위
             18. ()
             15. 산술(증감): ++, --
@@ -35,12 +56,56 @@
 
         var a = 10;
         var b = 20;
-        var m = 30;
-        var n = 40;
+        var c = 30;
+        var d = 40;
         var result;
 
-        document.write(result, '<br>');
+        result = a > b || b >= c || c > d;
+        document.write('1. ' + result, '<br>');
+        // ||
+        // 1    , 2    , 3
+        // false, false, false
+
+        result = a > b || b >= c || c <= d;
+        document.write('2. ' + result, '<br><br>');
+        // ||
+        // 1    , 2    , 3
+        // false, false, true
+
+        result = a <= b && b >= c && c <= d;
+        document.write('A. ' + result, '<br>');
+        // &&
+        // 1    , 2    , 3
+        // true, false, true
+
+        result = a <= b && b <= c && c <= d;
+        document.write('B. ' + result, '<br><br>');
+        // &&
+        // 1    , 2    , 3
+        // true, true, true
+
+        result = !(a > b);
+        document.write('a. ' + result, '<br><br>');
+        // !
+        // 1 
+        // !(false) -> true
         
+
+        document.write('ㄱ. ' + !10, '<br>');
+        document.write('ㄴ. ' + !0, '<br>');
+        document.write('ㄷ. ' + !null, '<br>');
+        document.write('ㄹ. ' + !undefined, '<br>');
+        document.write('ㅁ. ' + !'', '<br>');
+        document.write('ㅂ. ' + !false, '<br><br>');
+        
+        // 산술 연산에서 false는 0, true는 1로 취급
+        document.write(false + false + false, '<br>');
+        document.write(false + true + false, '<br>');
+        document.write(false + true + true, '<br>');
+
+
+
+
     </script>
 </body>
 
