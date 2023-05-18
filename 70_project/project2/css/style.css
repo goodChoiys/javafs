@@ -27,7 +27,7 @@ nav {
 /* section1 */
 #main_img {
     position: relative;
-    padding-top: 54px;
+    padding-top: 52px;
 }
 
 #main_img h2 {
@@ -76,26 +76,20 @@ nav {
 
 /* section2 */
 
-#menu li {
+#game li {
     position: relative;
 }
 
-#menu h2 {
+#game h2 {
     margin-bottom: 40px;
 }
 
-#menu li {
+#game li {
     border: 1px solid #f1f1f1;
 }
 
-#menu h3 {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 4px 12px;
-    background: #111111;
+#game h3 {
+display: none;
 }
 
 /* section3 */
@@ -112,11 +106,9 @@ nav {
         display: block;
         padding: 6px 0;
         text-align: center;
-        background: #cccccc;
+        background: #2d5bbd;
         margin-top: 16px;
     }
-
-
 
     /* section4 */
     #support input {
@@ -131,11 +123,7 @@ nav {
         display: block;
         padding: 12px 16px; 
         margin: 20px 0 45px;
-        background: #111111;
-    }
-
-    .Nomobile {
-        display: none;
+        background: #2d5bbd;
     }
 
 /* footer */
@@ -147,12 +135,6 @@ nav {
     footer span:nth-of-type(2){
         display: none;
     }
-
-
-
-
-
-
 
 
 /* 미디어 쿼리는 3단계로 작성 */
@@ -195,23 +177,24 @@ nav {
     padding: 81px 0 0;
 }
 
-.section ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.section li{
-    width: 360px;
-}
-
 /* section2 */
 
 /* section3 */
+
+#news ul {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
 #news li {
     display: flex;
+    width: 326px;
     flex-direction: column;
-    justify-content: space-between;
+
 }
 
 #news li div {
@@ -222,24 +205,14 @@ nav {
 #support {
     margin-bottom: 81px; 
 }
-#support .sec4_loc{
-    display: flex;
-    justify-content: space-between;
-}
-
-#support .sec4_loc > div{
-    display: block;
-    border: 2px solid seagreen;
-    width: 30%;
-    height: 300px;
-}
-
-
 
 /* input */
 /* button */
 
-
+iframe {
+    width: 50%;
+    height: 400px;
+}
 
 /* footer */
     footer p{
