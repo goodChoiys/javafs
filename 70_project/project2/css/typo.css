@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font: 1.5rem/1.8 verdana, sans-serif;
+    color: #333333;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 400; /* 글씨체 굵기: normal; */
+    letter-spacing: 4px; /*  */
+}
+
+h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400; /* 글씨체 굵기: normal; */
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+h3 {
+    font-size: 1.6rem;
+}
+
+a {
+    color: #333333;
+    /* 하이퍼링크 밑줄 삭제 */
+    text-decoration: none;
+}
+
+button {
+    color: #ffffff;
+}
+
+.mainTit {
+    font-size: 3.6rem;
+    letter-spacing: 4px;
+    color: rgba(255, 230, 100, .7);
+}
+
+#menu h3 {
+    color: #ffffff;
+}
+
+::placeholder {
+    color: #999999;
+}
+
+
+/* section3 */
+#event h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+#event li p:first-of-type{
+    color: #999999;
+}
+
+/* footer */
+footer {
+    color: #eeeeee;
+}

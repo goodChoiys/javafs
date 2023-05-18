@@ -19,14 +19,27 @@
             }
         */
 
+        // 학생수와 한 줄에 앉는 인원수를 입력 받아, 총 몇 줄이 필요한지 구하시오.
         // 입력
+            const student = Number(prompt('학생은 몇명입니까?'));
+            const count = Number(prompt('한줄에 몇명이 앉습니까?'));
+            const n = student % count;
+            var tortal_line
 
-
+                        
         // 처리
+        // 학생수 / 한줄인원수 -> 몪, 나머지
+        // 몫: parseInt(학생수 / 한줄인원수의 정수 부분)
 
+            if (n === 0) {
+                tortal_line = parseInt(n);
+            }
+            else {
+                tortal_line = parseInt(n) + 1;
+            }
 
         // 출력
-
+            document.write ('학생수는 ' + student + ' 명이고, 한 줄에 앉는 인원은 ' + count + ' 명 이므로, ' + '총' + tortal_line);
 
     </script>
 </body>

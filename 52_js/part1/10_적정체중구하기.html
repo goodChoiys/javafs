@@ -22,19 +22,42 @@
         */
 
         // 입력
-        var userName;
-        var userHeight;
-        var userWeight;
+        let user_n = prompt('당신의 이름을 입력하세요');
+        let user_h = prompt('당신의 키를 입력하세요');
+        let user_w = prompt('당신의 체중을 입력하세요');
+        let normal_w;
+        let result;
+        let over_w
+        let nMin
+        let nMax
 
         // 처리
         // 적정 체중 = (신장 - 100) * 0.9
+        normal_w = (user_h - 100) * 0.9;
 
-        
         // 오차 범위 ±5
+        result = user_w >= normal_w -5 && user_w <= normal_w + 5;
+        nMin <= (normal_w)
+        nMax <= (normal_w)
 
+        /* 
+        내가 만든거
+        avg_w = ((((user_w)) <= (normal_w + 5)) && ((user_w)) >= (normal_w -5) ) ? '적정 체중입니다.' : (((user_w <= over_w) ? ((over_w) +' kg 만큼 초과되어 비만입니다.') : ((over) + ' kg 만큼 미달되어 저체중입니다.'))) ;
+
+        document.write(user_n + ' 님의 ' + '신장은 ' + user_h + ' cm 이고, ' + ' 체중은 ' + user_w + ' kg이며, 적정 체중은 ' + normal_w + ' kg 으로, ' + avg_w);
+        */
+
+        // 초과 몸무게? 사용자 몸무게 - 적정체중
+        over_w = user_w - normal_w;
+
+        // 비만
+
+        // 저체중
 
         // 출력
-        document.write(userName + '님은 ' + result);
+        // document.write(user_n + '님의 신장은 ' + user_h + ' cm 이고, ' + '체중은 ' + user_w +' kg이며, 적정 체중은 ' nMin + '~' + nMax + reslut + 'kg 보다 ' + rsult);
+
+
     </script>
 </body>
 

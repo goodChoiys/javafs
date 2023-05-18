@@ -1,292 +1,215 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+@import url(reset.css);
+@import url(typo.css);
 
-/* 초기화 */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 10px;
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0 auto;
-    font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
-    color: #333;
-    outline: 15px solid yellow;
-
-}
-
-a {
-    text-decoration: none;
-    color: #333;
-}
-
-img {
-    width: 100%;
-    vertical-align: top;
-}
-
-li {
-    list-style: none;
-}
-
-#wrap {
-    width: 1200px;
-    height: 1200px;
-    outline: 15px solid yellow;
-    margin: 0 auto;
-}
-
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!header!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* 헤더 영역 전체 설정 */
+/* header */
 header {
+    /* position fixed, absolute 처리시 
+    width가 0이되어 지정해줘야함 */
     position: fixed;
-    height: 54px;
-    width: 100%;
     z-index: 9999;
-    background: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    margin: 0;
-    padding: 0;
-    outline: 10px solid red;
-    justify-content: space-between;
-
+    width: 100%;
+    /* height: 54px; */
+    padding: 12px 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
 }
 
-nav {
-    display: flex;
-    height: 100%;
-}
-
-nav div {
-
-    /* margin: 1.5rem 0 0 2rem; */
-    width: 88px;
-    outline: 10px solid blue;
-
-}
-
-nav ul {
-    height: 100%;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    outline: 10px solid gold;
-}
-
-nav li {
-    height: 100%;
-    width: 88px;
-    text-align: center;
-    outline: 10px solid lime;
-
-    }
-
-/* 네비 안의 li 요소 호버시 rgba효과 지정 */
-header li:hover {
-    background: rgba(100, 100, 100, 0.8);
-}
-
-/* 네비 자식 요소 플렉스 정렬되도록 지정 */
-
-
-/* 네비 안의 div 너비 및 여백 지정 */
-
-
-/* 네비 안의 div 안의 a태그 설정,
-    크기 조절을 위해 블록요소로 지정,
-    이미지를 불러왔고 크기가 부모보다 커서 
-    크기를 div의 80%크기가 되도록 조정
-     */
-nav div a {
-    display: block;
-    width: 80%;
-}
-
-/* 네비게이션 우측 부분 설정 */
-nav .right {
-    display: flex;
-    height: 54px;
-    width: 400px;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    transform: translateX(1040px);
-}
-
-/* 네비게이션 우측 안의 버튼(a태그) 정렬 */
-.right a {
-    width: 200px;
-    padding-top: 12px;
-    text-align: center;
-}
-
-/* 우측 네비의 가로 폭 지정,
-   자식요소인 a태그, i(아이콘)와 input태그를 
-   플렉스 정렬되도록 지정 */
-.right .deep {
-    display: flex;
-    width: 480px;
-    height: 54px;
-    margin: 0;
-}
-
-/* 우측 네비 자식 요소인 i(아이콘) 영역 설정 */
-.deep i {
-    width: 48px;
-    text-align: center;
-    padding-top: 18px;
-}
-
-/* 우측 네비 자식 요소인 input 설정 */
-.deep input {
-    width: 240px;
-    height: 32px;
-    margin-top: 12px;
-}
-
-/* section1 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section1!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-/* 섹션1 설정 */
-#section1 {
-    height: 880px;
-    margin-bottom: 32px;
-    font-size: 8px;
-}
-
-/* 섹션1의 h1(로고) 설정*/
-#section1 .logo {
-    height: 32px;
-    /* outline: 10px solid red; */
-}
-
-/* 섹션1안의 div인 section1의 설정 */
-.section1 {
-    display: flex;
-    /* position: relative; */
-    /* background-image: url(../images/main1.jpg);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: contain;
-    background-attachment: fixed; */
-    width: 1496px;
-    height: 880px;
-    margin: 0 auto;
-    /* outline: 10px solid red; */
-    z-index: 9997;
-    vertical-align: top;
-}
-
-
-.section1 p {
-    /* position: absolute; */
-    z-index: 1;
-    left: 50%;
-    bottom: 50%;
-    padding: 16px;
-    margin: 0 auto;
-    width: 800px;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    background: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    font-size: 1.5rem;
-    white-space: pre;
-}
-
-.section1:hover p {
-    animation: light 1s 2 forwards;
-}
-
-@keyframes light {
-    0% {
-        opacity: .8;
-        animation-timing-function: ease-out;
-    }
-
-    50% {
-        opacity: .4;
-        animation-timing-function: ease-in;
-    }
-
-    100% {
-        opacity: .8;
-        animation-timing-function: ease-in;
-    }
-}
-
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
-
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-/* 푸터 설정 */
-/* footer {
-    height: 108px;
-    margin: 0 auto;
-    padding: 24px;
-    text-align: center;
-    color: #fff;
-    background: #000;
+/* 요소 숨기기 */
+/* #main_img span {
+    display: none;
 } */
 
-/* 푸터 영역이 검은색이라 글씨 흰색 적용 */
-footer a {
-    color: #fff;
+nav {
+    display: none;
 }
+
+
+/* section1 */
+#main_img {
+    position: relative;
+    padding-top: 54px;
+}
+
+#main_img h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main_img b {
+    padding: 6px 12px 10px;
+    background: rgba(100, 100, 100, 0.2);
+}
+
+/* section 2 ~ 4 common */
+.section {
+    padding: 81px 30px 0;
+}
+
+.section h2{
+    line-height: 1; /* 객체 위아래 지정하지않았던 여백 없애고 객체 크기 그대로 설정 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0; /* 패딩을 통해 h2 박스 여백 설정 */
+    margin-bottom: 20px; /* h2박스 바깥 아래쪽 마진 */
+}
+
+.section li {
+    margin-bottom: 1.6rem;
+}
+
+/* section2 */
+
+#menu li {
+    position: relative;
+}
+
+#menu h2 {
+    margin-bottom: 40px;
+}
+
+#menu li {
+    border: 1px solid #f1f1f1;
+}
+
+#menu h3 {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 4px 12px;
+    background: #111111;
+}
+
+/* section3 */
+    #event > p {
+        margin-bottom: 40px;
+    }
+    
+    #event h3 {
+        margin-top: 16px;
+    }
+
+    #event li p:first-of-type {
+        margin: 8px 0;
+    }
+
+    #event a {
+        display: block;
+        padding: 6px 0;
+        text-align: center;
+        background: #cccccc;
+        margin-top: 16px;
+    }
+
+
+
+    /* section4 */
+    #news input {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 15px 0;
+        border: 1px solid #cccccc;
+    }
+
+    #news button {
+        display: block;
+        padding: 12px 16px; 
+        margin: 20px 0 45px;
+        background: #111111;
+    }
+
+/* footer */
+    footer {
+        background: #111111;
+        text-align: center;
+        padding: 30px 0;
+    }
+    footer span:nth-of-type(1), footer span:nth-of-type(3) {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+/* 미디어 쿼리는 3단계로 작성 */
+
+/* 992px 이상은 데스크탑 */
+@media (min-width: 992px) {
+
+
+/* header */
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+/* logo */
+/* navigation */
+    nav {
+        display: block; /* none 처리한 내비게이션을 보여주기 위함 */
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li:not(:first-of-type) {
+        margin-left: 30px;
+    }
+
+/* section1 */
+#main_img {
+    max-width: 1496px;
+    margin: 0 auto;
+}
+
+/* section2 ~ 4 common */
+.section {
+    width: 1496px;
+    margin: 0 auto;
+    padding: 81px 0 0;
+}
+
+.section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section li{
+    width: 360px;
+}
+
+/* section2 */
+
+/* section3 */
+#event li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#event li div {
+    height: 250px;
+}
+
+/* section4 */
+
+/* input */
+/* button */
+
+/* footer */
+
+
+    footer span:nth-of-type(2) {
+        display: none;
+    }
+}
+
