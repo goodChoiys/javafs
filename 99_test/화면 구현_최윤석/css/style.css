@@ -1,0 +1,407 @@
+@charset "utf-8";
+
+/* 초기화 */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    color: #333333;
+    font: 1.5rem/1.8 verdana, sans-serif;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+li {list-style: none;} /* 리스트 마커 제거 */
+
+button {
+    background: transparent; /* 버튼 색깔 없애기 */
+    border: none; /* 버튼 라인 없애기 */
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 400; /* 글씨체 굵기: normal; */
+    letter-spacing: 4px; /*  */
+}
+
+h2, h3 {
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400; /* 글씨체 굵기: normal; */
+}
+
+h2 {
+    font-size: 2.4rem;
+    color: #333333;
+}
+h3 {
+    font-size: 1.6rem;
+}
+
+a {
+    color: #eeeeee;
+    /* 하이퍼링크 밑줄 삭제 */
+    text-decoration: none;
+}
+
+button {
+    color: #eeeeee;
+}
+
+.mainTitD {
+    display: none;
+}
+
+
+#game h3 {
+    color: #333333;
+}
+
+::placeholder {
+    color: #999999;
+}
+
+
+
+/* header */
+header {
+    /* position fixed, absolute 처리시 
+    width가 0이되어 지정해줘야함 */
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    padding: 12px 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+nav {
+    display: none;
+}
+
+
+/* section1 */
+#main_img {
+    position: relative;
+}
+
+#main_img > ul > li {
+    display: none;
+}
+
+/* section 2 ~ 4 common */
+.section {
+    padding: 81px 30px 0;
+}
+
+
+/* section 2 */
+.section h2{
+    line-height: 1; /* 객체 위아래 지정하지않았던 여백 없애고 객체 크기 그대로 설정 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px 0; /* 패딩을 통해 h2 박스 여백 설정 */
+    margin-bottom: 20px; /* h2박스 바깥 아래쪽 마진 */
+}
+
+#game .game_div_2 > div:not(:nth-of-type(2)) {
+    display: none;
+}
+
+#game #mobileView div:not(:nth-of-type(5)) {
+    margin-bottom: 88px;
+}
+
+#game h2 {
+    margin-bottom: 40px;
+}
+
+.game_div_1 > .tabs {
+    display: none;
+}
+
+/* section3 */
+
+    #news h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-top: 16px;
+    }
+
+    #news li p:first-of-type {
+        margin: 8px 0;
+        color: #999999;
+
+    }
+
+    #news a {
+        display: block;
+        padding: 6px 0;
+        text-align: center;
+        background: rgb(45, 91, 189);
+        margin-top: 16px;
+    }
+
+    /* section4 */
+    #support input {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 15px 0;
+        border: 1px solid #cccccc;
+    }
+
+    #support button {
+        display: block;
+        padding: 12px 16px; 
+        margin: 20px 0 45px;
+        background: rgb(45, 91, 189);
+    }
+
+/* footer */
+    footer {
+        background: rgb(45, 91, 189);
+        text-align: center;
+        padding: 30px 0;
+        color: #eeeeee;
+
+    }
+    footer span:nth-of-type(2){
+        display: none;
+    }
+
+
+
+/* 미디어 쿼리는 3단계로 작성 */
+
+
+
+@media (min-width: 600px) {
+/* header */
+/* section1 */
+/* section2 */
+/* section3 */
+/* section4 */
+/* footer */
+
+}
+
+/* 992px 이상은 데스크탑 */
+@media (min-width: 992px) {
+
+
+/* header */
+header {
+        display: flex;
+        justify-content: space-between;
+}
+
+/* logo */
+
+/* navigation */
+    nav {
+        display: block; /* none 처리한 내비게이션을 보여주기 위함 */
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li:not(:first-of-type) {
+        margin-left: 30px;
+    }
+
+/* section1 */
+#main_img {
+    position: relative;
+    max-width: 1496px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#main_img .mainTitM{
+    display: none;
+} /* 모바일용 메인 이미지 숨기기 */
+
+#main_img > ul > li {
+    display: block;
+} /* 데스크탑용 이미지 살리기 */
+
+#main_img > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+} /* 메인 이미지 중심에 이미지 추가 */
+
+#main_img ul {
+    position: relative;
+    left: 0;
+    display: flex;
+    width: 400%;
+    animation: slide 9s infinite;
+    margin-bottom: 1.6rem;
+}
+
+@keyframes slide{
+    0% {left: 0;}
+    5% {left: -100%;}
+    33% {left: -100%;}
+    38% {left: -200%;}
+    66% {left: -200%;}
+    71% {left: -300%;}
+    99.99999% {left: -300%;}
+    100% {left: 0;}
+}
+
+/* section2 ~ 4 common */
+.section {
+    width: 1496px;
+    margin: 0 auto;
+    padding: 81px 0 0;
+}
+
+/* section2 */
+
+#game {
+    overflow: hidden;
+    height: 841px;
+}
+
+
+
+#game .game_div_2 > div:not(:nth-of-type(2)) {
+    display: block;
+}
+
+.game_div_1 input, .game_div_1 > #mobileView > div {
+    display: none;
+} /* 모바일 전용 게임소개 이미지 숨김처리  */
+
+
+  /* 2. tab 메뉴 부분 디자인 */
+  .tab-area input {
+    display: none;
+  }  
+  
+  .tab-area label {
+      margin: 0 auto;
+  }
+    
+  /* label에 마우스 올렸을 때 */
+  .tab-area label:hover {
+    cursor: pointer; 
+  }
+    
+  /* tab-area 안에 존재하는 input 태그가 체크되었을 때, 
+  체크된 input 태그 다음에 등장하는 label의 css 값 */
+  .tab-area input:checked + label {
+    font-weight: bold;
+    color: #ffffff;
+    background: rgb(45, 91, 189);
+  }
+    
+  /* 3. tab 내용 부분 디자인 */
+  .tab-content {
+    width: 100%; /*부모 div width와 같은 width를 가진다.*/
+    height: 800px;
+    display: none; /*기본 값일땐 화면에 표시하지 않음. 체크 상태일 때, 화면에 표시되어야 함 */
+    border-top: 2px solid rgba(200, 200, 200, 0.534);/*탭 메뉴와 내용구분선*/
+  }
+    
+  
+  /* input 태그가 체크 상태일떼, 이에 대응하는 content?를 display에 표시하도록 설정 */
+  #tab1:checked ~ #content1, #tab2:checked ~ #content2,#tab3:checked ~ #content3,#tab4:checked ~ #content4, #tab5:checked ~ #content5 {
+    display: flex;
+  }
+  
+  /* 탭 메뉴1 - 검은사막 */
+  .N1 {
+  background: url(../images/Game\ 1.png);
+  }
+  /* 탭 메뉴2 - 검은사막 모바일 */
+  .N2 {
+  background: url(../images/Game\ 2.png);
+  
+  }
+  /* 탭 메뉴3 - 붉은사막 */
+  .N3 {
+  background: url(../images/Game\ 3.png);
+  
+  }
+  /* 탭 메뉴4 - 도깨비 */
+  .N4 {
+  background: url(../images/Game\ 4.png);
+  }
+/* 탭 메뉴5 - 플랜8 */
+  .N5 {
+  background: url(../images/Game\ 5.png);
+  }
+
+/* section3 */
+
+#news ul {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+#news li {
+    display: flex;
+    width: 326px;
+    flex-direction: column;
+
+}
+
+#news li div {
+    height: 250px;
+}
+
+/* section4 */
+#support {
+    margin-bottom: 81px; 
+}
+
+/* input */
+/* button */
+
+iframe {
+    width: 50%;
+    height: 400px;
+}
+
+/* footer */
+    footer p{
+        display: flex;
+        width: 100%;
+        height: 10px;
+        border: 100x solid greenyellow;
+    }
+
+    footer span:nth-of-type(1) {
+        display: none;
+    }
+
+    
+}
+
