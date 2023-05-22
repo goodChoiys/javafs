@@ -12,6 +12,18 @@
     <h1>switch</h1>
     <script>
         /* 
+            if (변수 == 값1) {
+                코드1;
+            } else if (변수 == 값2) {
+                코드2;
+            } else if (변수 == 값3) {
+                코드3;
+            } else {
+                코드4;
+            }
+
+            if문에서는 break문을 굳이 쓸 필요가 없다.
+
             var 변수 = 초깃값;
 
             switch (변수) {
@@ -23,6 +35,9 @@
                 break;
                 default: 코드4;
             }
+
+            break 는 선택문, 제어문을 탈출
+
         */
 
         var site = prompt('네이버, 다음, 네이트, 구글 중 즐겨 사용하는 포털 검색 사이트는?', '');
@@ -30,19 +45,55 @@
 
         switch (site) {
             case '구글': url = 'www.google.com';
-            break;
+                break;
             case '다음': url = 'www.daum.net';
-            break;
+                break;
             case '네이버': url = 'www.naver.com';
-            break;
+                break;
             case '네이트': url = 'www.nate.com';
-            break;
+                break;
             default: alert('보기 중에 없는 사이트입니다.');
         }
 
-        // window.location.href = 'url'
+        /* 
+
+            (현실세계 예시)
+
+            (객체)      자동차
+            (메서드)    -기능: 달린다. 정지했다.
+            (속성)      -특징: 현대, 가격, 브랜드, 색상, ...
+
+            (객체)      사람
+            (메서드)    -기능: 달린다. 걷는다. 멈춘다. 앉았다.
+
+
+            내장 객체: window, document, console, ...
+                -메서드(기능): prompt(), reload
+                -속성: href
+            BOM 객체: window, loacation, document
+
+            내장 함수: Number()
+        */
+
+
+        /* 
+            객체.메서드();
+            객체.속성 = 값;
+            lcation.reload() ~ 브라우저 새로고침
+            
+            (window.)location.href = 'url'의 윈도우는 생략 가능하다.
+            location.href = 'url'
+        */
+        // location.href = 'url'
         // 현재 위치에서 url에 저장된 주소로 이동된다.
+        // if문의 실행코드가 한 문장일 경우 중괄호{}를 생략 가능
+
+        // 중괄호 생략
         if (url) location.href = 'https://' + url;
+
+        // 표준 방식
+        // if (url) {location.href = 'https://' + url};
+
     </script>
 </body>
 
