@@ -58,10 +58,10 @@
         // 함수
         function gallery(direct) {
             if (direct) {
-                if (num === 10) return;
+                if (num === 10) num = 0;
                 num++;
             } else {
-                if (num === 1) return;
+                if (num === 1) num = 11;
                 num--;
             }
             imgTag.setAttribute('src', '../assets/pic_' + num + '.jpg');

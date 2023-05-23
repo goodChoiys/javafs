@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade effect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script> -->
+    <style>
+
+        /* 초기화 */
+        li{
+            list-style: none;
+
+        }
+
+        li:first-of-type {background: green;
+            animation-name: fade1;
+        }
+        li:nth-of-type(2) {background: orange;
+            animation-name: fade2;
+        }
+        li:last-of-type {background: red;
+            animation-name: fade3;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        /* 애니메이션 효과 */
+        /* 페이드 효과*/
+        li {
+            position: absolute;
+            width: 838px;
+            height: 300px;
+            animation: 9s infinite alternate;
+        }
+
+        @keyframes fade1 {
+            0% {opacity: 0; z-index: 1;}
+            33% {opacity: 1; z-index: 1;}
+            66% {opacity: 1; z-index: 0;}
+            99.99999% {opacity: 0; z-index: 0;}
+            100% {opacity: 0; z-index: 0;}
+        }
+        @keyframes fade2 {
+            0% {opacity: 0; z-index: 0;}
+            33% {opacity: 0; z-index: 1;}
+            66% {opacity: 1; z-index: 1;}
+            99.99999% {opacity: 1; z-index: 0;}
+            100% {opacity: 0; z-index: 0;}
+        }
+        @keyframes fade3 {
+            0% {opacity: 1; z-index: 1;}
+            33% {opacity: 0; z-index: 1;}
+            66% {opacity: 0; z-index: 0;}
+            99.99999% {opacity: 1; z-index: 0;}
+            100% {opacity: 1; z-index: 0;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <ul>
+            <li><img src="../assets/slide1.jpg" alt="이미지1"></li>
+            <li><img src="../assets/slide2.jpg" alt="이미지2"></li>
+            <li><img src="../assets/slide3.jpg" alt="이미지3"></li>
+        </ul>
+    </div>
+</body>
+</html>
