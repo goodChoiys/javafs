@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 초기화1 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* GNB */
+        /* 1depth_mainMenu */
+
+
+        .main>li {
+            float: left;
+            width: 16rem;
+            height: 4rem;
+            background: rgba(0, 155, 0, 0.7);
+            margin: 0 0.4rem;
+            text-align: center;
+        }
+
+        .main>li>a {
+            display: block;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 4rem;
+            transition: .4s;
+        }
+
+        .main>li>a:hover {
+            background: orangered;
+
+        }
+
+
+        /* 2depth_subMenu */
+        .sub {
+            background: rgba(100, 255, 0, 0.3);
+            padding: 1rem 0 2rem 0;
+            display: none;
+        }
+
+        .sub a {
+            padding: 4px 8px;
+            font-size: 1.4rem;
+            color: rgba(10, 155, 0, 1);
+        }
+
+        .sub a:hover {
+            background: orangered;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav#gnb>ul.main>li*4>a{메인메뉴$}+ul.sub>li*4>a{서브메뉴$} -->
+    <nav id="gnb">
+        <ul class="main">
+            <li>
+                <a href="#">메인메뉴1</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴2</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴3</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴4</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /*
+            자바스크립트 라이브러리(제이쿼리)
+            1. 제이쿼리 라이브러리 연결하기
+
+            2. 준비 이벤트 (x) 
+                $(document).ready(function(){코드});
+                $(document)(){코드});
+            3. 이벤트: 
+                ready, click, mouseenter, mouseleave
+
+            4. 이벤트 메서드: 
+                $(document).ready(function(){코드}); 
+                $('선택자').click(function(){코드});
+                $('선택자').mouseenter(function(){코드});
+                $('선택자').mouseleave(function(){코드});
+        */
+
+        $(function(){
+            // 객체.메서드().메서드() ~ 메서드 체이닝
+            // 슬라이드 효과: slideDown(), slideUp()
+            // 페이드 효과: fadeOut(), fadeIn()
+            // 숨기기/보이기: hide(), show()
+            // 애니메이션: animate()
+
+            $('.main > li').mouseenter(function(){
+                $('.sub').stop().slideDown();
+            });
+
+            $('.main > li').mouseleave(function(){
+                $('.sub').stop().slideUp();
+            });
+            // 자바스크립트 코드
+            // 제이쿼리 코드
+        });
+            
+
+    </script>
+</body>
+
+</html>

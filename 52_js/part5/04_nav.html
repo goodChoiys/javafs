@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 초기화1 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* GNB */
+        /* 1depth_mainMenu */
+
+        .main>li {
+            width: 16rem;
+            background: rgba(0, 155, 0, 0.7);
+            margin: 0 0.4rem;
+            text-align: center;
+        }
+
+        .main>li>a {
+            display: block;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 4rem;
+            transition: .4s;
+        }
+
+        .main>li>a:hover {
+            background: orangered;
+
+        }
+
+        /* 2depth_subMenu */
+        .sub {
+            background: rgba(100, 255, 0, 0.3);
+            padding: 1rem 0 2rem 0;
+            display: none;
+        }
+
+        .sub a {
+            padding: 4px 8px;
+            font-size: 1.4rem;
+            color: rgba(10, 155, 0, 1);
+        }
+
+        .sub a:hover {
+            background: orangered;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="gnb">
+        <ul class="main">
+            <li>
+                <a href="#">메인메뉴1</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴2</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴3</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">메인메뉴4</a>
+                <ul class="sub">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                    <li><a href="#">서브메뉴4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+
+
+            $('.main > li').mouseenter(function () {
+                $(this).find('.sub').stop().slideDown();
+            });
+
+            $('.main > li').mouseleave(function () {
+                $(this).find('.sub').stop().slideUp();
+            });
+
+
+    </script>
+</body>
+
+</html>

@@ -17,8 +17,15 @@
             length: 문자열의 문자 총 개수 반환
         */
 
-        // 전화번호 뒤 4자리 '*'표시 하기
-
+       
+       let userName = prompt('이름을 입력해주세요(영문, English) ', '');
+       var upperName = userName.toUpperCase();
+       document.write('이름: ' + upperName, '<br><br>');
+       
+       // 전화번호 뒤 4자리 '*'표시 하기
+        let userNum = prompt('연락처를 입력해주세요', '');
+        var secretNum = userNum.substring(0, userNum.length - 4) + '****';
+        document.write('전화번호: ' + secretNum, '<br>');
 
     </script>
 </body>

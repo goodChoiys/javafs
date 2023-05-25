@@ -11,10 +11,12 @@
 <body>
     <h1>문자열 객체</h1>
     <script>
+
         /* 
-             var 참조변수 = new String('문자열');
-             var 참조변수 = '문자열';
+            var 참조변수 = new String('문자열');
+            var 참조변수 = '문자열'; 
         */
+
 
         var s = new String('hello javascript');
         var s2 = 'hello javascript';
@@ -24,24 +26,55 @@
             length: 문자열의 문자 총 개수 반환
         */
 
-        var userEmail = prompt('당신의 이메일 주소는?', '');
-        var arrUrl = ['.co.kr', '.com', '.net', '.or.kr', '.go.kr'];
+        /* 
+            이메일 주소를 입력받아 유효성 검사를 하시오
+            형식: id@naver.com
 
-        var check1 = false;
-        var check2 = false;
+            변수: userEmail, cprrectUrl, chechk1, check2, i
+            제어문: if, if ~ else, for
+            메서드: prompt, indexOf, write, alert
+            속성: length
+        */
 
-        if (userEmail.indexOf('@') > 0) {check1 = true;}
+        // 변수선언 + 입력
+        const userEmail = prompt('이메일 주소를 입력해주세요', '');
+        const correctUrl = ['.co.kr', '.go.kr', '.or.kr', '.com', '.net'];
+        let check1, check2 = false;
 
-        for (var i = 0; i < arrUrl.length; i++) {
-            if (userEmail.indexOf(arrUrl[i]) > 0) {
+        // 입력한 변수 userEmail 확인
+        document.write('입력하신 이메일 주소는 ' + userEmail + ' 입니다.' + '<br>');
+
+        /* 처리-------------------------------------------------------------- */
+
+        // check1----------------------------------------------
+        // @있으면 0이상 정수, 없으면 -1
+        //  chechk1 변수에 @가 있으면 true, 없으면 false
+        if (userEmail.indexOf('@') > 0) {
+            check1 = true;
+        } // /check1-------------------------------------------
+
+        document.write('check1의 값: ' + check1 + '<br>');
+
+        // check2----------------------------------------------
+        // check2 변수에 correctUrl 있으면 true, 없으면 false
+        for (var i = 0; i < correctUrl.length; i++) {
+            if (userEmail.indexOf(correctUrl[i]) > 0) {
                 check2 = true;
             }
-        }
+        } // /check1-------------------------------------------
+
+        document.write('check2의 값: ' + check2 + '<br>');
+
+        /* /처리------------------------------------------------------------- */
+
+        // 출력
+
         if (check1 && check2) {
-            document.write(userEmail);
+            document.write(userEmail + ' 는 정상적인 메일 주소입니다.');
         } else {
             alert('이메일 형식이 잘못되었습니다.');
-        }
+        } 
+
 
     </script>
 </body>
