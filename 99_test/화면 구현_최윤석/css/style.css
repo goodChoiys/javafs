@@ -556,7 +556,7 @@ footer p {
     nav .header_right input {
         margin-right: 1rem;
         display: block;
-        padding: 0.8rem 0.8rem 0.8rem 0;
+        padding: 0.8rem 0 0.8rem 0.8rem;
     }
 
     nav .header_right>div {
