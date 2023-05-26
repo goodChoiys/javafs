@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley festival_최윤석</title>
     <style>
+        /* 구글폰트 링크 */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 
         /* 초기화 */
@@ -39,7 +40,10 @@
             width: 100%;
         }
 
+        /* 초기화 끝 */
 
+        /* 공통 설정 */
+        /* 헤더 푸터의 크기 및 색상 설정 */
         header,
         footer {
             height: 10rem;
@@ -47,52 +51,69 @@
 
         }
 
-        header a {
-            font-size: 3rem;
-            color: #ffffff;
-        }
-
-        nav {
-            position: relative;
-            z-index: 1000;
-            height: 40px;
-            /* background: #000; */
-        }
-
-        footer p {
-            color: #ffffff;
-        }
+        /* /공통 설정 */
 
         /* 헤더 */
-
         header {
             text-align: center;
             line-height: 10rem;
         }
 
+        header h1 {
+            animation: titleName 1s forwards;
+        }
+
+        @keyframes titleName {
+            0% {
+                opacity: 1;
+                animation-timing-function: ease-out
+            }
+
+            50% {
+                opacity: 0.1;
+                animation-timing-function: ease-out
+            }
+
+            100% {
+                opacity: 1;
+                animation-timing-function: ease-out
+            }
+        }
+
+        /* 헤더안의 a태그 크기 및 색상 설정 */
+        header a {
+            font-size: 3rem;
+            color: #ffffff;
+        }
 
         /* 네비게이션 */
         #gnb {
+            position: relative;
+            z-index: 1000;
+            height: 40px;
             background: #354B46;
             padding: 0 50rem;
         }
 
+        /* 네비안의 a태그 폰트 종류 및 글씨 크기 설정 */
         #gnb a {
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 1.5rem;
         }
 
+        /* 네비 안의 li 가로 정렬위해 부모 .main에 플렉스 */
         #gnb .main {
             display: flex;
-            justify-content: space-between;
         }
 
+        /* 가로 크기 설정 및 중앙정렬 */
         #gnb .main>li {
             width: 100%;
             height: 40px;
             text-align: center;
         }
 
+        /* 세로 가운데 정렬, 호버시 부드럽게 변화 효과 */
         #gnb .main>li>a {
             display: block;
             font-size: 1.6rem;
@@ -102,28 +123,32 @@
             transition: .5s;
         }
 
+        /* 마우스호버시 배경색 변경 */
         #gnb .main>li>a:hover {
             background: rgba(255, 155, 50, 1);
         }
 
+        /* 메인메뉴 선택시 숨김처리한 서브 메뉴가 나오게 */
         #gnb .main>li>a:hover+.sub {
             display: block;
         }
 
-        /* 네비게이션_메뉴_2depth */
-
+        /* 서브메뉴 설정, 평상시 안보이게 */
         .sub {
             display: none;
-            padding: 10px 0 20px 0;
+            padding-top: 5%;
             background: rgba(100, 100, 100, 0.5);
+            height: 350%;
         }
 
+        /* 서브메뉴(a태그) 설정 */
         .sub a {
             padding: 4px 8px;
             font-size: 1.4rem;
             color: #ffffff;
         }
 
+        /* 서브메뉴(a태그) 호버시 하이라이트 및 폰트 변화*/
         .sub a:hover {
             background: rgba(255, 155, 50, 1);
             color: #ffffff;
@@ -131,7 +156,7 @@
             font-size: large;
         }
 
-        /* section1_slide image setting */
+        /* 섹션1 설정 */
         .section1 {
             position: relative;
             width: 100%;
@@ -139,6 +164,7 @@
             overflow: hidden;
         }
 
+        /* 이미지 중앙 글씨 설정 */
         .section1 h2 {
             position: absolute;
             left: 50%;
@@ -150,6 +176,7 @@
             text-shadow: 1px 1px 3px #000;
         }
 
+        /* 이미지 중앙하단 서브 글자 설정 */
         .section1 p {
             position: absolute;
             left: 50%;
@@ -159,8 +186,9 @@
             color: #ffffff;
             font-size: large;
             text-shadow: 1px 1px 3px #000;
-            }
+        }
 
+        /* 슬라이드 이미지 가로 정렬, 애니메이션 설정 */
         .section1 ul {
             position: relative;
             display: flex;
@@ -209,8 +237,16 @@
             text-align: center;
             padding: 40px 0;
         }
+
+        /* 푸터 글씨 설정 */
+        footer p {
+            color: #ffffff;
+        }
+
+        /* /푸터 */
     </style>
 </head>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <!-- /html -->
 
 <body>
@@ -225,16 +261,14 @@
                     <li><a href="#">Festival 소개</a></li>
                     <li><a href="#">행사장 안내</a></li>
                     <li><a href="#">조직위원회</a></li>
-                    <li><a href="#"><span></span></a></li>
                 </ul>
             </li>
             <li>
                 <a href="#">예약안내</a>
-                <ul class="sub">    
+                <ul class="sub">
                     <li><a href="#">예약하기</a></li>
                     <li><a href="#">예약확인/취소</a></li>
                     <li><a href="#">단체예약문의</a></li>
-                    <li><a href="#"><span></span></a></li>
 
                 </ul>
             </li>
@@ -253,17 +287,15 @@
                     <li><a href="#">공지사항</a></li>
                     <li><a href="#">사진갤러리</a></li>
                     <li><a href="#">영상갤러리</a></li>
-                    <li><a href="#"><span></span></a></li>
                 </ul>
             </li>
         </ul>
     </nav>
 
-
     <section class="section1">
         <div>
-        <h2>Valley Rock festival</h2>
-        <p id="p1">2023.05.26 Fri PM: 21:00</p>
+            <h2>Valley Rock festival</h2>
+            <p id="p1">2023.05.26 Fri PM: 21:00</p>
         </div>
         <ul>
             <li><img src="images/valleyfestival_slide1.png" alt="1"></li>
@@ -280,7 +312,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
 
-
         $(function () {
 
             $('.main > li').mouseenter(function () {
@@ -290,7 +321,6 @@
                 $('.sub').stop().slideUp();
             });
         });
-
 
     </script>
 
