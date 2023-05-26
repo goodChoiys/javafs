@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valley festival_최윤석</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet" type="text/css">
     <style>
-
         /* 초기화 */
         * {
             margin: 0;
@@ -38,7 +39,6 @@
         img {
             width: 100%;
             vertical-align: top;
-
         }
 
         /* 초기화 끝 */
@@ -49,7 +49,6 @@
         footer {
             height: 10rem;
             background: #328778;
-
         }
 
         /* /공통 설정 */
@@ -105,12 +104,17 @@
         /* 네비 안의 li 가로 정렬위해 부모 .main에 플렉스 */
         #gnb .main {
             display: flex;
-            flex-shrink : 0;
+            justify-content: center;
         }
 
+        /* 네비 양단 a태그 선택 불가하도록 처리 */
         #gnb .main .space {
-            position: relative;
-            z-index: 1;
+            user-select: none;
+        }
+
+        /* 네비 양단 숨김 처리 */
+        #gnb .main>.space>a {
+            opacity: 0;
         }
 
         /* 가로 크기 설정 및 중앙정렬 */
@@ -129,7 +133,6 @@
             color: #ffffff;
             transition: .5s;
         }
-        
 
         /* 마우스호버시 배경색 변경 */
         #gnb .main>li>a:hover {
@@ -153,6 +156,7 @@
             display: block;
             height: 140%;
         }
+
         /* 서브메뉴(a태그) 설정 */
         .sub a {
             padding: 4px 8px;
@@ -222,7 +226,7 @@
             }
 
             5% {
-                left: 0;
+                left: -100%;
             }
 
             33.33333% {
@@ -265,10 +269,9 @@
 
         @media (max-width: 1150px) {
             .section1 p {
-            display: none;}
+                display: none;
+            }
         }
-
-
     </style>
 </head>
 <!-- /html -->
@@ -280,12 +283,12 @@
     <nav id="gnb">
         <ul class="main">
             <li class="space">
-                <a>''</a>
+                <a>hide</a>
                 <div class="sub">
                 </div>
             </li>
             <li class="space">
-                <a>''</a>
+                <a>hide</a>
                 <div class="sub">
                 </div>
             </li>
@@ -323,12 +326,12 @@
                 </ul>
             </li>
             <li class="space">
-                <a>''</a>
+                <a>hide</a>
                 <div class="sub">
                 </div>
             </li>
             <li class="space">
-                <a>''</a>
+                <a>hide</a>
                 <div class="sub">
                 </div>
             </li>
