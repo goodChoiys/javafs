@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+
+    <script>
+
+    /* 
+        location.href = 'url'; -> 지정한 url로 위치 이동
+        location.reload(); -> 브라우저 새로 고침
+
+        적응형
+        www.naver.com ~ 데스크탑
+        m.naver.com ~ 모바일
+    */
+
+        const ua = navigator.userAgent.toLowerCase();
+        
+        if (ua.indexOf('android') > 0 || ua.indexOf('iphone') > 0) {
+            location.href = 'hrrps://m.naver.com';
+        } else {
+            location.href = 'https://naver.com'
+        }
+
+  
+
+
+
+        /* 
+            var 참조변수 = new String('문자열');
+            var 참조변수 = '문자열'; 
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -22,55 +22,27 @@
                 함수명();
 
             document.querySelector('선택자'); 문서 객체(태그)를 선택
-            문서객체.style.CSS스타일속성 = 값; 문서 객체에 CSS 스타일 적용
+            문서객체.style.CSS스타일 = 값; 문서 객체에 CSS 스타일 적용
         */
 
-        // var color = ['white', 'yellow', 'aqua', 'purple'];
-        // // color[0] = white;
-        // // color[1] = yellow;
-        // // color[2] = aqua;
-        // // color[3] = purple;
+        var color = ['white', 'yellow', 'aqua', 'purple'];
+        // color[0] = 'white'
+        // color[1] = 'yellow'
+        // color[2] = 'aqua'
+        // color[3] = 'purple'
 
-        // var i = 0;
-
-        // function changeColor() {
-        //     i++;
-        //     if (i >= color.length) {
-        //         i = 0;
-        //     }
-
-        //     var bodyTag = document.querySelector('body');
-        //     bodyTag.style.backgroundColor = color[i];
-        // }
-
-        var color = ['url(../asset/pic_1.jpg)', 'url src(../asset/pic_2.jpg)', 'url src(../asset/pic_3.jpg)', 'url src(../asset/pic_4.jpg)'];
-        // img[0] = ../asset/pic_1.jp;
-        // img[1] = ../asset/pic_2.jp;
-        // img[2] = ../asset/pic_3.jp;
-        // img[3] = ../asset/pic_4.jp;
-
+        
         var i = 0;
 
         function changeColor() {
             i++;
-            if (i >= img.length) {
+            if (i >= color.length) {
                 i = 0;
             }
 
             var bodyTag = document.querySelector('body');
-            bodyTag.style.background = 'no-repeat 0 0/cover';
-            bodyTag.style.backgroundImage = 'color[i]';
+            bodyTag.style.backgroundColor = color[i];
         }
-
-        
-
-
-        
-
-
-
-
-
     </script>
 </body>
 

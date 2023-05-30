@@ -12,30 +12,33 @@
     <h1>이미지 갤러리</h1>
     <div id="galleryZone">
         <p>
+            <!-- 인라인 스크립트 -->
             <button onclick="gallery(1);">1</button>
             <button onclick="gallery(2);">2</button>
             <button onclick="gallery(3);">3</button>
-            <button onclick="gallery(4);">4</button>
-            <button onclick="gallery(5);">5</button>
-            <button onclick="gallery(6);">6</button>
-            <button onclick="gallery(7);">7</button>
-            <button onclick="gallery(8);">8</button>
-            <button onclick="gallery(9);">9</button>
-            <button onclick="gallery(10);">10</button>
         </p>
         <p><img src="../assets/pic_1.jpg" alt="" id="photo"></p>
     </div>
     <!-- 내부 스크립트 -->
     <script>
+        
+            /* 함수를 사용하여 이미지 갤러리 만들기
+            -함수명 : gallery(direct)
+            -변수 : num, imgTag
+            -메서드 : getElementById(), setAttribute()
+            -제어문 : if ~ else, if
+            -이미지명: ../assets/pic_1.jpg ~ pic_3.jpg 
+            */
 
-        // 변수
-        const imgTag = document.getElementById('photo')
-        let num ; 
+        
 
-        // 함수
-        function gallery(direct) {
-            imgTag.setAttribute('src', '../assets/pic_' + direct + '.jpg');
-        }
+            //변수
+            const imgTag = document.getElementById('photo')
+
+            //함수
+            function gallery(direct) {
+                imgTag.setAttribute('src', '../assets/pic_' + direct + '.jpg');
+            }
 
 
     </script>

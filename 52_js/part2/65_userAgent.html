@@ -24,12 +24,21 @@
             location.reload(); -> 브라우저 새로 고침
 
             navigator.userAgent;
-                - 기본 플랫폼
-                - 운영체제 정보
-                - 사용중인 브라우저의 엔진 이름
-                - 사용 중인 브라우저 이름
-                - 같은 엔진을 사용 중이며 호환 가능한 다른 브라우저
+                - 기본 플랫폼: Mozilla/5.0
+                - 운영체제 정보: Windows NT 10.0; Win64; x64
+                - 사용중인 브라우저의 엔진 이름: ApplewebKit/537.36 (KHTML, Like Gecko)
+                - 사용 중인 브라우저 이름: Chrome/113.0.0.0
+                - 같은 엔진을 사용 중이며 호환 가능한 다른 브라우저; safari/537.36.
+
+                요소.indexOf('문자열') ~ 색인번호, 찾는 문자열이 없으면 -1
+
+                적응형
+                www.naver.com ~ 데스크탑
+                m.naver.com ~ 모바일
         */
+
+        console.log(navigator.userAgent);
+
 
         var info = navigator.userAgent.toLowerCase();
         var osImg = null;
@@ -46,9 +55,8 @@
 
         document.write('<img src=\'../assets/' + osImg + '\'>', '<br>');
 
-        var scr = screen;
-        var sc_w = scr.width;
-        var sc_h = scr.height;
+        var sc_w = screen.width;
+        var sc_h = screen.height;
 
         document.write('모니터 해상도 너비:' + sc_w + 'px', '<br>');
         document.write('모니터 해상도 높이:' + sc_h + 'px', '<br>');

@@ -2,137 +2,101 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML+JS</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
 </head>
 
 <body>
-  <h1>수학 객체</h1>
-  <h2>가위, 바위, 보 맞추기</h2>
-  <script>
+    <h1>수학 객체</h1>
+    <h2>컴퓨터 가위, 바위, 보 맞추기</h2>
+    <script>
+   
+        // document.write('<h2>컴퓨터 가위, 바위, 보 맞추기</h2>');
 
-    let gameNum;
+        // var game = prompt('가위, 바위, 보 중 쓰세요', '');
+        // var gameNum;
 
-    /* 
-    컴퓨터가 가위, 바위, 보중 어떤 것을 내었는지 맞춰 보시오.
-    - 변수: game, gameNum, com
-    - 메서드: prompt(), ceil(), random(), write(), alert()
-    - 제어문: switch, if ~ else
-    - 입력 데이터를 잘못 입력했을 경우 메시지를 출력하고, 브라우저를 새로고침한다.
+        // switch (game) {
+        //     case '가위':
+        //         gameNum = 1; break;
+        //     case '바위':
+        //         gameNum = 2; break;
+        //     case '보':
+        //         gameNum = 3; break;
+        //     default: alert('잘못 작성했습니다.');
+        //     // 브라우저 새로고침
+        //     location.reload();
+        // }
 
-     */
+        // var com = Math.ceil(Math.random() * 3);
+       
+        // document.write('<img src=\'../assets/math_img_' + com + '.jpg\'>');
 
-    let game = prompt('가위, 바위, 보 셋중 하나만 입력하시오.', '가위');
-
-    switch (game) {
-      case '가위':
-      gamneNum = 1;
-      break;
-      case '바위':
-      gamneNum = 2;
-      break;
-      case '보':
-      gamneNum = 3;
-      break;
-      default:
-        alert('가위, 바위, 보 셋중 하나만 입력하시오.');
-        location.reload();
-    }
-
-    let com = Math.floor((Math.random() * 3) + 1);
-    document.write('<img src="../asset/math_img_' + com + '.jpg" alt="가위"<br>');
-
-    if (gameNum === com) {
-      document.write('맞추셨네요' + '<img src=\'../assets/game_1.jpg\'>');
-    } else {
-      document.write('이걸 못맞춰?' + '<img src=\'../assets/game_2.jpg\'>');
-    }
+        // if (gameNum == com) {
+        //     document.write('<img src=\'../assets/game_1.jpg\'>');
+        // } else {
+        //     document.write('<img src=\'../assets/game_2.jpg\'>');
+        // }
 
 
+       
+
+        
+
+         //문자열 기록시 \(백슬래쉬) 뒤에 특수문자는 특수문자로 인식하여 표시된다.
+        //  document.write('나는 \"문자열\"이다.');
+        //  document.write("나는 \'문자열\'이다.");
+        //  document.write('나는 \'문자열\'이다.');
 
 
-    /*     switch (game) {
-          case '가위':
+
+        /*
+            컴퓨터가 가위, 바위, 보중 어떤 것을 내어는지 맞춰 보세요.
+            - 변수: game, gameNum, com
+            - 메서드: prompt(), ceil(), random(), write(), alert()
+            - 제어문: switch, if ~ else
+            - 입력 데이터를 잘못 작성했을 경우 메세지를 출력하고, 브라우저를 새로고침한다.
+        */
+
+        let gameNum = prompt('가위, 바위, 보 셋 중 하나만 입력하세요.', '');
+
+        switch (game) {
+            case '가위':
             gameNum = 1;
             break;
-          case '바위':
+            case '바위':
             gameNum = 2;
             break;
-          case '보':
+            case '보':
             gameNum = 3;
             break;
-          default:
-            alert('잘못 작성했습니다.');
-          // 브라우저 새로고침
-          location.reload();
+            default:
+            alert('다시 입력하세요.')
+            location.reload();
         }
-    
-        var com = Math.ceil(Math.random() * 3);
-    
-        document.write('<img src=\'../assets/math_img_' + com + '.jpg\'>');
-    
-        if (gameNum == com) {
-          document.write('<img src=\'../assets/game_1.jpg\'>');
+
+
+        // 1 <= x < 4 -> 1 ~ 3 사이 정수
+        // Math.floor(Math.random() * (최댓값 - 최솟값 + 1) - 최솟값;
+        // Math.floor(Math.random() * 3) + 1;
+   
+         let com = Math.floor(Math.random() * 3) + 1;
+        document.write('<img src="../assets/math_img_' + com + '.jpg" alt="가위"><br>');
+
+        if (gameNum === com) {
+            document.write('축하합니다. 잘 맞추었습니다.');
         } else {
-          document.write('<img src=\'../assets/game_2.jpg\'>');
-        } */
+            document.write('틀렸습니다. 다음기회에...');
+        }
 
 
 
 
 
-
-
-    /*
-        // '나는 문자열이다.'
-        document.write('<br>' + '나는 문자열이다.' + '<br>')
-        // "나는 문자열이다."
-        document.write("나는 문자열이다." + '<br>')
-        // "나는 '문자열'이다."
-        document.write("나는 '문자열'이다." + '<br>')
-        // '나는 "문자열"이다.'
-        document.write('나는 "문자열"이다.' + '<br><br>')
-        // 문자열 기록시 \(백슬래쉬) 뒤에오는 특수문자는 그대로 표시된다.
-        // "나는 '문자열'이다."
-        document.write("나는 \'문자열\'이다." + '<br>')
-        // '나는 "문자열"이다.'
-        document.write('나는 \"문자열\"이다.')
-        // '나는 '문자열'이다.'
-        document.write('나는 \'문자열\'이다.') */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </script>
+    </script>
+    </script>
 </body>
 
 </html>

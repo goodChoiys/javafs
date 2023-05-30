@@ -12,37 +12,35 @@
     <h1>if</h1>
     <script>
         /* 
+
             제어문
             1. 조건문: if
             2. 선택문: switch
-            3. 반목문: for, do, while
+            3. 반복문: fot, do, while
 
-            // 조건식이 true면 코드 실행
-            // 조건식이 false면 코드를 실행하지 않음
+            //조건식이 true 이면 코드 실행, 
+            //조건식이 false이면 코드 실행하지 않음.
             if (조건식) {
                 코드;
             }
         */
 
-        var num = Number(prompt('올바른 값을 입력해'));
+        var num = 10;
 
         if (num > 3) {
-            alert ('이럴수가...!');
-            // document.write ('믿어.. 이건 진짜야');
+                document.write('참이다1');
             }
-        
-        
+
         // 조건식에 false, NaN, 0, null, ''(빈 문자), undefined를 사용하면 false, 그 밖의 값은 true
         var num2 = 3;
         if (num2) {
-            alert('참이다.2');
-            // document.write('거봐 내말이 맞지?');
-        }
+            document.write('참이다2');
+        }    
 
-        var num3 = 'NaN';
+        var num3 = 0;
         if (num3) {
-            alert('참이다.3');
-        }
+            document.write('참이다3');
+        } 
         
     </script>
 </body>

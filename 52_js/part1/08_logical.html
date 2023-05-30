@@ -13,20 +13,22 @@
     <script>
         /* 
             논리 연산자: ||(또는), &&(그리고), !(아니다)
-            
-            // 논리 연산의 결과는 true 또는 false이다.
+
+            //논리 연산의 결과는 true 또는 false 이다.
+
+            피연산자1 || 피연산자2
 
             true || true -> true
             true || false -> true
             false || true -> true
-            false || false -> flase
-            
+            false || false -> false
+
             true && true -> true
             true && false -> false
-            false && true -> true
-            false && false -> flase
+            false && true -> false
+            false && false -> false
             
-            
+
 
             연산자의 우선순위
             1. ()
@@ -34,7 +36,7 @@
             3. 비교
             4. 논리
             5. 대입(할당)
-
+            
             연산자의 우선순위
             18. ()
             15. 산술(증감): ++, --
@@ -61,51 +63,22 @@
         var result;
 
         result = a > b || b >= c || c > d;
-        document.write('1. ' + result, '<br>');
-        // ||
-        // 1    , 2    , 3
-        // false, false, false
+        document.write(result, '<br>');
 
-        result = a > b || b >= c || c <= d;
-        document.write('2. ' + result, '<br><br>');
-        // ||
-        // 1    , 2    , 3
-        // false, false, true
+        result = a > b || b >= c || c < d;
+        document.write(result, '<br>');
 
         result = a <= b && b >= c && c <= d;
-        document.write('A. ' + result, '<br>');
-        // &&
-        // 1    , 2    , 3
-        // true, false, true
+        document.write(result, '<br>');
 
         result = a <= b && b <= c && c <= d;
-        document.write('B. ' + result, '<br><br>');
-        // &&
-        // 1    , 2    , 3
-        // true, true, true
+        document.write(result, '<br>');
 
         result = !(a > b);
-        document.write('a. ' + result, '<br><br>');
-        // !
-        // 1 
-        // !(false) -> true
+        document.write(result, '<br>');
+
+        //산술 연산에서 false는 0, true는 1이다.
         
-
-        document.write('ㄱ. ' + !10, '<br>');
-        document.write('ㄴ. ' + !0, '<br>');
-        document.write('ㄷ. ' + !null, '<br>');
-        document.write('ㄹ. ' + !undefined, '<br>');
-        document.write('ㅁ. ' + !'', '<br>');
-        document.write('ㅂ. ' + !false, '<br><br>');
-        
-        // 산술 연산에서 false는 0, true는 1로 취급
-        document.write(false + false + false, '<br>');
-        document.write(false + true + false, '<br>');
-        document.write(false + true + true, '<br>');
-
-
-
-
     </script>
 </body>
 
