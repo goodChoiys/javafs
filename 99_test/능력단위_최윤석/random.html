@@ -7,82 +7,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        p {
+            text-align: center;
         }
 
-        html {
-            font-size: 10px;
-            scroll-behavior: smooth;
+        h2 {
+            font-size: 40px;
+            text-align: center;
         }
 
-        body {
-            background: #ffffff;
-            color: #333333;
-            font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
-            margin: 0 auto;
+        #quizContainer {
+            text-align: left;
+            margin-top: 0px;
+            padding-top: 0px;
+            padding-bottom: 20px;
+            height: 100%;
+            max-width: 600px;
+            min-width: 360px;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+
+            overflow: hidden;
+
+            border: 1px solid #006382;
         }
 
-        img {
-            width: 100%;
-            vertical-align: top;
+        #question-page>div:first-of-type {
+            text-align: center;
+            margin-top: 10px;
         }
 
-        li {
-            list-style: none;
-        }
+        #result-page {
+            display: none;
+            width: 600px;
+            max-width: 600px;
 
-        @media (max-width: 720px) {
+            text-align: center;
 
-            header p {
-                text-align: center;
+            opacity: 0;
+            /* 초기에는 투명도를 0으로 설정하여 화면에서 숨김 */
+            animation: fade-in 1s ease-in-out 0.5s forwards;
+            /* 애니메이션 설정 */
+
+            #result-page {
+                display: none;
             }
 
-            nav {
-                width: 100%;
-                background: orangered;
+            .restart {
+                text-align: left;
             }
-            nav > ul {
-                display: flex;
-                justify-content: space-between;
-            }
-
-
-
-
-
-
-        }
     </style>
 </head>
 
 <body>
+    <div id="quizContainer">
 
-    <header>
-        <p>모바일페이지</p>
-        <nav>
-            <ul>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">로그인</a></li>
-            </ul>
-        </nav>
+        <div id="question-page">
+            <h1 class="headtitle">30초 성격유형별 테스트</h1>
+            <div>심심풀이지만 진지한 5문항!</div>
+            <div class="container">
 
-    </header>
-    <section></section>
-    <footer></footer>
+                <h2 id="question"></h2>
+
+                <hr>
+
+                <div id="choices"> ... </div>
+
+                <button id="nextButton" onclick="nextQuestion()">다음</button>
+            </div>
+        </div>
+
+        /* <!-- 결과 부분 --> */
+        <div id="result-page">
+
+            <h1 class="headtitle">나의 성격유형은,</h1>
+
+            <div id="resultContainer">
+
+                <img id="resultImage" src="" alt="">
+                <h2 id="result"></h2>
+                <p id="resultDescription"></p>
+            </div>
+
+            <br><br>
+            <button class="restart" onclick="restartTest()">다시하기</button>
+
+        </div>
+    </div>;
 
 
+    <script src="mbtitest.js"></script>
 
+    const questions = ({text: '새로운 환경이나 상황을 마주하게 된다면 어떤 것이면 좋겠어요?',
+    choices: [
+                '새로운 사람들과의 만날 수 있는',
+                '조용한 환경에서 시간을 보낼 수 있는',
+                '인상 깊은 장소, 디테일한 경험 가능한',
+                '독특하고 창의적 아이디어를 낼 수 있는 '
+    ],
+    });
 
+    // nextQuestion() 함수를 업데이트하여 선택한 답변을 저장하도록 합니다.
 
+    function nextQuestion() {
+    const selectedChoice = document.querySelector('input[name="choice"]:checked');
+    if (!selectedChoice) {
+    alert('Please choose an option.');
+    return;
+    }}
 
-
-
-
-
+    function displayResults(result) {
+    <!-- // 결과를 표시할 div를 찾고, 결과를 표시합니다. -->
+    const resultContainer = document.getElementById('resultContainer');
+    resultContainer.style.display = 'block';
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = ''; 
+    resultElement.innerText = result;
+    }
+    <!-- // 초기화 -->
 </body>
 
 </html>
