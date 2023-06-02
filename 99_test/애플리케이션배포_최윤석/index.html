@@ -110,41 +110,41 @@
             </p>
             <button id="strBtn">시작하기</button>
             <div id="selectMenu">
-                <div id="kategorie2">
+                <div id="kategorie1">
                     <button id="krFood">한식</button>
                     <button id="jpFood">일식</button>
                     <button id="chFood">중식</button>
                     <button id="euFood">양식</button>
                 </div>
-                <div id="kategorie1">
+                <div id="kategorie2">
                     <button id="riceBtn">밥</button>
                     <button id="noodleBtn">면</button>
                     <button id="etcBtn">기타</button>
                 </div>
                 <div id="detailKategorie">
                     <div id="korFood">
-                        <div><a href="https://naver.me/F8KlHj9z"><img src="images/홍두깨손칼국수.png" alt=""></a> 홍두깨손칼국수</div>
-                        <div><a href="https://naver.me/535lDKWK"><img src="images/교동바지락손칼국수.png" alt=""></a> 교동바지락손칼국수
+                        <div class="korRice"><a href="https://naver.me/5kLtg0na"><img src="images/korFood_백채김치찌개.png" alt=""></a> 백채김치찌개</div>
+                        <div class="korRice"><a href="https://naver.me/5jAmn6Tb"><img src="images/korFood_비아김밥.png" alt=""></a> 비아김밥</div>
+                        <div class="korNoodle"><a href="https://naver.me/F8KlHj9z"><img src="images/korFood_홍두깨손칼국수.png" alt=""></a> 홍두깨손칼국수</div>
+                        <div class="korNoodle"><a href="https://naver.me/535lDKWK"><img src="images/korFood_교동바지락손칼국수.png" alt=""></a> 교동바지락손칼국수
                         </div>
-                        <div><a href="https://naver.me/5kLtg0na"><img src="images/백채김치찌개.png" alt=""></a> 백채김치찌개</div>
-                        <div><a href="https://naver.me/5jAmn6Tb"><img src="images/비아김밥.png" alt=""></a> 비아김밥</div>
                     </div>
                     <div id="japFood">
-                        <div><a href=""><img src="" alt=""></a> 유미카츠</div>
-                        <div><a href=""><img src="" alt=""></a> 스시스토리</div>
-                        <div><a href=""><img src="" alt=""></a> 마쯔</div>
+                        <div><a href="https://naver.me/xxpYpH7P"><img src="images/japFood_유미카츠.png" alt=""></a> 유미카츠</div>
+                        <div><a href="https://naver.me/xM8GOeer"><img src="images/japFood_스시스토리.png" alt=""></a> 스시스토리</div>
+                        <div><a href="https://naver.me/GRzeFMww"><img src="images/japFood_마쯔.png" alt=""></a> 마쯔</div>
                     </div>
                     <div id="chiFood">
-                        <div><a href=""><img src="" alt=""></a> 짬뽕타운&린다방</div>
-                        <div><a href=""><img src="" alt=""></a> 더춘장</div>
-                        <div><a href=""><img src="" alt=""></a> 홍콩반점0410</div>
-                        <div><a href=""><img src="" alt=""></a> 감성반점</div>
+                        <div><a href="https://naver.me/IFFy2ckY"><img src="images/chiFood_짬뽕타운린다방.png" alt=""></a> 짬뽕타운&린다방</div>
+                        <div><a href="https://naver.me/FoRJRHwU"><img src="images/chiFood_더춘장.png" alt=""></a> 더춘장</div>
+                        <div><a href="https://naver.me/GUDI1hgH"><img src="images/chiFood_홍콩반점.png" alt=""></a> 홍콩반점0410</div>
+                        <div><a href="https://naver.me/FjjZNhLc"><img src="images/chiFood_감성반점.png" alt=""></a> 감성반점</div>
                     </div>
                     <div id="eurFood">
-                        <div><a href=""><img src="" alt=""></a> 프랭크버거</div>
-                        <div><a href=""><img src="" alt=""></a> 마일리버거</div>
-                        <div><a href=""><img src="" alt=""></a> 맘스터치</div>
-                        <div><a href=""><img src="" alt=""></a> 롤링파스타</div>
+                        <div class="eurEtc"><a href="https://naver.me/5zvX7mUj"><img src="images/eurFood_프랭크버거.png" alt=""></a> 프랭크버거</div>
+                        <div class="eurEtc"><a href="https://naver.me/5SWyusju"><img src="images/eurFood_마일리버거.png" alt=""></a> 마일리버거</div>
+                        <div class="eurEtc"><a href="https://naver.me/FxLCudwX"><img src="images/eurFood_맘스터치.png" alt=""></a> 맘스터치</div>
+                        <div id="eurNoodle"><a href="https://naver.me/5ncPtzM5"><img src="images/eurFood_롤링파스타.png" alt=""></a> 롤링파스타</div>
                     </div>
                 </div>
             </div>
@@ -162,9 +162,14 @@
         // const offBtn = document.querySelector('#offBtn');
         // const selMenu = document.querySelector('#selectMenu');
 
+        const korRice = document.querySelectorAll('.korRice');
+        const korNoodle = document.querySelectorAll('.korNoodle');
+        const eurEtc = document.querySelectorAll('.eurEtc');
+
+
         // 시작버튼 클릭시 viewMenu 출력
         let i = 0;
-
+        let j = 0;
         strBtn.onclick = viewMenu;
 
         // viewMenu 출력
@@ -176,6 +181,35 @@
             text.style.display = 'none'
         }
 
+        krFood.onclick = choose1
+        jpFood.onclick = choose2
+        chFood.onclick = choose3
+        euFood.onclick = choose4
+
+        function choose1() {
+            i = ++i
+            kategorie1.style.display = 'none'
+            kategorie2.style.display = 'block'
+        }
+        function choose2() {
+            i = i + 2;
+            // japFood.style.display = 'block'
+            kategorie1.style.display = 'none'
+            kategorie2.style.display = 'block'
+        }
+        function choose3() {
+            i = i + 3;
+            // chiFood.style.display = 'block'
+            kategorie1.style.display = 'none'
+            kategorie2.style.display = 'block'
+        }
+        function choose4() {
+            i = i + 4;
+            // eurFood.style.display = 'block'
+            kategorie1.style.display = 'none'
+            kategorie2.style.display = 'block'
+        }
+
         // viewMenu 선택에 따라 select1~3 출력
         riceBtn.onclick = select1
         noodleBtn.onclick = select2
@@ -183,62 +217,60 @@
 
 
         function select1() {
+            j = ++j
             kategorie1.style.display = 'none'
-            kategorie2.style.display = 'block'
-            alert('rice 선택지 출력');
+            kategorie2.style.display = 'none'
+            if (i == 1 && j == 1) {
+                korFood.style.display = 'block'
+            } else if (i == 2 && j == 1) {
+                japFood.style.display = 'block'
+            } else if (i == 3 && j == 1) {
+                chiFood.style.display = 'block'
+            } else {
+                alert('양식은 해당사항 없습니다.')
+            }
         }
-        document.write(i);
+
         function select2() {
+            j = j + 2;
             kategorie1.style.display = 'none'
-            kategorie2.style.display = 'block'
-            alert('noodle 선택지 출력');
+            kategorie2.style.display = 'none'
+            if (i == 1 && j == 2) {
+                korFood.style.display = 'block'
+            } else if (i == 2 && j == 2) {
+                japFood.style.display = 'block'
+            } else if (i == 3 && j == 2) {
+                chiFood.style.display = 'block'
+            } else {
+                eurFood.style.display = 'block'
+                eurEtc.style.display = 'block'
+            }
         }
+
         function select3() {
-            kategorie1.style.display = 'none'
-            kategorie2.style.display = 'block'
-            alert('etc 선택지 출력');
-
-        }
-
-        krFood.onclick = choose1
-        jpFood.onclick = choose2
-        chFood.onclick = choose3
-        euFood.onclick = choose4
-
-        function choose1() {
-            i = i++
-            korFood.style.display = 'block'
+            j = j + 3;
             kategorie1.style.display = 'none'
             kategorie2.style.display = 'none'
-        }
-        function choose2() {
-            i = i + 2;
-            japFood.style.display = 'block'
-            kategorie1.style.display = 'none'
-            kategorie2.style.display = 'none'
-        }
-        function choose3() {
-            i = i + 3;
-            chiFood.style.display = 'block'
-            kategorie1.style.display = 'none'
-            kategorie2.style.display = 'none'
-        }
-        function choose4() {
-            i = i + 4;
-            eurFood.style.display = 'block'
-            kategorie1.style.display = 'none'
-            kategorie2.style.display = 'none'
+            if (i == 1 && j == 3) {
+                korFood.style.display = 'block'
+            } else if (i == 2 && j == 3) {
+                japFood.style.display = 'block'
+            } else if (i == 3 && j == 3) {
+                chiFood.style.display = 'block'
+            } else {
+                eurFood.style.display = 'block'
+            }
         }
 
+        // 다시하기 버튼
         rtyBtn.onclick = function () {
             location.href = 'index.html';
         };
+
+        // 나가기 버튼
         offBtn.onclick = function () {
             location.href = 'login.html';
         };
-
-
-
 
     </script>
 
