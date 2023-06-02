@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #detailKategorie {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>오늘의 점심</h1>
+    <div>
+        <button id="sdsd">아무거나</button>
+    </div>
+    <div id="detailKategorie">
+        <div id="korFood">
+            <p>홍두깨손칼국수</p>
+            <p>교동바지락손칼국수</p>
+            <p>백채김치찌개</p>
+            <p>비아김밥</p>
+        </div>
+        <div id="japFood">
+            <p>유미카츠</p>
+            <p>스시스토리</p>
+            <p>마쯔</p>
+            <p><span></span></p>
+        </div>
+    </div>
+
+
+
+    <script>
+        let i = prompt('0 ~ 1 값을 입력하시오', '');
+
+        sdsd.onclick = abc;
+
+        function abc() {
+           i++
+        }
+
+        if (i == 1) {
+                korFood.style.display = 'block';
+            } else {
+                japFood.style.display = 'block';
+            }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

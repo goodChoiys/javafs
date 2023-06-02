@@ -6,128 +6,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        p {
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 40px;
-            text-align: center;
-        }
-
-        #quizContainer {
-            text-align: left;
-            margin-top: 0px;
-            padding-top: 0px;
-            padding-bottom: 20px;
-            height: 100%;
-            max-width: 600px;
-            min-width: 360px;
-            background-color: #FFFFFF;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-
-            overflow: hidden;
-
-            border: 1px solid #006382;
-        }
-
-        #question-page>div:first-of-type {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        #result-page {
-            display: none;
-            width: 600px;
-            max-width: 600px;
-
-            text-align: center;
-
-            opacity: 0;
-            /* 초기에는 투명도를 0으로 설정하여 화면에서 숨김 */
-            animation: fade-in 1s ease-in-out 0.5s forwards;
-            /* 애니메이션 설정 */
-
-            #result-page {
-                display: none;
-            }
-
-            .restart {
-                text-align: left;
-            }
-    </style>
 </head>
 
 <body>
-    <div id="quizContainer">
-
-        <div id="question-page">
-            <h1 class="headtitle">30초 성격유형별 테스트</h1>
-            <div>심심풀이지만 진지한 5문항!</div>
-            <div class="container">
-
-                <h2 id="question"></h2>
-
-                <hr>
-
-                <div id="choices"> ... </div>
-
-                <button id="nextButton" onclick="nextQuestion()">다음</button>
+    <div id="game-box">
+        <h1 class="game-title">Up & Down Game</h1>
+        <div id="result-area">1부터 50까지의 숫자를 입력하세요</div>
+        <div id="chance-area">남은 기회: 5번!</div>
+        <div id="form">
+            <input id="user-input" type="text" placeholder="1부터 50까지의 숫자를 입력하세요">
+            <div class="btns">
+                <button id="play-button">Go!</button>
+                <button id="reset-button">Reset</button>
             </div>
         </div>
+    </div>
 
-        /* <!-- 결과 부분 --> */
-        <div id="result-page">
-
-            <h1 class="headtitle">나의 성격유형은,</h1>
-
-            <div id="resultContainer">
-
-                <img id="resultImage" src="" alt="">
-                <h2 id="result"></h2>
-                <p id="resultDescription"></p>
-            </div>
-
-            <br><br>
-            <button class="restart" onclick="restartTest()">다시하기</button>
-
-        </div>
-    </div>;
+    <script>
 
 
-    <script src="mbtitest.js"></script>
+        let computerNum = 0;
+        let userNum = document.getElementById("user-input");
+        let playButton = document.getElementById("play-button");
+        let resetButton = document.getElementById("reset-button");
+        let resultArea = document.getElementById("result-area");
+        let chance = 5;
+        let chanceArea = document.getElementById("chance-area");
+        let gameOver = false;
+        let history = [];
 
-    const questions = ({text: '새로운 환경이나 상황을 마주하게 된다면 어떤 것이면 좋겠어요?',
-    choices: [
-                '새로운 사람들과의 만날 수 있는',
-                '조용한 환경에서 시간을 보낼 수 있는',
-                '인상 깊은 장소, 디테일한 경험 가능한',
-                '독특하고 창의적 아이디어를 낼 수 있는 '
-    ],
-    });
+        chanceArea.innerHTML = `남은 기회:${chance}`;
+        userNum.addEventListener("focus", () => { userNum.value = "" })
+        playButton.addEventListener("click", playGame)
+        resetButton.addEventListener("click", reset)
 
-    // nextQuestion() 함수를 업데이트하여 선택한 답변을 저장하도록 합니다.
+        function randomNum(){
+    computerNum=Math.floor(Math.random()*50)+1; //random함수는 소수로나오므로 100을 곱한다. 1을 더하는 이유는 예로 0.003일때 0으로나오는것을 방지하기위해!
+    console.log("랜덤번호", computerNum)
+}
 
-    function nextQuestion() {
-    const selectedChoice = document.querySelector('input[name="choice"]:checked');
-    if (!selectedChoice) {
-    alert('Please choose an option.');
-    return;
-    }}
+function playGame(){
+    let userValue=userNum.value
 
-    function displayResults(result) {
-    <!-- // 결과를 표시할 div를 찾고, 결과를 표시합니다. -->
-    const resultContainer = document.getElementById('resultContainer');
-    resultContainer.style.display = 'block';
-    const resultElement = document.getElementById('result');
-    resultElement.innerHTML = ''; 
-    resultElement.innerText = result;
+    if(userValue<1 && userValue>50){
+        resultArea.textContent="1에서 50까지의 숫자를 입력해주세요"
+        return;
     }
-    <!-- // 초기화 -->
+    if(history.includes(userValue)){
+        resultArea.textContent="이미 입력한 값입니다."
+        return;
+    }
+
+    chance--;
+    chanceArea.textContent=`남은 기회: ${chance}번`;
+    console.log("기회?",chance);
+    history.push(userValue);
+    console.log("입력값",history);
+    
+
+    if(userValue>computerNum){
+        resultArea.textContent="Down!";
+
+    }else if(userValue<computerNum){
+        resultArea.textContent="Up!";
+    
+    }else{
+        resultArea.textContent="Clear!";
+        chanceArea.innerHTML="reset버튼을 눌러주세요";
+        playButton.disabled=true;
+     
+    }
+ 
+    if(chance == 0){
+        resultArea.textContent="fail ㅜ.ㅜ";
+        chanceArea.innerHTML="reset버튼을 눌러주세요"
+        playButton.disabled=true;
+        gameOver = true;
+    }
+    if(gameOver == true){
+        resultArea.textContent="fail ㅜ.ㅜ";
+        chanceArea.innerHTML="reset버튼을 눌러주세요"
+        playButton.disabled=true;
+    }
+
+}
+function reset(){
+    userNum.value="";
+    resultArea.textContent="1에서 50까지의 숫자를 입력해주세요";
+    chanceArea.innerHTML="남은 기회: 5번";
+    randomNum();
+    playButton.disabled = false;
+    gameOver = false;
+    chance = 5;
+    history = [];
+}
+
+    </script>
 </body>
 
 </html>

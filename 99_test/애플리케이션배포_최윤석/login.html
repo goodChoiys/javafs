@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML+CSS+JS</title>
+    <title>오늘의점심_최윤석</title>
     <style>
         /* 가로 해상도: 390px */
 
         /* 초기화 */
         * {
-            margin:0;
-            padding:0;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
+
         html {
             font-size: 10px;
         }
@@ -22,91 +23,116 @@
         body {
             font: 1.5rem/1.8 'Noto Serif', serif;
             margin: 0 auto;
+            background: #000;
+            max-width: 390px;
 
+
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
         }
 
         #wrap {
-            margin: 0 30px 0;
             text-align: center;
         }
 
-        header {
-            margin: 60px 0 0 0; 
-            background: url(images/bg.png) no-repeat center;
-            background-size: contain;
-            height: 300px;
-            line-height: 300px;
-            text-align: center;
+
+        #mainImg {
+            background: url(images/라면.png);
+        }
+
+        #space {
+            margin: 0 30px 0;
         }
 
         h1 {
-            margin-bottom: 32px;
+            margin: 3.2rem 0 3.2rem;
             font-size: 6rem;
-            color: #fff;
-            text-shadow: 3px 3px 3px #000;
-            z-index: 999;
-            background: #000;
+            color: #f00;
+            text-shadow: 1px 2px tomato;
+            height: 26rem;
+            line-height: 26rem;
         }
+
+        /* font color*/
+        p,
+        #member {
+            color: #eee;
+        }
+
+        a {
+            color: #f00;
+        }
+
 
         p {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #000;
+            font-family: 'Noto Sans KR', sans-serif;
         }
 
-        a {
-            color: red;
+        p:first-of-type {
+            margin-top: 18rem;
         }
 
-        input, button {
+
+        input,
+        button {
             border-radius: 1rem;
             width: 100%;
             margin: 8px 0;
             font-size: 20px;
-
-        }
-
-        input {
-            border: 1px solid #000;
             padding: 16px;
-            box-shadow: 5px 5px;
         }
-
 
         button {
-            padding: 8px;
-            box-shadow: 5px 5px #000;
+            font-weight: 700;
             cursor: pointer;
             background: #fff;
         }
 
+        input:hover,
+        button:hover {
+            background: #ccc;
+        }
+
         #member {
             position: absolute;
-            left:0;
+            left: 0;
             width: 100%;
             bottom: 100px;
             font-size: 1.5rem;
-            color: #000;
         }
 
-
-
-
+        #copyright {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 50px;
+            color: #999;
+        }
 
 
     </style>
 </head>
 
 <body>
-    <header>
-    </header>
+
     <div id="wrap">
-        <h1>MBTI Test</h1>
-        <input type="text" placeholder="아이디를 입력하세요." id="loginId">
-        <input type="text" placeholder="비밀번호를 입력하세요." id="loginPw">
-        <button>로그인</button>
-        <p>아이디와 패스워드를 입력후 로그인하세요.</p>
-        <p id="member">계정이 없으신가요? <a href="93_member.html">가입하기</a></p>
+        <div id="mainImg">
+            <h1>오늘의 점심</h1>
+        </div>
+        <div id="space">
+            <input type="text" placeholder="아이디를 입력하세요." id="loginId">
+            <input type="text" placeholder="비밀번호를 입력하세요." id="loginPw">
+            <button>로그인</button>
+            <p>아이디와 패스워드를 입력후 로그인하세요.</p>
+            <p id="member">계정이 없으신가요? <a href="signup.html">가입하기</a></p>
+            <p id="copyright">Copyright 2023 최윤석. All rights reserved.</p>
+
+        </div>
     </div>
 
     <script>
@@ -121,18 +147,18 @@
         const loginId = document.querySelector('#loginId');
         const loginPw = document.querySelector('#loginPw');
         const loginBtn = document.querySelector('button');
-        
+
         // 로그인 시 입력한 아이디/패스워드
-        
+
         loginBtn.onclick = login;
-        
-        function login(){
+
+        function login() {
             let newId = loginId.value;
             let newPw = loginPw.value;
 
             if (userId === newId) {
                 if (userPw === newPw) {
-                    location.href = "93_service.html";
+                    location.href = "index.html";
                 } else {
                     alert('비밀번호를 잘못입력하셨습니다.')
                     location.reload();
@@ -142,6 +168,12 @@
                 location.reload();
             }
         }
+
+
+
+
+
+
     </script>
 </body>
 
