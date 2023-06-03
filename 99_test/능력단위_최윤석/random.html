@@ -6,100 +6,321 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        #sel1 {
+            display: flex;
+        }
+
+        #sel2,
+        #sel3 {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="game-box">
-        <h1 class="game-title">Up & Down Game</h1>
-        <div id="result-area">1부터 50까지의 숫자를 입력하세요</div>
-        <div id="chance-area">남은 기회: 5번!</div>
-        <div id="form">
-            <input id="user-input" type="text" placeholder="1부터 50까지의 숫자를 입력하세요">
-            <div class="btns">
-                <button id="play-button">Go!</button>
-                <button id="reset-button">Reset</button>
-            </div>
+    <!-- ------------------------------------------------ -->
+    <div id="sel1">
+        <div id="kFood"><button>한식</button></div>
+        <div id="jFood"><button>일식</button></div>
+        <div id="cFood"><button>중식</button></div>
+        <div id="eFood"><button>양식</button></div>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <div id="sel2">
+        <div id="riceM"><button>밥</button></div>
+        <div id="noodleM"><button>면</button></div>
+        <div id="etcM"><button>기타</button></div>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <div id="sel3">
+        <div id="kRice">
+            <div id="rice"><button>찌개</button></div>
+            <div id="rice"><button>김밥</button></div>
         </div>
+        <div id="kNoodle">
+            <div id="noodle"><button>칼국수</button></div>
+            <div id="noodle"><button>냉면</button></div>
+        </div>
+        <div id="kEtc">
+            <div id="etc"><button>국밥</button></div>
+            <div id="etc"><button>편의점</button></div>
+        </div>
+        <!-- ------------------------------------------------ -->
+        <div id="jRice">
+            <div id="rice"><button>돈까스</button></div>
+            <div id="rice"><button>텐동</button></div>
+            <div id="rice"><button>덮밥</button></div>
+            <div id="rice"><button>초밥</button></div>
+        </div>
+        <div id="jNoodle">
+            <div id="noodle"><button>라멘</button></div>
+            <div id="noodle"><button>우동</button></div>
+            <div id="noodle"><button>모밀</button></div>
+        </div>
+        <div id="jEtc">
+            <div id="etc"><button>없음</button></div>
+        </div>
+        <!-- ------------------------------------------------ -->
+        <div id="cRice">
+            <div id="rice"><button>볶음밥</button></div>
+            <div id="rice"><button>짜장/짬뽕밥</button></div>
+        </div>
+        <div id="cNoodle">
+            <div id="noodle"><button>짬뽕</button></div>
+            <div id="noodle"><button>짜장면</button></div>
+        </div>
+        <div id="cEtc">
+            <div id="etc"><button>만두</button></div>
+        </div>
+        <!-- ------------------------------------------------ -->
+        <div id="eRice">
+            <div id="rice"><button>리조또</button></div>
+        </div>
+        <div id="eNoodle">
+            <div id="noodle"><button>파스타</button></div>
+        </div>
+        <div id="eEtc">
+            <div id="etc"><button>샐러드</button></div>
+            <div id="etc"><button>빵</button></div>
+            <div id="etc"><button>샌드위치</button></div>
+            <div id="etc"><button>햄버거</button></div>
+        </div>
+        <!-- ------------------------------------------------ -->
+
+
     </div>
 
     <script>
 
+        let i = 0;
+        let j = 0;
 
-        let computerNum = 0;
-        let userNum = document.getElementById("user-input");
-        let playButton = document.getElementById("play-button");
-        let resetButton = document.getElementById("reset-button");
-        let resultArea = document.getElementById("result-area");
-        let chance = 5;
-        let chanceArea = document.getElementById("chance-area");
-        let gameOver = false;
-        let history = [];
+        kFood.onclick = sel11
+        jFood.onclick = sel12
+        cFood.onclick = sel13
+        eFood.onclick = sel14
 
-        chanceArea.innerHTML = `남은 기회:${chance}`;
-        userNum.addEventListener("focus", () => { userNum.value = "" })
-        playButton.addEventListener("click", playGame)
-        resetButton.addEventListener("click", reset)
+        riceM.onclick = sel21
+        noodleM.onclick = sel22
+        etcM.onclick = sel23
 
-        function randomNum(){
-    computerNum=Math.floor(Math.random()*50)+1; //random함수는 소수로나오므로 100을 곱한다. 1을 더하는 이유는 예로 0.003일때 0으로나오는것을 방지하기위해!
-    console.log("랜덤번호", computerNum)
-}
+        function sel11() {
+            i = 1 /* i에 1 할당 */
+            alert('i에 할당된 값은' + i + '입니다.')
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
+        function sel12() {
+            i = 2; /* i에 1 할당 */
+            alert('i에 할당된 값은' + i + '입니다.')
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
+        function sel13() {
+            i = 3; /* i에 1 할당 */
+            alert('i에 할당된 값은' + i + '입니다.')
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
+        function sel14() {
+            i = 4; /* i에 1 할당 */
+            alert('i에 할당된 값은' + i + '입니다.')
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
 
-function playGame(){
-    let userValue=userNum.value
+        function sel21() {
+            j = 1 /* j에 1 할당 */
+            alert('j에 할당된 값은' + j + '입니다.')
+            sel2.style.display = 'none'
 
-    if(userValue<1 && userValue>50){
-        resultArea.textContent="1에서 50까지의 숫자를 입력해주세요"
-        return;
-    }
-    if(history.includes(userValue)){
-        resultArea.textContent="이미 입력한 값입니다."
-        return;
-    }
+            if (i === 1 && j === 1) {
+                sel3.style.display = 'block'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 2 && j === 1) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 3 && j === 1) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            }
+        }
 
-    chance--;
-    chanceArea.textContent=`남은 기회: ${chance}번`;
-    console.log("기회?",chance);
-    history.push(userValue);
-    console.log("입력값",history);
-    
+        function sel22() {
+            j = 2 /* j에 2 할당 */
+            alert('j에 할당된 값은' + j + '입니다.')
+            sel2.style.display = 'none'
 
-    if(userValue>computerNum){
-        resultArea.textContent="Down!";
+            if (i === 1 && j === 2) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 2 && j === 2) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 3 && j === 2) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eEtc.style.display = 'none'
+            }
+        }
 
-    }else if(userValue<computerNum){
-        resultArea.textContent="Up!";
-    
-    }else{
-        resultArea.textContent="Clear!";
-        chanceArea.innerHTML="reset버튼을 눌러주세요";
-        playButton.disabled=true;
-     
-    }
- 
-    if(chance == 0){
-        resultArea.textContent="fail ㅜ.ㅜ";
-        chanceArea.innerHTML="reset버튼을 눌러주세요"
-        playButton.disabled=true;
-        gameOver = true;
-    }
-    if(gameOver == true){
-        resultArea.textContent="fail ㅜ.ㅜ";
-        chanceArea.innerHTML="reset버튼을 눌러주세요"
-        playButton.disabled=true;
-    }
+        function sel23() {
+            j = 3 /* j에 3 할당 */
+            alert('j에 할당된 값은' + j + '입니다.')
+            sel2.style.display = 'none'
 
-}
-function reset(){
-    userNum.value="";
-    resultArea.textContent="1에서 50까지의 숫자를 입력해주세요";
-    chanceArea.innerHTML="남은 기회: 5번";
-    randomNum();
-    playButton.disabled = false;
-    gameOver = false;
-    chance = 5;
-    history = [];
-}
+            if (i === 1 && j === 3) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 2 && j === 3) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 3 && j === 3) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+            }
+        }
+
+
+
+
 
     </script>
 </body>
