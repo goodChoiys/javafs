@@ -14,11 +14,25 @@
 
     <script>
         /* 
-            요소.createElement(노드명) ~ 요소에 요소 노드 추가
-            요소.createAttribute(속성명) ~ 요소에 속성 추가
-            요소.setAttributeNode(노드명) ~ 요소에 속성 연결
-            부모노드.appendChild(자식노드) ~ 부모 노드에 자식 노드 연결
+            A.createElement(b) ~ A요소에 요소 노드b 추가
+            A.createAttribute(b) ~ A요소에 속성b 추가
+            A.setAttributeNode(b) ~ A요소에 속성b 연결
+            A.appendChild(b) ~ 부모 노드A에 자식 노드b 연결
+
+
+            속성: value
         */
+
+        const newImg = document.createElement('img');
+        const srcAttr = document.createAttribute('src');
+        const altAttr = document.createAttribute('alt');
+        srcAttr.value = '../assets/pic_1.jpg';
+        altAttr.value = '이미지';
+        newImg.setAttributeNode(srcAttr);
+        newImg.setAttributeNode(altAttr);
+        document.getElementById('info').appendChild(newImg);
+        
+
 
     </script>
 </body>
