@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullPage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css');
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            background: #fff;
+            color: #111;
+            font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #fullpage,
+        #footer {
+            font-size: 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+
+        }
+
+
+
+        #fullpage div {
+            height: 100vh;
+            line-height: 100vh;
+            text-align: center;
+        }
+
+        #section1 {
+            background: #FF5F45;
+        }
+
+        #section2 {
+            background: #0798EC;
+        }
+
+        #section3 {
+            background: #FC6C7C;
+            position: relative;
+        }
+
+        #section4 {
+            background: #FEC401;
+        }
+
+        #indicator {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+            width: 30px;
+            height: 120px;
+        }
+
+        #indicator li {
+            position: relative;
+        }
+
+        #indicator li a {
+            display: block;
+            width: 5px;
+            height: 5px;
+            margin: 20px 0;
+            border-radius: 50%;
+            background: #fff;
+            transition: transform .5s;
+            text-align: center;
+            text-indent: -9999em;
+        }
+
+        #indicator span {
+            position: absolute;
+            right: 40px;
+            top: -8px;
+            opacity: 0;
+        }
+
+        #indicator li a:hover {
+            transform: scale(2.2);
+        }
+
+        #indicator li a:hover+span {
+            opacity: 1;
+        }
+
+        #indicator li a.on {
+            transform: scale(2.5);
+        }
+
+        #indicator li a.on+span {
+            opacity: 1;
+        }
+
+        #footer {
+            display: block;
+            text-align: center;
+            background: #111;
+            padding: 100px 0;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div id="section1" class="section">
+            <h2>SECTION 1</h2>
+        </div>
+        <div id="section2" class="section">
+            <h2>SECTION 2</h2>
+        </div>
+        <div id="section3" class="section">
+            <h2>SECTION 3</h2>
+        </div>
+        <div id="section4" class="section">
+            <h2>SECTION 4</h2>
+        </div>
+    </div>
+    <div id="footer" class="section fp-auto-height">footer</div>
+    <!-- 사이드 내비게이션(인디케이터) -->
+    <ul id="indicator">
+        <li><a href="#section1" class="on">section1</a><span>firstPage</span></li>
+        <li><a href="#section2">section2</a><span>secondPage</span></li>
+        <li><a href="#section3">section3</a><span>thirdPage</span></li>
+        <li><a href="#section4">section4</a><span>fourthPage</span></li>
+        <li><a href="#footer">footer</a><span>lastPage</span></li>
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script>
+
+        $('#indicator a').on('click', function (e) {
+            // a태그 기본 이벤트 제거
+            e.preventDefault();
+            // this.hash는 클릭한 a태그를 말함
+            $('html, body').animate({ scrollTop: $(this.hash).offset().top }, 500)
+        });
+
+        $('.section').mousewheel(function (e, delta) {
+            if (delta > 0) {
+                try {
+                    // 마우스휠을 위로 올림
+                    let prev = $(this).prev().offset().top;
+                    // css({속성: 값})
+                    // animate({속성: 값})
+                    $('html').stop().animate({ scrollTop: prev });
+
+                    $('#indicator a').removeClass('on');
+                    $(this).addClass('on');
+                } catch (err) {
+                    return false;
+                }
+
+            } else if (delta < 0) {
+                try {
+
+                    // 마우스휠을 아래로 내림
+                    let next = $(this).next().offset().top;
+                    // css({속성: 값})
+                    // animate({속성: 값})
+                    $('html').stop().animate({ scrollTop: next });
+                } catch (err) {
+                    return false;
+                }
+            }
+        });
+
+        $('html').stop().animate({ scrollTop: 0 });
+
+        $('#indicator a').click(function (e) {
+            // a태그의 기본 이벤트를 제거
+            // 기본 이벤트 = a태그 이동을 제거
+            e.preventDefault
+            let idx = $(this).parent().index();
+            let posY = $('.section').eq(idx).offset().top;
+            // 아래 body를 추가하는 이유는 구형 브라우저 호환때문에 추가함
+            $('html', 'body').stop().animate({ scrollTop: posY });
+            $('#indicator a').removeClass('on');
+            $(this).addClass('on');
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullPage</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #fullpage div {
+            height: 100vh;
+        }
+
+        #section1 {
+            background: #FF5F45;
+        }
+
+        #section2 {
+            background: #0798EC;
+        }
+
+        #section3 {
+            background: #FC6C7C;
+        }
+
+        #section4 {
+            background: #FEC401;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div id="section1" class="section">섹션1</div>
+        <div id="section2" class="section">섹션2</div>
+        <div id="section3" class="section">섹션3</div>
+        <div id="section4" class="section">섹션4</div>
+    </div>
+    <script>
+
+        /* 
+            마우스휠 조정시 위아래로 한 칸씩 섹션이동시킨다.
+            
+            이벤트: wheel
+            메서드: nextElementSibling, previousElementSibling, offsetTop, scrollTop
+            키워드: this
+            제어문: if
+
+            // wheel 이벤트 형식
+            요소.onwheel = function(e){
+                if (e.deltaY < 0) {
+                    // 마우스휠을 위로 올림
+                } else {
+                    // 마우스휠을 아래로 내림
+                }
+            });
+
+            // error(에러, bug): debugging(디버깅) ~ 에러 수정
+            // error 처리: try ~ catch ~finally
+
+            <사용 방법>
+            try {
+                실행코드
+            } catch(err) {
+                에러시 처리할 내용
+            }
+
+        */
+
+        const secs = document.querySelectorAll('.section');
+        let i = 0;
+
+        for (let i = 0; i < secs.length; i++) {
+
+            secs[i].onwheel = function (e) {
+                if (e.deltaY < 0) {
+                    // 마우스휠을 위로 올림
+                    num = num - 1;
+                    if (num < 0) {
+                        num = 1;
+                    }
+                    sec_top = document.querySelector("#section" + num).offsetTop;
+                    document.documentElement.scrollTop = sec_top;
+                } else {
+                    // 마우스휠을 아래로 내림
+                    num = nim + 1;
+                    if (num > 4) {
+                        num = 4;
+                    }
+                    sec_top = document.querySelector("#section" + num).offsetTop;
+                    document.documentElement.scrollTop = sec.top;
+                }
+            }; //onwheel
+        }   //for문의 끝
+    </script>
+</body>
+
+</html>

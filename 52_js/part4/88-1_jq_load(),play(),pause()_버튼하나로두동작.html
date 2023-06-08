@@ -30,7 +30,8 @@
             line-height: 70px;
             cursor: pointer;
             text-indent: -9999em;
-
+            opacity: 0;
+            transition: .3s;
         }
         
 
@@ -126,6 +127,13 @@
                 btn.removeClass('on');
             }
         };
+
+        $('.vid').mouseover(function(){
+            btn.css({opacity:1});
+        });
+        $('.vid').mouseleave(function(){
+            btn.css({opacity:0});
+        });
 
 
         // 내가한거 (3가지 동작 루프)
