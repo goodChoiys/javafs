@@ -1,137 +1,140 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메가커피</title>
-    <link rel="stylesheet" href="css/style0510.css">
+    <title>월트디즈니_최윤석</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+    <script src="js/script.js"></script>
 </head>
+
 <body>
-    <!-- header -->
-    <header>
-        <h1 class="logo"><a href="#">메가커피</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#이벤트">이벤트</a></li>
-                <li><a href="#베스트">베스트</a></li>
-                <li><a href="#특가">특가</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="fullpage">
+        <!-- section1 -->
+        <div class="section" id="section1">
+            <header id="header">
+                <h1 class="logo"><a href="#"><img src="images/logo.png" alt="타이틀 로고"></a></h1>
+                <div class="nav_bg"></div>
+                <nav id="gnb">
+                    <ul class="main">
+                        <li><a href="#">DISENY</a>
+                            <ul class="sub">
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">BI</a></li>
+                                <li><a href="#">오시는길</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">WORKS</a>
+                            <ul class="sub">
+                                <li><a href="#">DISENY</a></li>
+                                <li><a href="#">MARVEL</a></li>
+                                <li><a href="#">STAR WARS</a></li>
+                                <li><a href="#">ETC</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">DISENY+</a>
+                            <ul class="sub">
+                                <li><a href="#">소개</a></li>
+                                <li><a href="#">MARVEL</a></li>
+                                <li><a href="#">STAR WARS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ETC</a>
+                            <ul class="sub">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">고객의소리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="member">
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                </div>
+            </header>
+            <!-- <div class="vid">
+            <video autoplay muted loop>
+                <source src="video/main_video1.mp4"" type=" video/mp4">
+            </video>
+        </div> -->
 
+            <!-- 캐로셀 -->
+            <div id="slideWrap">
 
-    <!-- section1 -->
-    <section id="main_img">
-        <!-- main image -->
-        <img src="images/main1.jpg" alt="배너">
-        <!-- main title -->
-        <h2 class="main_tit"><b>ma:</b><span>ma:nyo</span></h2>
-        </section>
+                <!-- 슬라이드 배경 이미지 -->
+                <ul class="slider">
+                    <li class="bg1">
+                        <div class="tit">
+                            <span>DISENY ORIGN</span>
+                            Classic is Permanet
+                            you can see the history
+                        </div>
+                    </li>
+                    <li class="bg2">
+                        <div class="tit">
+                            <span>Travel Summer</span>
+                            여름의 시작을 알리는 시원한 웰컴-드링크
+                        </div>
+                    </li>
+                    <li class="bg3">
+                        <div class="tit">
+                            <span>Granola S'mores Cookie</span>
+                            건강한 통곡물이 꼭꼭 박힌 그래놀라 스모어 쿠키
+                        </div>
+                    </li>
+                    <li class="bg4">
+                        <div class="tit">
+                            <span>Peace of mind</span>
+                            MEGA MGC Teapleasure 카페인 걱정 없는 릴렉싱 블렌드 티
+                        </div>
+                    </li>
+                </ul>
 
-    <!-- section2 -->
-    <section id="menu" class="section">
-        <h2>Best sellers</h2>
-        <ul>
-            <li>
-                <h3>비피타 바이옴 콤플렉스 앰플</h3>
-                <img src="images/barnhouse1.jpg" alt="제품1">
-            </li>
-            <li>
-                <h3>비피타 바이옴 앰플 & 토너</h3>
-                <img src="images/barnhouse1.jpg" alt="제품2">
-            </li>
-            <li>
-                <h3>비피타 바이옴 아쿠아 베리어 크림</h3>
-                <img src="images/barnhouse1.jpg" alt="제품3">
-            </li>
-            <li>
-                <h3>비피다 바이옴 컨센트레이트</h3>
-                <img src="images/barnhouse1.jpg" alt="제품4">
-            </li>
-            <li>
-                <h3>퓨어 클렌징 오일</h3>
-                <img src="images/barnhouse2.jpg" alt="제품5">
-            </li>
-            <li>
-                <h3>퓨어&딥 클렌징 폼</h3>
-                <img src="images/barnhouse2.jpg" alt="제품6">
-            </li>
-            <li>
-                <h3>블랙헤드 퓨어 클렌징 오일 킬패드</h3>
-                <img src="images/barnhouse2.jpg" alt="제품7">
-            </li>
-            <li>
-                <h3>비피타 바이옴 토너</h3>
-                <img src="images/barnhouse2.jpg" alt="제품8">
-            </li>
-        </ul>
-    </section>
+                <!-- 페이저 -->
+                <div class="pager">
+                    <a class="active"><img src="images/0613pic/1.png" alt="페이저1"></a>
+                    <a><img src="images/0613pic/2.png" alt="페이저2"></a>
+                    <a><img src="images/0613pic/3.png" alt="페이저3"></a>
+                    <a><img src="images/0613pic/4.png" alt="페이저4"></a>
+                </div>
 
-   <!-- section3 -->
-   <section id="event" class="section">
-    <h2>event</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nisi, natus veritatis consequatur esse magni corrupti ullam suscipit? Vel odit suscipit esse soluta facere, voluptatum in magni tenetur, commodi ex ipsa eius. Aperiam reiciendis sapiente itaque quod mollitia! Molestiae, fugiat et nobis mollitia eaque doloremque quisquam commodi! Impedit fuga vel debitis officiis quos minus nesciunt molestiae voluptatum illum hic deleniti nam illo consequatur laudantium, tenetur in consequuntur suscipit ipsam assumenda, dolorem iure, ea sunt saepe placeat. Nisi hic voluptates corporis ex dolor alias iusto modi cupiditate nihil! Eligendi animi, facere molestias delectus ducimus sunt ex dolorem quidem. Inventore, nesciunt asperiores?</p>
-    <ul>
-        <li>
-            <img src="images/Trash/john.jpg" alt="event1">
-            <div>
-                <h3>갈락 나이아신 에센스 안써본 분을 찾습니다</h3>
-                <p>2023.05.08 10:00 AM ~ 05.15 10:00 AM</p>
-                <p>선착순 3천명 0원 체험</p>
+                <!-- 이전/이후 버튼 -->
+                <!-- 폰트어썸 -->
+                <div class="btn">
+                    <a href="#" id="prev"><i class="fa-regular fa-circle-left"></i></a>
+                    <a href="#" id="next"><i class="fa-regular fa-circle-right"></i></a>
+                </div>
             </div>
-            <a href="#">더 알아보기</a>
-        </li>
-        <li>
-            <img src="images/Trash/jane.jpg" alt="event2">
-            <div>
-                <h3>딱 7일만! 379에센스 런칭 이벤트</h3>
-                <p>2023.05.04 10:00 AM ~ 05.10 11:59PM</p>
-                <p>남다른 초저분자 379Da 히알루론산 딱 7일만~ 70% </p>
-            </div>
-            <a href="#">더 알아보기</a>
-        </li>
-        <li>
-            <img src="images/Trash/mike.jpg" alt="event3">
-            <div>
-                <h3>함께해서 더 기쁜 5월, 마음을 선물해요</h3>
-                <p>2023.05.02 10:00 AM ~ 05.15 10:00 AM</p>
-                <p>사은품 증정 & 세트 구성 추가 할인</p>
-            </div>
-            <a href="#">더 알아보기</a>
-        </li>
-        <li>
-            <img src="images/Trash/dan.jpg" alt="event4">
-            <div>
-                <h3>월간 혜택 5월호 COUPON BOOK</h3>
-                <p>2023.05.03 10:00 AM ~ 05.31 11:59 PM</p>
-                <p>지금 공식물 단독 혜택을 확인하세요!</p>
-            </div>
-            <a href="#">더 알아보기</a>
-        </li>
-    </ul>
-</section>
+        </div>
+        <!-- /section1 -->
 
-    <!-- section4 -->
-    <section id="news" class="section">
-        <h2>마녀 공장 소식</h2>
-        <p>마녀 공장을 만나는 순간 시작되는 새로운 당신</p>
-        <form action="message.php" method="post">
-            <input type="text" name="user_name" placeholder="Name">
-            <input type="email" name="user_email" placeholder="Email">
-            <input type="text" name="user_subject" placeholder="Subject">
-            <input type="text" name="user_comment" placeholder="Comment">
-            <button type="submit">SEND MESSAGE</button>
-        </form>
-        
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.917308337439!2d127.03415527590964!3d37.509868427375444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c997fe61d5b1d%3A0x2ca7ef951c15364!2zKOyjvCnrp4jrhYDqs7XsnqU!5e0!3m2!1sko!2skr!4v1683704957468!5m2!1sko!2skr"></iframe></div>
-    </section>
-
-    <!-- footer -->
-    <footer>
-        <p><span>Copyright</span><span>&copy;</span> 2023 MANYO<span>FACTORY</span> ALL RIGHTS RESERVED.</p>
-
-    </footer>
+        <!-- section2 -->
+        <div class="section" id="section2">
+            <div class="txt1 txt">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel commodi facere quod fugit reiciendis pariatur similique eaque in. 
+            </div>
+            <div class="txt2 txt">
+                Neque deleniti obcaecati commodi itaque quo error, mollitia velit ducimus provident tempora numquam fuga iusto quia vero voluptatibus, recusandae eum, sequi soluta laboriosam? Ducimus laudantium excepturi vero? Dolor veritatis eveniet hic odio.
+            </div>
+            <a href="#" class="btn">자세히 보기</a>
+            <div id="product">
+                <div class="prod1"></div>
+                <div class="prod2"></div>
+                <div class="prod3"></div>
+            </div>
+        </div>
+        <!-- section3 -->
+        <!-- /section3 -->
+        <!-- section4 -->
+        <!-- /section4 -->
 </body>
+
 </html>

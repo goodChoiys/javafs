@@ -1,0 +1,95 @@
+@charset 'utf-8';
+
+/* GNB(Global Navigation Bar) */
+
+#gnb {
+    z-index: 99999;
+    position: relative;
+    height: 94px;
+}
+
+.nav_bg {
+    position: absolute;
+    left: 0;
+    top: 94px;
+    /* 메인메뉴 높이만큼 내려준다. */
+    width: 100%;
+    background: rgba(14, 138, 255, 0.5);
+}
+
+/* 크기, 색, 굵기 등으로 폰트의 위계를 지정한다. */
+/* 1depth: main */
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.main>li {
+    /* 삼각형 모양 기준 */
+    position: relative;
+    width: 160px;
+    /* 메인메뉴와 서브메뉴 모두 텍스트 가운데 */
+    text-align: center;
+}
+
+.main>li>a {
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 94px;
+}
+
+.main>li>a:hover {
+    color: gold;
+    text-shadow: 1px 1px orangered;
+}
+
+.main>li>a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 28px;
+    content: '';
+    width: 100%;
+    border-bottom: 3px solid gold;
+    color: #ccc;
+    transform: scaleX(0);
+    transition: .3s;
+}
+
+.main>li>a:hover:after {
+    transform: scaleX(1);
+
+}
+
+/* 로그인/회원가입 */
+.member>a:first-of-type {
+    margin: 16px;
+}
+
+.member>a {
+    font-size: 1.4rem;
+
+}
+
+/* 2depth: sub */
+
+.sub {
+    display: none;
+    padding: 15px 0;
+}
+
+.sub a {
+    color: #eee;
+    font-size: 1.6rem;
+    line-height: 2;
+    font-weight: 300;
+    padding: 3px 12px;
+}
+
+.sub a:hover {
+    color: gold;
+    text-shadow: 1px 1px orangered;
+    /* rgb(14, 138, 255) */
+}

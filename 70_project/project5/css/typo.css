@@ -5,65 +5,73 @@ html {
 }
 
 body {
-    font: 1.5rem/1.8 verdana, sans-serif;
-    color: #333333;
+    font: 1.5rem/1.8 Verdana, sans-serif;
+    color: #333;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 400; /* 글씨체 굵기: normal; */
-    letter-spacing: 4px; /*  */
+    font-weight: normal;
+    letter-spacing: 4px;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: 'Segoe UI', sans-serif;
-    font-weight: 400; /* 글씨체 굵기: normal; */
+    font-weight: 400;
 }
 
 h2 {
     font-size: 2.4rem;
-    color: #333333;
 }
+
 h3 {
     font-size: 1.6rem;
 }
 
 a {
-    color: #333333;
-    /* 하이퍼링크 밑줄 삭제 */
+    color: #fff;
     text-decoration: none;
 }
 
+#section2>p, #section2>a {
+    color: gold;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px orangered;
+}
+
 button {
-    color: #333333
-}
-
-.mainTit {
-    font-size: 3.6rem;
-    letter-spacing: 4px;
-    color: rgba(255, 230, 100, .7);
-}
-
-#game h3 {
-    color: #333333;
+    color: #fff;
 }
 
 ::placeholder {
-    color: #999999;
+    color: #ccc;
 }
 
+.main_tit {
+    font-size: 3.6rem;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, .85);
+}
 
-/* section3 */
-#news h3 {
+/* 섹션2 */
+#menu h3 {
+    color: #fff;
+}
+
+/* 섹션3 */
+#event h3 {
     font-size: 1.8rem;
     font-weight: 700;
 }
 
-#news li p:first-of-type{
-    color: #999999;
+#event li p:first-of-type {
+    color: #999;
 }
 
-/* footer */
+/* 푸터 */
 footer {
-    color: #eeeeee;
+    color: #fff;
+
 }
