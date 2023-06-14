@@ -7,9 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam_최윤석</title>
     <style>
-        #section1>.nav>.navCenter {
-            
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 sans-serif;
+            background: #fff;
+            color: #333;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .section {
+            background: rgb(51, 87, 141);
+        }
+
+        #section1 a {
+            color: #fff;
+        }
+
+
+        #section1 .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 32px;
+        }
+
+        #section1 .nav .navCenter {
+            display: flex;
+        }
+        #section1 .nav .navRight {
+            display: flex;
+            width: 160px;
+            justify-content: space-between;
+        }
+        /* font */
+        #section1 .nav .logo a{
+            font-size: 2rem;
+        }
+
+        /*  */
+
+
+
     </style>
 </head>
 
@@ -18,7 +79,9 @@
     <div>
         <div class="section" id="section1">
             <div class="nav">
-                <div class="logo"></div>
+                <div class="logo">
+                    <a href="#">Steam</a>
+                </div>
                 <ul class="navCenter">
                     <li><a href="#">상점</a></li>
                     <li><a href="#">커뮤니티</a></li>
