@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 탭 메뉴 */
+        .tabs {
+            padding: 24px 24px 24px 0;
+            background-clip: content-box;
+        }
+
+        .tabs input,
+        .tabs>div {
+            display: none;
+        }
+
+        #btn1:checked~#tab1,
+        #btn2:checked~#tab2 {
+            display: block;
+        }
+
+        /* 탭 메뉴 - 제목/버튼 */
+        .tabs label {
+            /* display: inline-block; */
+            background: #ebdaca;
+            color: #000000;
+            padding: 4px 16px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        #btn1:checked+label,
+        #btn2:checked+label {
+            background: #eee;
+            color: #000000;
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+
+        /* 탭 메뉴 - 공지사항 */
+        #tab1,
+        #tab2 {
+            padding-top: 16px;
+        }
+
+        #tab1 li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            white-space: nowrap;
+
+        }
+
+        #tab1 a {
+            width: 280px;
+            white-space: nowrap;
+            overflow: hidden;
+            /* 말 줄임 ...효과 */
+            text-overflow: ellipsis;
+        }
+
+        #tab1 a:hover {
+            color: #000000;
+        }
+
+        /* 탭 메뉴 - 갤러리 */
+        #tab2 a {
+            display: inline-block;
+            width: 110px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="tabs">
+        <!-- 제목/버튼 -->
+        <input type="radio" name="tabs" id="btn1" checked>
+        <label for="btn1">공지사항</label>
+        <input type="radio" name="tabs" id="btn2">
+        <label for="btn2">갤러리</label>
+
+        <!-- 공지사항 -->
+        <div id="tab1">
+            <ul>
+                <li><a href="#">네이버페이 머니 충전 및 간편 결제 서비스 이용 불가 안내</a><span>2023-05-15</span></li>
+                <li><a href="#">멤버데이즈 참여 감사 10% 할인 혜택 제공</a> <span>2023-05-10</span></li>
+                <li><a href="#">멤버데이즈 이벤트 안내</a><span>2023-05-05</span></li>
+                <li><a href="#">2023년 05월 카드사 무이자 할부 혜택 안내</a><span>2023-05-01</span></li>
+            </ul>
+        </div>
+
+        <!-- 갤러리 -->
+        <div id="tab2">
+            <a href="#"><img src="images/i1.png" alt="신발1"></a>
+            <a href="#"><img src="images/i2.png" alt="신발2"></a>
+            <a href="#"><img src="images/i3.png" alt="신발3"></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

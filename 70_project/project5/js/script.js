@@ -108,15 +108,58 @@ $(function () {
 
         if (st >= stVal) {
             btn.css({ opacity: 1 });
-            txt1.css({ left: 360 + 'px'});
-            txt2.css({ left: 360 + 'px'});
+            txt1.css({ left: 360 + 'px' });
+            txt2.css({ left: 360 + 'px' });
         } else {
             btn.css({ opacity: 0 });
-            txt1.css({ left: -800 + 'px'});
-            txt2.css({ left: -400 + 'px'});
+            txt1.css({ left: -800 + 'px' });
+            txt2.css({ left: -400 + 'px' });
         }
     });
     // /section2
+
+    // section3: 탭
+
+    const tabBtn = $('#section3 .thumb li'),
+        bigImg = $('#section3 .big li'),
+        txt = $('#section3 .txt li');
+
+    tabBtn.click(function () {
+        let idx = $(this).index();
+        tabBtn.removeClass('active');
+        bigImg.removeClass('active');
+        txt.removeClass('active');
+        $(this).addClass('active');
+        bigImg.eq(idx).addClass('active');
+        txt.eq(idx).addClass('active');
+    });
+
+    // /section3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -133,6 +176,11 @@ $(function () {
             $('html').stop().animate({ scrollTop: next }, 400, 'easeOutExpo');
         }
     });
+
+
+
+
+
 
 
 
