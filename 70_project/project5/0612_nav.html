@@ -34,6 +34,8 @@
             font-size: 1.5rem;
             background: #fff;
             color: #333;
+            height: 2000px;
+            /* 화면 스크롤 되도록 강제설정 */
         }
 
         img {
@@ -44,12 +46,24 @@
         /* GNB(Global Navigation Bar) */
 
         header {
+            position: fixed;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 100%;
             padding: 0 60px;
             background: rgb(14, 138, 255);
+            
+            /* 속기형 표기 */
+            transition: .5s .5s;
+            /* transition-duration: 0.5s; */
+            /* transition-delay: 0.5s; */
+            /*  속기형 서술시 순서
+                transition-property: all;
+                transition-duration: .5s;
+                transition-timing-function: ease;
+                transition-delay: .5s;
+            */
         }
 
         #gnb {
@@ -198,6 +212,19 @@
     </header>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
+        // 스크롤시 헤더 배경색 바꾸기
+        const headerBg = $('#header');
+
+        $(window).scroll(function () {
+            let st = $(this).scrollTop;
+
+            if (st <= 0) {
+                headerBg.css({ background: 'transparent' })
+            } else {
+                headerBg.css({ background: 'red' })
+            }
+        });
+
         // 내비게이션바
         $('.main > li > a').mouseenter(function (e) {
             // a태그 기본 이벤트 제거
@@ -209,6 +236,7 @@
             $('.sub').stop().slideUp(400);
             $('.nav_bg').stop().animate({ height: 0 }, 400);
         });
+
     </script>
 </body>
 

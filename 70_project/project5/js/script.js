@@ -1,6 +1,9 @@
 // 문서가 준비되면 함수 실행
 $(function () {
 
+    // 헤더
+    const headerBg = $('#header');
+
     // 내비게이션바
     $('.main > li > a').mouseenter(function (e) {
         // a태그 기본 이벤트 제거
@@ -178,6 +181,36 @@ $(function () {
 
     //  /section4
 
+    // 푸터
+    const fs = $('.fs'),
+        fsLst = fs.find('ul'),
+        fsIcon = fs.find('i'),
+        fsTxt = fs.find('span'),
+        fsBtn = fs.find('.fsBtn');
+
+    let state = 0;
+
+    fsBtn.click(function (e) {
+        // $('.fs ul').toggle();
+        e.preventDefault();
+
+        fsLst.slideToggle();
+
+
+        if (state == 0) {
+
+            fsIcon.attr({ class: 'fa-solid fa-minus' });
+            fsTxt.text('관련사이트 닫기');
+            state = 1;
+
+        } else {
+            fsIcon.attr({ class: 'fa-solid fa-plus' });
+            state = 0;
+            fsTxt.text('관련사이트 열기');
+        }
+    });
+
+    // /푸터
 
 
 
@@ -199,7 +232,7 @@ $(function () {
 
 
 
-
+    const hdBg = $('#header');
 
 
 
@@ -220,9 +253,62 @@ $(function () {
 
 
 
+    // 윈도우에 스크롤 이벤트가 발생하면 함수 실행
+    $(window).scroll(function () {
+        // 스크롤바를 스크롤한 양을 st에 저장
+        let st = document.documentElement.scrollTop;
+        let stVal = 600;
+
+        if (st >= stVal) {
+            headerBg.css({ background: '#0F2244' })
+        } else {
+            headerBg.css({ background: 'transparent' })
+
+        }
 
 
+    });
 
+    $('html').stop().animate({ scrollTop: 0 });
+
+    $('#indicator a').click(indicator);
+
+    function indicator() {
+        let idx = $(this).parent().index();
+        console.log(idx);
+        let posY = $('.section').eq(idx).offset().top;
+        $('html,body').stop().animate({ scrollTop: posY });
+        tooltip(idx);
+    }
+
+    function tooltip(index) {
+        $('#indicator a').removeClass('on');
+        $('#indicator a').eq(index).addClass('on');
+    }
+
+    $('.section').mousewheel(function (e, delta) {
+        if (delta > 0) {
+            // 마우스휠을 위로 올림
+            try {
+                tooltip($(this).index() - 1);
+                let prev = $(this).prev().offset().top;
+                console.log(prev);
+                $('html').stop().animate({ scrollTop: prev });
+            } catch (err) {
+                return false;
+            }
+        } else if (delta < 0) {
+            // 마우스휠을 아래로 내림
+            try {
+                tooltip($(this).index() + 1);
+                let next = $(this).next().offset().top;
+                console.log(next);
+                $('html').stop().animate({ scrollTop: next });
+            } catch (err) {
+                return false;
+            }
+        }
+    });
 
 
 });

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header {
+            transition-delay: 0.5s;
+            transition-duration: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <script>
+        // 헤더
+        const headerBg = $('#header');
+
+        // 윈도우에 스크롤 이벤트가 발생하면 함수 실행
+        $(window).scroll(function () {
+            // 스크롤바를 스크롤한 양을 st에 저장
+            let st = $(this).scrollTop;
+            /* if (st >= stVal) {
+            headerBg.css({ background: '#888' }) */
+            if (st <= 0) {
+                headerBg.css({ background: 'transparent' })
+            } else {
+                headerBg.css({ background: '#888' })
+            }
+        });
+
+    </script>
+</body>
+
+</html>
