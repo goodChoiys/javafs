@@ -37,11 +37,11 @@ a {
 }
 
 /* section2 - .counter */
-.counter {
+#counter {
     color: #fff;
 }
 
-.counter span {
+#counter span {
     font-size: 2.4rem;
 }
 

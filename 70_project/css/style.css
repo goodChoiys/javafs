@@ -1,10 +1,9 @@
 @charset "utf-8";
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css');
-
-
 @import url('reset.css');
 @import url('typo.css');
+
 
 /* header */
 header {
@@ -28,9 +27,11 @@ header ul {
 header a {
     padding: 4px 16px;
 }
+
 header a:hover {
     background: #ccc;
 }
+
 header i {
     margin-right: 8px;
 }
@@ -41,6 +42,7 @@ header i {
     height: 930px;
     background: url(../images/parallax1.png) no-repeat 50% 50%/cover fixed;
 }
+
 /* 요소를 부모 안에 정가운데 배치 */
 .logo {
     position: absolute;
@@ -51,10 +53,19 @@ header i {
     background: #000;
 }
 
+/* 디지털시계 */
+
+
+
+
+
+
 /* section2~4 공통 */
 .container {
+    /* 
     width: 960px;
-    margin: 0 auto;
+    margin: 0 auto; 
+    */
     padding-bottom: 81px;
 }
 
@@ -62,7 +73,8 @@ section h2 {
     margin-top: 81px;
     text-align: center;
 }
-section h2 + p {
+
+section h2+p {
     margin: 27px 0;
     text-align: center;
 }
@@ -90,9 +102,11 @@ section h2 + p {
 
 /* section2 */
 .profile {
+    /* 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; 
+    */
 }
 
 .profile p {
@@ -102,25 +116,25 @@ section h2 + p {
 }
 
 .profile p:first-of-type {
-    flex: 100%;
+    /* flex: 100%; */
     margin-bottom: 54px;
 }
 
 .profile div {
-    flex: 0 0 48%;
+    /* flex: 0 0 48%; */
     text-align: center;
 }
 
 .profile p:last-of-type {
-    flex: 0 0 48%;
+    /* flex: 0 0 48%; */
 }
 
 
 .photo {
-    width: 425px;
+    /* width: 425px;/ */
 }
 
-.photo b{
+.photo b {
     margin-left: 8px;
 }
 
@@ -136,52 +150,36 @@ section h2 + p {
     margin: 54px 0;
 }
 
-.progress .lst > span {
-    display: inline-block;
-    margin: 16px ;
+/* 프로그래스바 */
+#skill .progress {
+    width: 100%;
+    background-color: #ddd;
+    margin-bottom: 16px;
+    height: 30px;
 }
 
-.progress .lst div {
-    height: 34px;
-    background: #dddddd;
-}
-
-.progress .lst div span{
-    display: block;
-    height: 100%;
+#skill .progress div {
+    width: 0%;
+    background-color: #04AA6D;
     text-align: center;
-    background: #555555;
+    line-height: 30px;
+    color: white;
 }
 
-.progress .lst:nth-of-type(1) div span{
-    width: 95%;
-}
+/* /.skill */
 
-.progress .lst:nth-of-type(2) div span{
-    width: 95%;
-}
-
-.progress .lst:nth-of-type(3) div span{
-    width: 90%;
-}/* /.skill */
-
-
-
-/* #counter {
-    display: flex;
-    justify-content: space-around;
-} */
+/* 카운터 */
 
 #counter ul {
-    align-items: center; 
+    padding: 36px 0;
+    align-items: center;
     background: #000;
-    height: 132px;
     background: #616161;
     color: #fff;
     text-align: center;
 }
 
-#counter span{
+#counter span {
     display: block;
 }
 
@@ -208,45 +206,37 @@ section h2 + p {
 
 #portfolio .parallax {
     background-image: url(../images/parallax2.jpg);
-}
 
-#portfolio ul {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
-
 
 #portfolio li {
     /* 231px=((69*3)+(12*2)) */
-    width: 231px;
+    /* width: 231px; */
     /* width를 계산 후 비례적으로 */
-    height: 162px;
+    /* height: 162px; */
     margin-bottom: 12px;
     overflow: hidden;
+}
+
+#portfolio li img {
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-#portfolio .moreBtn{
+#portfolio .moreBtn {
     margin-top: 64px;
     /* 자식요소를 중앙에 정렬 */
     text-align: center;
 }
 
-#portfolio .moreBtn button{
+#portfolio .moreBtn button {
     padding: 12px 24px;
     font-size: 1.5rem;
 }
-
 
 /* 
 - 권장사항 - 
 인라인요소는 블록으로 묶어서 블록으로 조작하는것이 좋다
  */
-
-
-
-
 
 
 
@@ -257,12 +247,7 @@ section h2 + p {
     background-image: url(../images/parallax3.jpg);
 }
 
-#contact .container {
-    display: flex;
-}
-
 #map {
-    flex: 0 0 330px;
     height: 160px;
     margin-right: 30px;
     border-radius: 5px;
@@ -273,17 +258,19 @@ section h2 + p {
     margin-right: 20px;
 }
 
-#contact address + p {
+#contact address+p {
     margin: 16px 0 16px;
 }
-
+/* 
 #contact form {
     text-align: right;
 }
-
+ */
 #contact [name] {
+    /* 
     width: 292px;
-    height: 44px;
+    height: 44px; 
+    */
     padding-left: 8px;
 }
 
@@ -292,7 +279,8 @@ section h2 + p {
 }
 
 #contact [name*="message"] {
-    width: 600px; /* 너비 재선언 300 -> 600 */
+    /* width: 600px; */
+    /* 너비 재선언 300 -> 600 */
     margin: 16px 0;
 }
 
@@ -302,9 +290,6 @@ section h2 + p {
     background: #000;
     color: #fff;
 }
-
-
-
 
 /* footer */
 

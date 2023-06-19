@@ -97,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function(){
            ss = '0' + ss;
        }
     
-    
        mArea.innerHTML = mm + '분';
        sArea.innerHTML = ss + '초';
     
