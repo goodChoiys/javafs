@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 공통 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #222328;
+        }
+
+        a:hover {
+            font-weight: bold;
+        }
+
+        body {
+            font-size: 14px;
+            background: #ffffff;
+            color: #222328;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* 레이아웃 */
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            height: 100px;
+        }
+
+        #mainimg {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #container {
+            height: 200px;
+        }
+
+        footer {
+            height: 100px;
+            background: #edd8b9;
+            padding-top: 30px;
+        }
+
+        /* 탭 메뉴 */
+        .tab {
+            position: relative;
+            width: 400px;
+        }
+
+        .tabBtn li {
+            z-index: 0;
+            position: relative;
+            float: left;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            border-left: none;
+            padding: 10px;
+            background: #999;
+            cursor: pointer;
+        }
+
+        .tabBtn li.on {
+            z-index: 1;
+            border-left: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .tabCont {
+            position: absolute;
+            width: 100%;
+            top: 38px;
+            display: none;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        .tabCont.on {
+            display: block;
+        }
+
+        /* 공지사항 */
+        .menu1 li {
+            height: 25px;
+        }
+
+        .menu1 span {
+            display: inline-block;
+            width: 280px;
+        }
+
+        /* 겔러리 */
+        .menu2 {
+            overflow: auto;
+            padding: 17px 20px;
+        }
+
+        .menu2 a:nth-of-type(2) img {
+            margin: 0 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="tab">
+        <ul class="tabBtn clearfix">
+            <li class="on">메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+        <div class="tabCont menu1 on">
+            <ul>
+                <li><a href="#">메뉴1의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴2의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴3의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴4의 건의사항입니다.</a></li>
+            </ul>
+        </div>
+        <div class="tabCont menu2">
+            <ul>
+                <li><a href="#">메뉴11의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴22의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴33의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴44의 건의사항입니다.</a></li>
+            </ul>
+        </div>
+        <div class="tabCont menu3">
+            <ul>
+                <li><a href="#">메뉴111의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴222의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴333의 건의사항입니다.</a></li>
+                <li><a href="#">메뉴444의 건의사항입니다.</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            $(".tabBtn li").click(function () {
+                var li = $(this).index();
+                $(".tabCont").css({ display: "none" });
+                $(".tabCont").eq(li).css({ display: "block" });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

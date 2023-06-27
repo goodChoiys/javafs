@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            padding-left: 32px;
+        }
+
+        li {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        li img {
+            opacity: 0;
+            transition: 1s;
+            margin: 250px 0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li><img src="images/work1.jpg" alt="이미지1" class="img1"></li>
+        <li><img src="images/work2.jpg" alt="이미지2" class="img2"></li>
+        <li><img src="images/work3.jpg" alt="이미지3" class="img3"></li>
+        <li><img src="images/work4.jpg" alt="이미지4" class="img4"></li>
+        <li><img src="images/work5.jpg" alt="이미지5" class="img5"></li>
+        <li><img src="images/work6.jpg" alt="이미지6" class="img6"></li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+
+        const imgScroll1 = $('.img1');
+        const imgScroll2 = $('.img2');
+        const imgScroll3 = $('.img3');
+        const imgScroll4 = $('.img4');
+        const imgScroll5 = $('.img5');
+        const imgScroll6 = $('.img6');
+
+        window.onscroll = function () {
+            let st = document.documentElement.scrollTop;
+            let stVal = 200;
+            console.log(st);
+
+            if (st >= stVal) {
+                imgScroll1.css({ opacity: 1 });
+            } else {
+                imgScroll1.css({ opacity: 0 });
+
+            }
+
+            if (st >= (stVal + 800)) {
+                imgScroll2.css({ opacity: 1 });
+
+            } else {
+                imgScroll2.css({ opacity: 0 });
+
+            }
+
+            if (st >= (stVal + 1800)) {
+                imgScroll3.css({ opacity: 1 });
+
+            } else {
+                imgScroll3.css({ opacity: 0 });
+
+            }
+
+            if (st >= (stVal + 2800)) {
+                imgScroll4.css({ opacity: 1 });
+
+            } else {
+                imgScroll4.css({ opacity: 0 });
+
+            }
+
+            if (st >= (stVal + 3800)) {
+                imgScroll5.css({ opacity: 1 });
+
+            } else {
+                imgScroll5.css({ opacity: 0 });
+
+            }
+
+            if (st >= (stVal + 4800)) {
+                imgScroll6.css({ opacity: 1 });
+
+            } else {
+                imgScroll6.css({ opacity: 0 });
+
+            }
+
+        };
+
+
+    </script>
+
+</body>
+
+</html>
