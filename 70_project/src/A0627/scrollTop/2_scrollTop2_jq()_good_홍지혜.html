@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            height: 700px;
+        }
+        img{
+            position: absolute;
+            top: 100px;
+            opacity: 0;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>work1</p>
+        <img src="images/work1.jpg" alt="사진1">
+    </div>
+    <div>
+        <p>work2</p>
+        <img src="images/work2.jpg" alt="사진2">
+    </div>
+    <div>
+        <p>work3</p>
+        <img src="images/work3.jpg" alt="사진3">
+    </div>
+    <div>
+        <p>work4</p>
+        <img src="images/work4.jpg" alt="사진4">
+    </div>
+    <div>
+        <p>work5</p>
+        <img src="images/work5.jpg" alt="사진5">
+    </div>
+    <div>
+        <p>work6</p>
+        <img src="images/work6.jpg" alt="사진6">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        let pic = $('img');
+        $(window).scroll(function(idx,max){
+            view(0,100);
+            view(1,600);
+            view(2,1300);
+            view(3,1800);
+            view(4,2500);
+            view(5,3000);
+        })
+        function view(idx,max){
+            let st = $(window).scrollTop();
+            if(st>max){
+                pic.eq(idx).css({opacity : 1,top:50})
+            }
+        }
+    </script>
+</body>
+</html>
