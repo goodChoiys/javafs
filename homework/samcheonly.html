@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 'Nanum Gothic', sans-serif;
+            color: #333;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        /* header */
+
+        .header {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .header .common1 {
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            width: 980px;
+            height: 100px;
+        }
+
+        .header .logo {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            height: 47px;
+            width: 155;
+            transform: translateY(-50%);
+        }
+
+
+        .header .navi ul {
+            display: flex;
+            line-height: 50px;
+            align-items: center;
+            width: 980px;
+        }
+
+        .header .navi ul:first-of-type {}
+
+        .header .navi ul:last-of-type {}
+
+        .header .navi ul input {
+            width: 100px;
+            height: 30px;
+            margin: -2px 0 0;
+            padding: 6px 5px 0;
+        }
+
+
+
+
+
+        /* section1 */
+        #section1 {
+            position: relative;
+            height: 600px;
+            background: url(images/bg_visual_1.jpg) no-repeat;
+            background-size: cover;
+            text-align: center;
+
+        }
+
+        #section1 li {
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            width: 980px;
+            height: 80px;
+            transform: translate(-50%);
+            background: rgba(0, 0, 0, 0.1);
+
+            /* margin: 0 auto; */
+        }
+
+
+
+        /* section2 */
+        #section2 {
+            display: flex;
+            height: 250px;
+        }
+
+        #section2 .innerDiv1 {
+            background: orangered;
+            width: 40%;
+        }
+
+        #section2 .innerDiv2 {
+            background: greenyellow;
+            width: 20%;
+
+        }
+
+        #section2 .innerDiv3 {
+            background: blue;
+            width: 40%;
+
+        }
+        /* section3 */
+        #section3 {
+            display: flex;
+            height: 250px;
+        }
+
+        #section3 .innerDiv1 {
+            background: sandybrown;
+            width: 40%;
+        }
+
+        #section3 .innerDiv2 {
+            background: seagreen;
+            width: 20%;
+
+        }
+
+        #section3 .innerDiv3 {
+            background: salmon;
+            width: 40%;
+
+        }
+        /* section4 */
+        #section4{
+            margin: 0 auto;
+            width: 980px;
+            height: 150px;
+
+            background: darkmagenta;
+        }
+
+
+
+        /* footer */
+
+        .footer {
+
+            background: lavender;
+            height: 150px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="header">
+        <div class="common1">
+            <div class="logo"><img src="images/삼천리.gif" alt="삼천리 로고"></div>
+            <div class="navi">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">English</a></li>
+                    <input type="text">
+                </ul>
+                <ul>
+                    <li><a href="#">기업소개</a>
+                        <!-- 
+                        <ul class="subMenu">
+                            <li>그룹소개</li>
+                            <li>CEO 인사말</li>
+                            <li>연혁</li>
+                            <li>CI</li>
+                            <li>안전보건경영</li>
+                            <li>고객만족</li>
+                            <li>사회공헌</li>
+                            <li>GWP</li>
+                            <li>찾아오시는 길</li>
+                        </ul>
+                         -->
+                    </li>
+                    <li><a href="#">사업소개</a></li>
+                    <li><a href="#">R&D</a></li>
+                    <li><a href="#">투자정보</a></li>
+                    <li><a href="#">홍보센터</a></li>
+                    <li><a href="#">고객센터</a></li>
+                    <li><a href="#">인재채용</a></li>
+                    <li><a href="#">윤리경영</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <ul>
+            <li><a href="#">요금조회</a></li>
+            <li><a href="#">요금납부</a></li>
+            <li><a href="#">전출입신청</a></li>
+            <li><a href="#">신청서양식</a></li>
+            <li><strong>간편요금조회</strong>
+            <div>
+                <input type="text">
+                <a href="#">간편요금조회</a>
+            </div>
+        </li>
+            <li><a href="#">협력업체</a></li>
+        </ul>
+
+    </div>
+    <div class="section" id="section2">
+        <div class="innerDiv1"><img src="images/도시가스 관련 요금조회 납부_ 전출 전입 접수_ 자동이체신청 등 편.jpg" alt="이미지"></div>
+        <div class="innerDiv2">2</div>
+        <div class="innerDiv3">3</div>
+    </div>
+    <div class="section" id="section3">
+        <div class="innerDiv1">1</div>
+        <div class="innerDiv2">2</div>
+        <div class="innerDiv3"><img src="images/bg_report_1.jpg" alt="이미지"></div>
+    </div>
+    <div class="section" id="section4">
+        <ul>
+            <li><strong></strong><span></span></li>
+            <li><strong></strong><span></span></li>
+            <li><strong></strong><span></span></li>
+            <li><strong></strong><span></span></li>
+            <li><strong></strong><span></span></li>
+            <li><strong></strong><span></span></li>
+        </ul>
+    </div>
+    <div class="footer">
+    </div>
+</body>
+
+</html>
