@@ -125,7 +125,7 @@
             font-weight: bold;
         }
 
-        .header .navi .lower>li:nth-child(n+6) a {
+        .header .navi .lower > li:nth-child(n+6) a {
             color: #2986C8;
         }
 
@@ -140,7 +140,6 @@
 
         .header .lower li {
             margin-right: 22px;
-
         }
 
 
@@ -148,274 +147,19 @@
         .sub {
             background: #fff;
             display: none;
-
         }
 
         .sub a {
             font-size: 1rem;
-
         }
 
         .sub a:hover {
             background: #007CBC;
             color: #fff;
         }
-
-
-
-
-        /* section1 */
-        #section1 {
-            position: relative;
-            height: 600px;
-            background: url(images/bg_visual_1.jpg) no-repeat;
-            background-size: cover;
-            text-align: center;
-
-        }
-
-        #section1 a {
-            color: #fff;
-        }
-
-        #section1 .mainTxtBox {
-            width: 900px;
-            margin: 0 auto;
-            padding: 80px 0 0 14px;
-            text-align: left;
-        }
-
-        #section1 .mainTxt {
-            font: 4.4rem/1.2 'Nanum Gothic', sans-serif;
-            font-weight: bold;
-            color: #000;
-        }
-
-
-        #section1 .section1Menu {
-            position: absolute;
-            display: flex;
-            justify-content: space-between;
-            width: 980px;
-            left: 50%;
-            bottom: 5%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 8px 16px;
-            align-items: center;
-
-        }
-
-
-        #section1 .section1Menu li {
-            display: flex;
-            height: 80px;
-            align-items: center;
-            justify-content: center;
-
-        }
-
-        #section1 .section1Menu li img {
-            width: 35px;
-            height: 35px;
-        }
-
-
-        #section1 .section1Menu li a {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-
-        #section1 .section1Menu li input {
-            margin-left: 16px;
-            padding-left: 16px;
-            width: 140px;
-            height: 40px;
-        }
-
-        #section1 .section1Menu .box {
-            width: 120px;
-            height: 40px;
-            background: #007CBC;
-        }
-
-
-
-
-        /* section2 */
-        #section2 {
-            display: flex;
-            justify-content: center;
-            height: 250px;
-        }
-
-        #section2 a {
-            color: #fff;
-        }
-
-
-
-        #section2 .innerDiv1 {
-            position: relative;
-            /* background: orangered; */
-            width: 240px;
-        }
-
-        #section2 .innerDiv1 img {
-            position: absolute;
-            right: 0;
-        }
-
-
-        .tabs {
-            width: 500px;
-            padding: 24px 24px 24px 0;
-            background-clip: content-box;
-            background: #0697E1;
-        }
-
-        .tabs input,
-        .tabs>div {
-            display: none;
-        }
-
-        #btn1:checked~#tab1,
-        #btn2:checked~#tab2 {
-            display: block;
-        }
-
-        /* 탭 메뉴 - 제목/버튼 */
-        .tabs label {
-            /* display: inline-block; */
-            background: #ebdaca;
-            color: #000000;
-            padding: 4px 16px;
-            margin-bottom: 8px;
-            cursor: pointer;
-            font-size: 1.6rem;
-            font-weight: 400;
-        }
-
-        #btn1:checked+label,
-        #btn2:checked+label,
-        #btn3:checked+label,
-        #btn4:checked+label,
-        #btn5:checked+label,
-        #btn6:checked+label,
-        #btn7:checked+label {
-            background: #eee;
-            color: #000000;
-            font-size: 1.6rem;
-            font-weight: 400;
-        }
-
-
-        /* 탭 메뉴 - 공지사항 */
-        #tab1,
-        #tab2,
-        #tab3,
-        #tab4,
-        #tab5,
-        #tab6,
-        #tab7 {
-            padding-top: 16px;
-        }
-
-        #tab1 li {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        #tab1 a {
-            width: 280px;
-        }
-
-
-
-        /* 탭 메뉴 - 갤러리 */
-        #tab2 a {
-            display: inline-block;
-            width: 110px;
-            margin-right: 8px;
-        }
-
-
-        #section2 .innerDiv3 {
-            /* background: blue; */
-            width: 240px;
-            background: #007CBC;
-
-        }
-
-        /* section3 */
-        #section3 {
-            display: flex;
-            height: 250px;
-        }
-
-        #section3 .innerDiv1 {
-            /* background: sandybrown; */
-            width: 40%;
-        }
-
-        #section3 .innerDiv2 {
-            /* background: seagreen; */
-            width: 20%;
-
-        }
-
-        #section3 .innerDiv3 {
-            /* background: salmon; */
-            width: 40%;
-
-        }
-
-        /* section4 */
-        #section4 {
-            margin: 0 auto;
-            width: 980px;
-            height: 150px;
-        }
-
-        /* footer */
-
-        .footer {
-            display: flex;
-            justify-content: center;
-            background: #495860;
-            color: #ffffff;
-            height: 150px;
-        }
-
-
-        .footer .upper2 ul {
-            display: flex;
-            right: 550px;
-            margin-bottom: 30px;
-            font-size: 14px;
-            right: 50px;
-        }
-
-        .footer a {
-            color: #ffffff;
-        }
-
-        .footer .upper2 li:not(:last-of-type)::after {
-            content: '|';
-            margin: 0 16px;
-            color: rgba(255, 255, 255, 0.2);
-        }
-
-        .footer .trophy {
-            display: flex;
-            margin: 0 19px 0 0;
-            width: 10px;
-            height: 10px;
-        }
+        
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    </style>
 
 </head>
 
@@ -510,66 +254,7 @@
             </div>
         </div>
     </div>
-    <div class="section" id="section1">
-        <div class="mainTxtBox">
-            <p class="mainTxt">신뢰와 나눔 속에
-                <br>사랑 받는 기업으로
-            </p>
-        </div>
-        <ul class="section1Menu">
-            <li>
-                <img src="images/ico_quick01.png" alt="아이콘1">
-                <a href="https://www.samchully.co.kr/customer/gas/inquiry/check.do">요금조회</a>
-            </li>
-            <li>
-                <img src="images/ico_quick02.png" alt="아이콘2">
-                <a href="https://www.samchully.co.kr/customer/gas/inquiry/charge.do">요금납부</a>
-            </li>
-            <li>
-                <img src="images/ico_quick03.png" alt="아이콘3">
-                <a href="http://simplereg.samchully.co.kr/">전출입신청</a>
-            </li>
-            <li>
-                <img src="images/ico_quick04.png" alt="아이콘4">
-                <a href="https://www.samchully.co.kr/customer/gas/request/format/list.do">신청서양식</a>
-            </li>
-            <li class="search">
-                <a href="#">간편요금조회</a>
-                <input type="text">
-            </li>
-            <li class="box">
-                <a
-                    href="https://www.samchully.co.kr/member/login.do?returnUrl=/cooperation/notice/coperationNotice.do">협력업체</a>
-            </li>
-        </ul>
 
-    </div>
-    <div class="footer">
-        <div class="footerCont">
-            <img src="images/bg_footer_1.gif" alt="푸터 삼천리 로고">
-            <div class="upper2">
-                <ul>
-                    <li><a href="#">개인정보 처리 방침 </a></li>
-                    <li><a href="#">메일주소 무단수집거부 </a></li>
-                    <li><a href="#">신용정보 조회사실 통보공시 </a></li>
-                    <li><a href="#">이용약관</a></li>
-                </ul>
-            </div>
-            <div class="lower2">
-                <div>
-                    <p>07328 서울특별시 영등포구 국제금융로 6길 42 (주)삼천리</p>
-                    <p>Copyright samchully Corp. All rights reserved.</p>
-                </div>
-                <div class="trophy">
-                    <img src="images/존경받는기업.jpg" alt="한국에서 가장 존경받는 기업">
-                    <img src="images/소비자중심경영인증기업.gif" alt="소비자중심경영 인증기업">
-                    <img src="images/올해의 CCM.gif" alt="소비자중심경영 우수기업">
-                    <img src="images/교육기부 진로체험 인증기관.png" alt="교육기부 진로체험 인증기관">
-                </div>
-            </div>
-        </div>
-
-    </div>
     <script>
 
 
@@ -583,7 +268,6 @@
 
 
     </script>
-</body>
 </body>
 
 </html>
