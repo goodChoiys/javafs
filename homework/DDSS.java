@@ -4,25 +4,22 @@ import java.util.Scanner;
 
 public class DDSS {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
 
-        int hour = scanner.nextInt(); // 시
-        int minute = scanner.nextInt(); // 분
-        scanner.close();
+        int H = scan.nextInt();
+        int M = scan.nextInt();
 
-        if (minute < 45) {
-            hour--;
-            minute = 60 - (45 - minute);
-
-            if (hour < 0) {
-                hour = 23;
+        if (M < 45) {
+            if (H == 0) {
+                H = 23;
+            } else {
+                H--;
             }
-
-            System.out.println(hour + " " + minute);
+            M = M - 45 + 60;
         } else {
-            System.out.println(hour + " " + (minute - 45));
-
+            M -= 45;
         }
 
+        System.out.println(H + " " + M);
     }
 }
