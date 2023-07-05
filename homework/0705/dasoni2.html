@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월트디즈니</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+        /* 초기화1 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* 월트디즈니 소스 코드 */
+        /* A영역 */
+        #innerHeader {
+            padding-top: 30px;
+        }
+
+        /* GNB (Global Navigation Bar)*/
+        nav {
+            display: flex;
+            position: relative;
+            z-index: 9999;
+            height: 87px;
+            padding: 0 32px;
+            background: #000;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav_bg {
+            /* 앱솔루트일때 width는 요소 크기 만큼 이기 때문에 요소가없으면 0 그래서 100% 별도 지정함 */
+            position: absolute;
+            left: 0;
+            top: 87px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        /* 폰트의 위계를 지정한다: 크기, 색, 굵기 */
+
+        /* 1depth: main */
+        .main {
+            display: flex;
+        }
+        
+        .main>li {
+            position: relative; /* 삼각형 모양 나오게 처리할려고 렐러티브처리 */
+            width: 16rem;
+            height: 8.8rem;
+            /* 메인메뉴와 서브메뉴 모두 텍스트 가운데 정렬 */
+            text-align: center;
+        }
+
+        .main>li>a {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 30px 0;
+            color: #fff;
+            background: #000;
+        }
+
+        .main>li>a:hover {
+            background: rgba(200, 200, 200, 0.8);
+        }
+
+        .main>li>a:hover:after {
+            position: absolute;
+            top: 88px;
+            left: 50%;
+            /* left: calc(50% - 15px); */
+            transform: translateX(-50%);
+            content: '';
+            border-top: 10px solid;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            color: rgba(200, 200, 200, 0.8);
+        }
+
+        /* 2depth: sub */
+        .sub {
+            display: none;
+            padding-top: 15px 0 15px;
+            /* background: salmon; */
+        }
+
+        .sub a {
+            color: #ccc;
+            font-size: 1.4rem;
+            font-weight: 300;
+            padding: 3px 0px;
+            line-height: 2;
+        }
+
+        .sub a:hover {
+            background: rgba(200, 200, 200, 0.4);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- nav#gnb>ul.main>li*4>a{메인메뉴$}+ul.sub>li*4>a{서브메뉴$} -->
+    <nav id="gnb">
+        <div class="logo">
+            <a href="#"><img src="../assets/92-4/logo.png" alt="월트디즈니로고"></a>
+        </div>
+        <div class="nav_bg"></div>
+        <ul class="main">
+            <li><a href="#">DISENY</a>
+                <ul class="sub">
+                    <li><a href="#">브랜드사이트</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">블로그</a></li>
+                </ul>
+            </li>
+            <li><a href="#">MARVEL</a>
+                <ul class="sub">
+                    <li><a href="#">브랜드사이트</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">블로그</a></li>
+                </ul>
+            </li>
+            <li><a href="#">STAR WARS</a>
+                <ul class="sub">
+                    <li><a href="#">브랜드사이트</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">블로그</a></li>
+                </ul>
+            </li>
+            <li><a href="#">NATIONAL GEOGRAPHIC</a>
+                <ul class="sub">
+                    <li><a href="#">브랜드사이트</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">블로그</a></li>
+                </ul>
+            </li>
+            <li><a href="#">20th CENTURY STUDIOS</a>
+                <ul class="sub">
+                    <li><a href="#">브랜드사이트</a></li>
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">페이스북</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">블로그</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ETC</a>
+                <ul class="sub">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">고객의소리</a></li>
+                    <li><a href="#"><span></span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="logo">
+            <a href="#"><img src="../assets/92-4/logo.png" alt="월트디즈니로고"></a>
+        </div>
+    </nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 내비게이션바
+        $('.main > li > a').mouseenter(function (e) {
+            // a태그 기본 이벤트 제거
+            e.preventDefault();
+            $('.sub').stop().slideDown(400);
+            $('.nav_bg').stop().animate({ height: 200 }, 400);
+        });
+        $('nav').mouseleave(function () {
+            $('.sub').stop().slideUp(400);
+            $('.nav_bg').stop().animate({ height: 0 }, 400);
+        });
+    </script>
+</body>
+
+</html>

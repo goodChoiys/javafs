@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다소니_최윤석</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem 'NanumSquare', sans-serif;
+            color: #000;
+            background: #fff;
+            margin: 0 auto;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            font-size: 1.6rem;
+            font-weight: normal;
+            text-decoration: none;
+            color: #000000;
+        }
+
+        #common {
+            width: 100%;
+        }
+
+        #common .section {
+            width: 100%;
+            height: 100vh;
+        }
+
+        #common .header {
+            position: relative;
+            width: 1903px;
+            height: 161px;
+            text-align: center;
+        }
+
+        #common .header .headerTop {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 111px;
+        }
+
+        #common .header .headerTop a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 252px;
+            height: 50px;
+            background: url(images/dasoni_logo.png);
+        }
+
+        #common .header .nav_bg {
+            /* 앱솔루트일때 width는 요소 크기 만큼 이기 때문에 요소가없으면 0 그래서 100% 별도 지정함 */
+            position: absolute;
+            left: 0;
+            top: 161px;
+            width: 100%;
+            background: #fff;
+        }
+
+        #common .header .nav {
+            position: absolute;
+            left: 0;
+            top: 111px;
+            width: 100%;
+            height: 50px;
+            border-top: 2px solid;
+            border-image: linear-gradient(to right, #7BD79C, #FBDE71, #AA8DD8, #ffa760);
+            border-image-slice: 1;
+        }
+
+        #common .header .nav>ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        #common .header .nav>ul>li {
+            line-height: 50px;
+            width: 200px;
+            height: 50px;
+
+        }
+
+        #common .header .nav>ul:hover {
+
+            border-bottom: 2px solid;
+            border-image: linear-gradient(to right, #7BD79C, #FBDE71, #AA8DD8, #ffa760);
+            border-image-slice: 1;
+        }
+
+        #common .header .nav>ul>li>ul>li>a:hover {
+
+            background: url(images/menu_hover.png) no-repeat;
+        }
+
+        /* section1 시작 */
+
+
+        /* 섹션1 - 캐로셀 */
+        /* bx-wrapper을 초기화 */
+        .bx-wrapper {
+            box-shadow: none;
+            border: none;
+            background: transparent;
+        }
+
+        #slideWrap {
+            position: relative;
+            height: 100vh;
+            /* padding: 0 3%; */
+        }
+
+        #slideWrap .slider li {
+            /* 뭐가 문제인지 찾아볼 것 */
+            width: 100% !important;
+            height: 100vh;
+            padding: 150px 0;
+            text-align: center;
+            background: no-repeat 50% 50%/auto;
+        }
+
+        #slideWrap .slider li div {
+            position: relative;
+            top: 0;
+            opacity: 0;
+            font-size: 2rem;
+            line-height: 1.8;
+        }
+
+        #slideWrap .slider li div span {
+            display: block;
+            font-size: 3.5rem;
+        }
+
+        #slideWrap .slider li img {
+            display: inline-block;
+        }
+
+        /* 배경 */
+        #slideWrap .slider .bg1 {
+            background-color: #FFC248;
+            background-image: url(../images/0613pic/image\ 1.png);
+        }
+
+        #slideWrap .slider .bg2 {
+            background-color: #FFC1B3;
+            background-image: url(../images/0613pic/image\ 2.png);
+        }
+
+        #slideWrap .slider .bg3 {
+            background-color: #FE8A7F;
+            background-image: url(../images/0613pic/image\ 3.png);
+        }
+
+        #slideWrap .slider .bg4 {
+            background-color: #C1554D;
+            background-image: url(../images/0613pic/image\ 5.png);
+        }
+
+        /* 이전/이후 버튼 */
+        #slideWrap .btn {
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            transform: translateY(-50%);
+            /* line-height: 100px; */
+            width: 100%;
+            height: 50px;
+        }
+
+        #slideWrap .btn a {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 5rem;
+            color: #fff;
+            transition: .3s;
+        }
+
+        #slideWrap .btn a:hover {
+            color: #333;
+        }
+
+        #slideWrap #prev {
+            left: 10%;
+        }
+
+        #slideWrap #next {
+            right: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="common">
+        <div class="header">
+            <div class="headerTop">
+                <a href="http://dasoni.or.kr/index.php">
+                </a>
+            </div>
+            <div class="nav_bg"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">ABOUT 다소니</a>
+                        <ul>
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">오시는길</a></li>
+                            <li><a href="#">마음산책</a></li>
+                            <li><a href="#">후기</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">상담진 소개</a>
+                        <ul>
+                            <li><a href="#">대표/슈퍼바이저</a></li>
+                            <li><a href="#">다소니 상담진</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">심리상담</a>
+                        <ul>
+                            <li><a href="#">성인심리상담</a></li>
+                            <li><a href="#">청소년/아동심리상담</a></li>
+                            <li><a href="#">부부상담</a></li>
+                            <li><a href="#">가족상</a>담</li>
+                            <li><a href="#">심리상담 예약신청</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">심리검사</a>
+                        <ul>
+                            <li><a href="#">다소니전문심리검사</a></li>
+                            <li><a href="#">종합심리평가</a></li>
+                            <li><a href="#">신경심리평가</a></li>
+                            <li><a href="#">단일검사</a></li>
+                            <li><a href="#">심리검사 예약신청</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">관계테라피</a>
+                        <ul>
+                            <li><a href="#">부부관계테라피</a></li>
+                            <li><a href="#">가족관계테라피</a></li>
+                            <li><a href="#">커플관계테라피</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="section1" class="section">
+            <div><img src="images/main_img1.jpg" alt="메인이미지1"></div>
+            <div><img src="images/main_img2.jpg" alt="메인이미지2"></div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 내비게이션바
+        $('#common .header .nav').mouseenter(function (e) {
+            // a태그 기본 이벤트 제거
+            e.preventDefault();
+            $('.nav > ul > li > ul').stop().slideDown(0);
+            $('.nav_bg').stop().animate({ height: 333 }, 200);
+        });
+        $('#common .header .nav').mouseleave(function () {
+            $('.nav > ul > li > ul').stop().slideUp(0);
+            $('.nav_bg').stop().animate({ height: 0 }, 200);
+        });
+    </script>
+</body>
+
+</html>
