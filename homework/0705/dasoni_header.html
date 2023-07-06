@@ -119,100 +119,6 @@
 
         /* section1 시작 */
 
-
-        /* 섹션1 - 캐로셀 */
-        /* bx-wrapper을 초기화 */
-        .bx-wrapper {
-            box-shadow: none;
-            border: none;
-            background: transparent;
-        }
-
-        #slideWrap {
-            position: relative;
-            height: 100vh;
-            /* padding: 0 3%; */
-        }
-
-        #slideWrap .slider li {
-            /* 뭐가 문제인지 찾아볼 것 */
-            width: 100% !important;
-            height: 100vh;
-            padding: 150px 0;
-            text-align: center;
-            background: no-repeat 50% 50%/auto;
-        }
-
-        #slideWrap .slider li div {
-            position: relative;
-            top: 0;
-            opacity: 0;
-            font-size: 2rem;
-            line-height: 1.8;
-        }
-
-        #slideWrap .slider li div span {
-            display: block;
-            font-size: 3.5rem;
-        }
-
-        #slideWrap .slider li img {
-            display: inline-block;
-        }
-
-        /* 배경 */
-        #slideWrap .slider .bg1 {
-            background-color: #FFC248;
-            background-image: url(../images/0613pic/image\ 1.png);
-        }
-
-        #slideWrap .slider .bg2 {
-            background-color: #FFC1B3;
-            background-image: url(../images/0613pic/image\ 2.png);
-        }
-
-        #slideWrap .slider .bg3 {
-            background-color: #FE8A7F;
-            background-image: url(../images/0613pic/image\ 3.png);
-        }
-
-        #slideWrap .slider .bg4 {
-            background-color: #C1554D;
-            background-image: url(../images/0613pic/image\ 5.png);
-        }
-
-        /* 이전/이후 버튼 */
-        #slideWrap .btn {
-            position: absolute;
-            z-index: 999;
-            top: 50%;
-            transform: translateY(-50%);
-            /* line-height: 100px; */
-            width: 100%;
-            height: 50px;
-        }
-
-        #slideWrap .btn a {
-            display: block;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 5rem;
-            color: #fff;
-            transition: .3s;
-        }
-
-        #slideWrap .btn a:hover {
-            color: #333;
-        }
-
-        #slideWrap #prev {
-            left: 10%;
-        }
-
-        #slideWrap #next {
-            right: 10%;
-        }
     </style>
 </head>
 
@@ -269,13 +175,18 @@
                 </ul>
             </div>
         </div>
-        <div id="section1" class="section">
-            <div><img src="images/main_img1.jpg" alt="메인이미지1"></div>
-            <div><img src="images/main_img2.jpg" alt="메인이미지2"></div>
+        <div id="secton1">
+            <div class="bxslider">
+                <div><img src="images/main_img1.jpg" title="메인이미지1" /></div>
+                <div><img src="images/main_img2.jpg" title="메인이미지2" /></div>
+            </div>
         </div>
+
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
     <script>
         // 내비게이션바
         $('#common .header .nav').mouseenter(function (e) {
@@ -288,6 +199,18 @@
             $('.nav > ul > li > ul').stop().slideUp(0);
             $('.nav_bg').stop().animate({ height: 0 }, 200);
         });
+
+        // section1
+        $(function () {
+            $('.bxslider').bxSlider({
+                mode: 'fade',
+                captions: true,
+                slideWidth: 600
+            });
+        });
+
+
+
     </script>
 </body>
 
