@@ -1,0 +1,403 @@
+@charset "utf-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font: 1.5rem/1.8 'Nanum Gothic', sans-serif;
+    color: #333;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* header */
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.header .common1 {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    width: 980px;
+    height: 100px;
+}
+
+
+
+.header .common1 .hdInCom {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.header .navi {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.header .navi .upper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    line-height: 50px;
+    font-size: 1.3rem;
+}
+
+.header .upper li:not(:nth-of-type(n+5))::after {
+    content: '|';
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 8px;
+}
+
+.header .upper li:nth-of-type(4)::after {
+    content: '';
+}
+
+.header .upper input {
+    width: 150px;
+    height: 26px;
+    background: #EFF4F7;
+    border: 0;
+}
+
+.header .navi .lower {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.header .lower span::before {
+    content: '|';
+    color: rgba(0, 0, 0, 0.8);
+    margin-right: 16px;
+}
+
+
+.header .navi .lower a {
+    display: inline-block;
+    height: 100%;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.header .navi .lower>li:nth-child(n+6) a {
+    color: #2986C8;
+}
+
+.header .navi .lower a:hover {
+    border-bottom: 4px solid #007CBC;
+}
+
+.header .lower img {
+    width: 25px;
+    height: 25px;
+}
+
+.header .lower li {
+    margin-right: 22px;
+
+}
+
+
+/* 2depth_subMenu */
+.sub {
+    background: #fff;
+    display: none;
+
+}
+
+.sub a {
+    font-size: 1rem;
+
+}
+
+.sub a:hover {
+    background: #007CBC;
+    color: #fff;
+}
+
+
+
+
+/* section1 */
+#section1 {
+    position: relative;
+    height: 600px;
+    background: url(images/bg_visual_1.jpg) no-repeat;
+    background-size: cover;
+    text-align: center;
+
+}
+
+#section1 a {
+    color: #fff;
+}
+
+#section1 .mainTxtBox {
+    width: 900px;
+    margin: 0 auto;
+    padding: 80px 0 0 14px;
+    text-align: left;
+}
+
+#section1 .mainTxt {
+    font: 4.4rem/1.2 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    color: #000;
+}
+
+
+#section1 .section1Menu {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 980px;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    align-items: center;
+
+}
+
+
+#section1 .section1Menu li {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#section1 .section1Menu li img {
+    width: 35px;
+    height: 35px;
+}
+
+
+#section1 .section1Menu li a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+#section1 .section1Menu li input {
+    margin-left: 16px;
+    padding-left: 16px;
+    width: 140px;
+    height: 40px;
+}
+
+#section1 .section1Menu .box {
+    width: 120px;
+    height: 40px;
+    background: #007CBC;
+}
+
+
+
+
+/* section2 */
+#section2 {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+}
+
+#section2 a {
+    color: #fff;
+}
+
+
+
+#section2 .innerDiv1 {
+    position: relative;
+    /* background: orangered; */
+    width: 240px;
+}
+
+#section2 .innerDiv1 img {
+    position: absolute;
+    right: 0;
+}
+
+
+.tabs {
+    width: 500px;
+    padding: 24px 24px 24px 0;
+    background-clip: content-box;
+    background: #0697E1;
+}
+
+.tabs input,
+.tabs>div {
+    display: none;
+}
+
+#btn1:checked~#tab1,
+#btn2:checked~#tab2 {
+    display: block;
+}
+
+/* 탭 메뉴 - 제목/버튼 */
+.tabs label {
+    /* display: inline-block; */
+    background: #ebdaca;
+    color: #000000;
+    padding: 4px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+#btn1:checked+label,
+#btn2:checked+label,
+#btn3:checked+label,
+#btn4:checked+label,
+#btn5:checked+label,
+#btn6:checked+label,
+#btn7:checked+label {
+    background: #eee;
+    color: #000000;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+
+/* 탭 메뉴 - 공지사항 */
+#tab1,
+#tab2,
+#tab3,
+#tab4,
+#tab5,
+#tab6,
+#tab7 {
+    padding-top: 16px;
+}
+
+#tab1 li {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tab1 a {
+    width: 280px;
+}
+
+
+
+/* 탭 메뉴 - 갤러리 */
+#tab2 a {
+    display: inline-block;
+    width: 110px;
+    margin-right: 8px;
+}
+
+
+#section2 .innerDiv3 {
+    /* background: blue; */
+    width: 240px;
+    background: #007CBC;
+
+}
+
+/* section3 */
+#section3 {
+    display: flex;
+    height: 250px;
+}
+
+#section3 .innerDiv1 {
+    /* background: sandybrown; */
+    width: 40%;
+}
+
+#section3 .innerDiv2 {
+    /* background: seagreen; */
+    width: 20%;
+
+}
+
+#section3 .innerDiv3 {
+    /* background: salmon; */
+    width: 40%;
+
+}
+
+/* section4 */
+#section4 {
+    margin: 0 auto;
+    width: 980px;
+    height: 150px;
+}
+
+/* footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background: #495860;
+    color: #ffffff;
+    height: 150px;
+}
+
+
+.footer .upper2 ul {
+    display: flex;
+    right: 550px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    right: 50px;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+.footer .upper2 li:not(:last-of-type)::after {
+    content: '|';
+    margin: 0 16px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.footer .trophy {
+    display: flex;
+    margin: 0 19px 0 0;
+    width: 10px;
+    height: 10px;
+}

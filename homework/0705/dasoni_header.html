@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>다소니_최윤석</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.15/jquery.bxslider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <style>
         * {
             padding: 0;
@@ -118,7 +121,6 @@
         }
 
         /* section1 시작 */
-
     </style>
 </head>
 
@@ -184,8 +186,7 @@
 
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
 
     <script>
         // 내비게이션바
@@ -209,7 +210,18 @@
             });
         });
 
-
+        $('.bxslider').bxSlider({
+            mode: 'horizontal',// 가로 방향 수평 슬라이드
+            speed: 500,        // 이동 속도를 설정
+            pager: false,      // 현재 위치 페이징 표시 여부 설정
+            moveSlides: 1,     // 슬라이드 이동시 개수
+            slideWidth: 1903,   // 슬라이드 너비
+            minSlides: 1,      // 최소 노출 개수
+            maxSlides: 1,      // 최대 노출 개수
+            slideMargin: 1,    // 슬라이드간의 간격
+            auto: false,        // 자동 실행 여부
+            controls: true    // 이전 다음 버튼 노출 여부
+        });
 
     </script>
 </body>
