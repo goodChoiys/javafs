@@ -77,8 +77,8 @@
         }
 
         #common .header .nav_bg {
-            /* 앱솔루트일때 width는 요소 크기 만큼 이기 때문에 요소가없으면 0 그래서 100% 별도 지정함 */
             position: absolute;
+            z-index: 999;
             left: 0;
             top: 161px;
             width: 100%;
@@ -87,6 +87,7 @@
 
         #common .header .nav {
             position: absolute;
+            z-index: 999;
             left: 0;
             top: 111px;
             width: 100%;
@@ -109,7 +110,6 @@
         }
 
         #common .header .nav>ul:hover {
-
             border-bottom: 2px solid;
             border-image: linear-gradient(to right, #7BD79C, #FBDE71, #AA8DD8, #ffa760);
             border-image-slice: 1;
@@ -121,7 +121,174 @@
         }
 
         /* section1 시작 */
+        #section1 {
+            position: relative;
+            height: 840px;
+            width: 100%;
+        }
+
+        #section1 .slider li {
+            position: relative;
+            text-align: center;
+            height: 820px;
+            background: no-repeat 50% 50%/auto;
+        }
+
+        /* 배경 */
+        #section1 .slider .bg1 {
+            background-image: url(images/main_img1.jpg);
+        }
+
+        #section1 .slider .bg2 {
+            background-image: url(images/main_img2.jpg);
+        }
+
+        #section1 .slider li div {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 900;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 2rem;
+            width: 636px;
+            height: 296px;
+            align-items: center;
+            padding: 40px 0;
+            background: url(images/main_txt_box.png);
+
+        }
+
+        #section1 .slider li div span {
+            display: block;
+            margin: 10px;
+            font-weight: 700;
+        }
+
+        .impact {
+            font-size: 3.5rem;
+        }
+
+        .radius1 {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translate(-25%, -50%);
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 2px solid black;
+            border-radius: 50%;
+        }
+
+        .radius2 {
+            position: absolute;
+            top: 50%;
+            right: 25%;
+            transform: translate(-25%, -50%);
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 2px solid black;
+            border-radius: 50%;
+
+        }
+
+        /* 이전/이후 버튼 */
+        #section1 .btn {
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+        }
+
+        #section1 .btn a {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #section1 #prev {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        #section1 #next {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
+    <script>
+        $(function () {
+            // 내비게이션바
+            $('#common .header .nav').mouseenter(function (e) {
+                // a태그 기본 이벤트 제거
+                e.preventDefault();
+                $('.nav > ul > li > ul').stop().slideDown(0);
+                $('.nav_bg').stop().animate({ height: 333 }, 300);
+            });
+            $('#common .header .nav').mouseleave(function () {
+                $('.nav > ul > li > ul').stop().slideUp(0);
+                $('.nav_bg').stop().animate({ height: 0 }, 300);
+            });
+
+            // section1
+            const slider = $('.slider').bxSlider({
+                mode: 'fade',
+                // 자동 슬라이드
+                auto: true,
+                stopAutoOnClick: true,
+                autoHover: true,
+                pager: false,
+                controls: false,
+                speed: 600,
+                pause: 4000,
+                onSlideBefore: function () {
+                    autoPager();
+                },
+                onSlideAfter: function () {
+                    titMotion();
+                }
+            });
+
+            function titMotion() {
+                // 슬라이드 전환 직후의 텍스트 모션
+                $('#section1 .slider li div').animate({ opacity: 1 });
+            }
+
+            function autoPager() {
+                // 슬라이드 전환 직전의 텍스트 모션
+                $('#section1 .slider li div').css({ opacity: 0 });
+            }
+
+
+
+            // 이전 버튼
+            $('#section1 #prev').click(function (e) {
+                e.preventDefault();
+                // 이전 슬라이드로 이동
+                slider.goToPrevSlide();
+                autoPager();
+                return false;
+            });
+            // 이후 버튼
+            $('#section1 #next').click(function (e) {
+                e.preventDefault();
+                // 다음 슬라이드로 이동
+                slider.goToNextSlide();
+                autoPager();
+                return false;
+            });
+        });
+
+    </script>
 </head>
 
 <body>
@@ -177,53 +344,42 @@
                 </ul>
             </div>
         </div>
-        <div id="secton1">
-            <div class="bxslider">
-                <div><img src="images/main_img1.jpg" title="메인이미지1" /></div>
-                <div><img src="images/main_img2.jpg" title="메인이미지2" /></div>
+        <div id="section1">
+
+            <!-- 슬라이드 배경 이미지 -->
+            <ul class="slider">
+                <li class="bg1">
+                    <div class="tit">
+                        <span>언텍트시대 필수 과정</span>
+                        <span class="impact">비대면 상담</span>
+                        <span class="impact">비대면검사</span>
+                        <span>이제 당신의 공간에서 전문상담사를 만나보세요</span>
+                    </div>
+                </li>
+                <li class="bg2">
+                    <div class="tit">
+                        <span>가격부담 Down x 치료기대효과 Up</span>
+                        <span class="impact">다소니 관계 테라피</span>
+                        <span>검사와 상담이 필요한 여러분께 딱!</span>
+                    </div>
+                </li>
+
+            </ul>
+
+            <!-- 이전/이후 버튼 -->
+            <!-- 폰트어썸 -->
+            <div class="btn">
+                <div class="radius1">
+                    <a href="#" id="prev"><img src="images/btn_slide_prev.png" alt="이전버튼"></a>
+                </div>
+                <div class="radius2">
+                    <a href="#" id="next"><img src="images/btn_slide_next.png" alt="이후버튼"></a>
+                </div>
             </div>
         </div>
 
 
-    </div>
 
-
-    <script>
-        // 내비게이션바
-        $('#common .header .nav').mouseenter(function (e) {
-            // a태그 기본 이벤트 제거
-            e.preventDefault();
-            $('.nav > ul > li > ul').stop().slideDown(0);
-            $('.nav_bg').stop().animate({ height: 333 }, 200);
-        });
-        $('#common .header .nav').mouseleave(function () {
-            $('.nav > ul > li > ul').stop().slideUp(0);
-            $('.nav_bg').stop().animate({ height: 0 }, 200);
-        });
-
-        // section1
-        $(function () {
-            $('.bxslider').bxSlider({
-                mode: 'fade',
-                captions: true,
-                slideWidth: 600
-            });
-        });
-
-        $('.bxslider').bxSlider({
-            mode: 'horizontal',// 가로 방향 수평 슬라이드
-            speed: 500,        // 이동 속도를 설정
-            pager: false,      // 현재 위치 페이징 표시 여부 설정
-            moveSlides: 1,     // 슬라이드 이동시 개수
-            slideWidth: 1903,   // 슬라이드 너비
-            minSlides: 1,      // 최소 노출 개수
-            maxSlides: 1,      // 최대 노출 개수
-            slideMargin: 1,    // 슬라이드간의 간격
-            auto: false,        // 자동 실행 여부
-            controls: true    // 이전 다음 버튼 노출 여부
-        });
-
-    </script>
 </body>
 
 </html>
