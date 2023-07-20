@@ -6,9 +6,10 @@ import hellospring.hello.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-
+@Transactional
 //@Service
 public class MemberService {
 
@@ -54,10 +55,18 @@ public class MemberService {
         //메서드 추출  ctrl + alt + m
         //안되면 전구클릭   extract method 를 클릭해서 추출
 
+        long start = System.currentTimeMillis();
+        try{
         validateDuplicateMember(member); //중복된회원검증
         // 회원가입시 아이디를 반환시켜준다.
         memberRepository.save(member);
         return member.getId();
+        }finally {
+            long finish = System.currentTimeMillis();
+            long timeMs = finish - start;
+            System.out.println("join " + timeMs + "ms");
+        }
+
     }
 
     private void validateDuplicateMember(Member member) {
@@ -69,7 +78,16 @@ public class MemberService {
 
     public List<Member> findMembers(){
         return memberRepository.findAll();
-    }
+//        long start = System.currentTimeMillis();
+//            try{
+//                return memberRepository.findAll();
+//            } finally {
+//                long finish = System.currentTimeMillis();
+//                long timeMs = finish -start;
+//                System.out.println("findMembers " + timeMs + "ms");
+//            }
+//            return memberRepository.findAll();
+        }
 
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);

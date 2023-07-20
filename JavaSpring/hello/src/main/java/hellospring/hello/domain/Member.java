@@ -1,7 +1,15 @@
 package hellospring.hello.domain;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Member {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String name;
 
     public Long getId() {
@@ -22,7 +30,7 @@ public class Member {
 
     @Override
     public String toString() {
-            return "Member{" +
+        return "Member{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
