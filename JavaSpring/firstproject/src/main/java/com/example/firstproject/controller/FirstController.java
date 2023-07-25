@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FirstController {
 //    @GetMapping("/hi") //주소줄에 hi를입력하면 hello로 반환
     @GetMapping("hello") //주소줄에 입력값
-
-    public String itsmine(Model model){
-        model.addAttribute("data","Hello!!");
+    public String itsmine(){
         return "hello";
     }
 
