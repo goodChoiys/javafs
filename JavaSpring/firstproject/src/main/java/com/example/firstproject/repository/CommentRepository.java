@@ -9,9 +9,10 @@ import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
-    @Query(value = "select * from comment where article_id = :articleId",nativeQuery = true)
+    @Query(value = "select * from comment where article_id = :articleId",
+            nativeQuery = true)
     List<Comment> findByArticleId(@Param("articleId") Long articleId);
-    // 옛날방식 META_INF 에 xml 파일을 생성하여 작성해야함
-    List<Comment> findByNickname(String nickname);
 
+
+    List<Comment> findByNickname(String nickname);
 }

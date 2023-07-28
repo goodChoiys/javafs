@@ -16,12 +16,13 @@
         </tr>
     {{/article}}
     </tbody>
-
 </table>
-<!--    수정 링클 추가-->
-<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
-<a href="/articles/{{article.id}}/delete" class="btn btn-Danger">Delete</a>
-
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">EDIT</a>
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">Delete</a>
 <a href="/articles">Go to Article List</a>
-<!--상세페이지에서 목록으로-->
+
+{{>comments/_comments}}
+<!-- 상세페이지에서 목록으로-->
+
+
 {{>layouts/footer}}

@@ -8,6 +8,8 @@ import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -27,10 +29,18 @@ public class Article {
     @Column
     private String content;
 
+//    @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Comment> comments = new ArrayList<>();
+
+
+
     public void patch(Article article) {
-        if(article.title != null)
+        if (article.title != null)
             this.title = article.title;
-        if(article.content != null)
+        if (article.content != null)
             this.content = article.content;
     }
+
+
 }
+

@@ -1,4 +1,5 @@
 {{>layouts/header}}
+
 <table class="table">
     <thead>
     <tr>
@@ -16,12 +17,9 @@
         </tr>
     {{/article}}
     </tbody>
+    </table>
 
-</table>
-<!--    수정 링클 추가-->
-<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
-<a href="/articles/{{article.id}}/delete" class="btn btn-Danger">Delete</a>
+    <a href="/articles">Go to Article List</a>
 
-<a href="/articles">Go to Article List</a>
-<!--상세페이지에서 목록으로-->
-{{>layouts/footer}}
+    {{>layouts/footer}}
+
