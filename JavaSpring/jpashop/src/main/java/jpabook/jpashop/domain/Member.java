@@ -30,4 +30,12 @@ public class Member {
     // Member 엔티티와의 관계를 매필하고 'mappedBy' 속성에는 이 관계를 정의하는 필드명인
     // member 속성이 존재한다.
 
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
