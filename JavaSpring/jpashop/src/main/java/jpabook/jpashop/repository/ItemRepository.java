@@ -12,6 +12,8 @@ import java.util.List;
 public class ItemRepository {
     private final EntityManager em; // 무조건 넣어줘야
 
+    /* 굉장히 중요함 */
+    // 아이디에 null값이 아니면 merge해라(update)
     public void save(Item item){
         if(item.getId() == null){
             em.persist(item);
