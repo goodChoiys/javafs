@@ -239,17 +239,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         const tabBtn = $('.thumb li'),
-            bigImg = $('.big li'),
-            txt = $('.txt li');
+            bigImg = $('.big li');
+            // txt = $('.txt li');
 
         tabBtn.click(function () {
             let idx = $(this).index();
             tabBtn.removeClass('active');
             bigImg.removeClass('active');
-            txt.removeClass('active');
+            // txt.removeClass('active');
             $(this).addClass('active');
             bigImg.eq(idx).addClass('active');
-            txt.eq(idx).addClass('active');
+            // txt.eq(idx).addClass('active');
         });
 
 
