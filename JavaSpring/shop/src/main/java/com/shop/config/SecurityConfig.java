@@ -14,7 +14,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
     @Autowired
     MemberService memberService;
 
@@ -27,18 +26,20 @@ public class SecurityConfig {
                 .failureUrl("/members/login/error")
                 .and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher(".members/logout"))
-                .logoutSuccessUrl("/");
+                .logoutRequestMatcher(new AntPathRequestMatcher("/members/logout"))
+                .logoutSuccessUrl("/")
+        ;
+        http.authorizeRequests()
+                .mvcMatchers("/css/**", "/js/**", "/img/**").permitAll() /*모두 접근 가능*/
+                .mvcMatchers("/", "/members/**", "/item/**", "/images/**").permitAll() /*모두 접근 가능*/
+                .mvcMatchers("/admin/**").hasRole("ADMIN") /*관리자만 접근 가능*/
+                .anyRequest().authenticated()
+        ;
 
+        http.exceptionHandling()
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint())
+        ;
 
-        /*http.authorizeRequests()
-                .requestMatchers("/css/**","/js/**","/img/**").permitAll()
-                .requestMatchers("/","/members/**","/item/**","/images/**").permitAll()
-                .requestMatchers("/admin/**").hasRole("ADMIN")
-                .anyRequest().authenticated();
-                http.exceptionHandling()
-                .authenticationEntryPoint(new CustomAuthenticationEntryPoint());
-        */
         return http.build();
     }
 
@@ -47,7 +48,5 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    //패스워드 암호화
-
-
 }
+//패스워드 암호화

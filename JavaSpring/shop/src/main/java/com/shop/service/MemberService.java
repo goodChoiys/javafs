@@ -40,7 +40,7 @@ public class MemberService implements UserDetailsService {
         return User.builder() /*로그인시 이메일 비밀번호 유저와 어드민을 가지고있는다. */
                 .username(member.getEmail())
                 .password(member.getPassword())
-                .roles(member.getRole().toString())
+                .roles(member.getRole().toString()) /*이거 때문에 header에 'ROLE_ADMIN' 되는것 */
                 .build();
     }
 }
