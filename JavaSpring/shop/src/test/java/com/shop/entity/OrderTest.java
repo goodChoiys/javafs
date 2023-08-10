@@ -5,6 +5,7 @@ import com.shop.repository.ItemRepository;
 import com.shop.repository.MemberRepository;
 import com.shop.repository.OrderItemRepository;
 import com.shop.repository.OrderRepository;
+import org.aspectj.weaver.ast.Or;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,4 +85,49 @@ class OrderTest {
     // 저장한 OrderItem 엔티티의 개수를 확인합니다.
 
     // 쉽게 말해서 -> order 가 저장되면서 order 와 연관딘 OrderItem 엔티티도 자동 저장된다.
+
+    public Order createOrder(){
+        Order order = new Order(); // 주문 생성(order 객체)
+        for(int i =0;i<3;i++){
+            Item item = createItem(); // item 에 creteItem 값을 부여
+            itemRepository.save(item); // 레파지토리에 item 을 저장
+            OrderItem orderItem = new OrderItem(); // orderItem 생성
+            orderItem.setItem(item); // orderItem 의 Item 값에 item 을 부여
+            orderItem.setCount(10);
+            orderItem.setOrderPrice(1000);
+            orderItem.setOrder(order);
+            order.getOrderItems().add(orderItem);
+        }
+        Member member = new Member();
+        memberRepository.save(member);
+        order.setMember(member);
+        orderRepository.save(order);
+        return order;
+    }
+
+    @Test
+    @DisplayName("고아객체 제거 테스트")
+    public void orphanRemovalTest(){
+        Order order = this.createOrder();
+        order.getOrderItems().remove(0);
+        em.flush();
+    }
+
+    @Test
+    @DisplayName("지연 로딩 테스트")
+    public void lazyLoadingTest(){
+        Order order = this.createOrder();
+        Long orderItemId = order.getOrderItems().get(0).getId();
+        em.flush();
+        em.clear();
+        OrderItem orderItem = orderItemRepository.findById(orderItemId)
+                .orElseThrow(EntityNotFoundException::new);
+        System.out.println("Order class : " + orderItem.getOrder().getClass());
+        System.out.println("==========================");
+        orderItem.getOrder().getOrderDate();
+        System.out.println("==========================");
+
+    }
+
+
 }
