@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Entity;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
@@ -44,7 +44,7 @@ class OrderTest {
     OrderItemRepository orderItemRepository;
 
 
-    public Item createItem(){
+    public Item createItem() {
         Item item = new Item();
         item.setItemNm("테스트 상품");
         item.setPrice(10000);
@@ -58,21 +58,21 @@ class OrderTest {
     }
 
     @Test
-    @DisplayName("영속성 전이(양방향 조회) 테스트")
-    public void cascadeTest(){
-        Order order = new Order(); // order 엔티티 생성
+    @DisplayName("영속성 전이 테스트")
+    public void cascadeTest() {
+        Order order = new Order();  // Order 엔티티 생성
 
-        for (int i=0; i < 3; i++){ // 반복문을 통해서 3개의 Item 엔티티를 생성
+        for (int i = 0; i < 3; i++) {      // 반복문을 통해서 3개의 Item 엔티티를 생성
             Item item = this.createItem();
             itemRepository.save(item);
             OrderItem orderItem = new OrderItem();
             orderItem.setItem(item);
             orderItem.setCount(10);
             orderItem.setOrderPrice(1000);
-            orderItem.setOrder(order); // orderItem 의 order 필드에 생성산 Order 엔티티를 설정
+            orderItem.setOrder(order); // orderItem 의 order 필드에 생성한 Order 엔티티를 설정하고
             order.getOrderItems().add(orderItem);
-            // order 엔티티의 orderItem 컬렉션에 생성한 OrderItem 엔티티를 추가
-        }   // 부모인 order 엔티티를 orderRepository 에 저장
+            // order 엔티티의 orderItem 컬랙션에 생성한 OrderItem 엔티티를 추가
+        }   // 부모인 order 엔티티를 orderRepository 에 저장한다.
 
         orderRepository.saveAndFlush(order);
         em.clear();
@@ -83,21 +83,22 @@ class OrderTest {
     }
     // orderRepository 를 통해 저장한 Order 엔티티를 다시 조회하고,
     // 저장한 OrderItem 엔티티의 개수를 확인합니다.
+    // order 가 저장되면서 order 와 연관된 OrderItem 엔티티도 자동 저장된다.
 
-    // 쉽게 말해서 -> order 가 저장되면서 order 와 연관딘 OrderItem 엔티티도 자동 저장된다.
 
-    public Order createOrder(){
-        Order order = new Order(); // 주문 생성(order 객체)
-        for(int i =0;i<3;i++){
-            Item item = createItem(); // item 에 creteItem 값을 부여
-            itemRepository.save(item); // 레파지토리에 item 을 저장
-            OrderItem orderItem = new OrderItem(); // orderItem 생성
-            orderItem.setItem(item); // orderItem 의 Item 값에 item 을 부여
+    public Order createOrder() {
+        Order order = new Order();  // 주문 생성 - order
+        for (int i = 0; i < 3; i++) {
+            Item item = createItem();
+            itemRepository.save(item);  // 주문 항목 저장
+            OrderItem orderItem = new OrderItem();
+            orderItem.setItem(item);
             orderItem.setCount(10);
             orderItem.setOrderPrice(1000);
             orderItem.setOrder(order);
             order.getOrderItems().add(orderItem);
         }
+
         Member member = new Member();
         memberRepository.save(member);
         order.setMember(member);
@@ -123,11 +124,32 @@ class OrderTest {
         OrderItem orderItem = orderItemRepository.findById(orderItemId)
                 .orElseThrow(EntityNotFoundException::new);
         System.out.println("Order class : " + orderItem.getOrder().getClass());
-        System.out.println("==========================");
+        System.out.println("============================");
         orderItem.getOrder().getOrderDate();
-        System.out.println("==========================");
-
+        System.out.println("============================");
     }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

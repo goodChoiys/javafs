@@ -1,5 +1,6 @@
 package com.shop.config;
 
+
 import com.shop.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -30,9 +31,9 @@ public class SecurityConfig {
                 .logoutSuccessUrl("/")
         ;
         http.authorizeRequests()
-                .mvcMatchers("/css/**", "/js/**", "/img/**").permitAll() /*모두 접근 가능*/
-                .mvcMatchers("/", "/members/**", "/item/**", "/images/**").permitAll() /*모두 접근 가능*/
-                .mvcMatchers("/admin/**").hasRole("ADMIN") /*관리자만 접근 가능*/
+                .mvcMatchers("/css/**", "/js/**", "/img/**").permitAll()
+                .mvcMatchers("/", "/members/**", "/item/**", "/images/**").permitAll()
+                .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
         ;
 
@@ -49,4 +50,3 @@ public class SecurityConfig {
     }
 
 }
-//패스워드 암호화

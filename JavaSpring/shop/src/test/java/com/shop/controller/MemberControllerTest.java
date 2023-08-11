@@ -1,6 +1,5 @@
 package com.shop.controller;
 
-import com.shop.constant.Role;
 import com.shop.dto.MemberFormDto;
 import com.shop.entity.Member;
 import com.shop.service.MemberService;
@@ -23,16 +22,15 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 @Transactional
 @TestPropertySource(locations="classpath:application-test.properties")
 class MemberControllerTest {
-
     @Autowired
     private MemberService memberService;
-
 
     @Autowired
     private MockMvc mockMvc;
 
     @Autowired
     PasswordEncoder passwordEncoder;
+
 
     public Member createMember(String email, String password){
         MemberFormDto memberFormDto = new MemberFormDto();
@@ -55,11 +53,11 @@ class MemberControllerTest {
                         .user(email).password(password))
                 .andExpect(SecurityMockMvcResultMatchers.authenticated());
     }
-    // mockMvc.perform(formLogin() - 로그인 요청 생성
-    // userParameter("email") - email 파라미터를 사용
-    // .loginProcessingUrl("/member/login") - 로그인 처리 url
-    // user(email).password(password)) 이정보로 로그인 시도
-    // .andExpect ... 로그인 성공하였는지 검증
+    // mockMvc.perform(formLogin() - 로그인 요청생성
+    //userParameter("email") - email 파라미터를 사용
+    //.loginProcessingUrl("/member/login") -로그인처리 url
+    //user(email).password(password)) 이정보로 로그인 시도
+    //.andExpect ... 로그인 성공하였는지 검증
 
     @Test
     @DisplayName("로그인 실패 테스트")
@@ -71,7 +69,6 @@ class MemberControllerTest {
                         .loginProcessingUrl("/members/login")
                         .user(email).password("12345"))
                 .andExpect(SecurityMockMvcResultMatchers.unauthenticated());
-        //unauthenticated가 들어가면 실패했을때 테스트 결과가 성공으로 나온다.
     }
 
 

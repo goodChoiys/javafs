@@ -6,10 +6,11 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cart_item")
 @Getter
 @Setter
+@Table(name = "cart_item")
 public class CartItem extends BaseEntity{
+
     @Id
     @GeneratedValue
     @Column(name = "cart_item_id")
@@ -24,7 +25,7 @@ public class CartItem extends BaseEntity{
     private Item item;
     private int count;
 
-    public static CartItem createCartItem(Cart cart, Item item, int count) {
+    public static CartItem createCartItem(Cart cart, Item item, int count){
         CartItem cartItem = new CartItem();
         cartItem.setCart(cart);
         cartItem.setItem(item);
@@ -37,6 +38,6 @@ public class CartItem extends BaseEntity{
     }
 
     public void updateCount(int count){
-        this.count += count;
+        this.count = count;
     }
 }

@@ -29,6 +29,7 @@ class ItemRepositoryTest {
 
     @Autowired
     ItemRepository itemRepository;
+
     @Test
     @DisplayName("상품 저장 테스트")
     public void createItemTest() {
@@ -82,34 +83,30 @@ class ItemRepositoryTest {
     }
 
     @Test
-    @DisplayName("가격 Less Than 테스트")
+    @DisplayName("가격 LessThan 테스트")
     public void findByPriceLessThanTest() {
         this.createItemList();
-        List<Item> itemList =
-                itemRepository.findByPriceLessThan(10005);
+        List<Item> itemList = itemRepository.findByPriceLessThan(10005);
         for (Item item : itemList) {
             System.out.println(item.toString());
+
+
         }
     }
-
     @Test
     @DisplayName("가격 내림차순 조회 테스트")
-    public void findByPriceLessThanOrderByPriceDescTest() {
+    public void findByPriceLessThanOrderByPriceDesc() {
         this.createItemList();
-        List<Item> itemList =
-                itemRepository.findByPriceLessThanOrderByPriceDesc(10005);
+        List<Item> itemList = itemRepository.findByPriceLessThanOrderByPriceDesc(10005);
         for (Item item : itemList) {
             System.out.println(item.toString());
         }
     }
-
-
     @Test
-    @DisplayName("@Query 를 이용한 상품 조회 테스트")
+    @DisplayName("@Query를 이용한 상품 조회 테스트")
     public void findByItemDetailTest() {
         this.createItemList();
-        List<Item> itemList =
-                itemRepository.findByItemDetail("테스트 상품 상세 설명");
+        List<Item> itemList = itemRepository.findByItemDetail("테스트 상품 상세 설명");
         for (Item item : itemList) {
             System.out.println(item.toString());
         }
@@ -124,14 +121,14 @@ class ItemRepositoryTest {
         JPAQuery<Item> query = queryFactory.selectFrom(qItem)
                 .where(qItem.itemSellStatus.eq(ItemSellStatus.SELL))
                 .where(qItem.itemDetail.like("%"+"테스트 상품 상세 설명"+"%"))
-                .where(qItem.price.lt(10005))
-//                .where(qItem.price.eq(10005))
+               // .where(qItem.price.lt(10005))
                 .orderBy(qItem.price.desc());
         List<Item> itemList = query.fetch();
 
-        for(Item item : itemList){
+        for (Item item : itemList) {
             System.out.println(item.toString());
         }
+
     }
 
 }
