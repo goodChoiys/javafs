@@ -3,6 +3,7 @@ package com.shop.service;
 import com.shop.dto.ItemFormDto;
 import com.shop.dto.ItemImgDto;
 import com.shop.dto.ItemSearchDto;
+import com.shop.dto.MainItemDto;
 import com.shop.entity.Item;
 import com.shop.entity.ItemImg;
 import com.shop.repository.ItemImgRepository;
@@ -49,17 +50,17 @@ public class ItemService {
 
     @Transactional(readOnly = true)
     public ItemFormDto getItemDtl(Long itemId){
-    //상품 상세정보를 가져오는 메서드 선언
-    List<ItemImg> itemImgList = itemImgRepository.findByItemIdOrderByIdAsc(itemId);
-    // 해당삼품에 연결된 이미지 정보를 id 순서대로 가져온다.
-    List<ItemImgDto> itemImgDtoList = new ArrayList<>();
-    //ItemImgDto 객체 리스트를 초기화합니다.
-    for(ItemImg itemImg : itemImgList)    {
-        ItemImgDto itemImgDto = ItemImgDto.of(itemImg);
-        // ItemImgDto 클래스에 정의된 of 메서드를 호출  ItemImg -> ItemImgDto 로 변환하여 반환
-        itemImgDtoList.add(itemImgDto);
-        //리스트에 추가
-    }
+        //상품 상세정보를 가져오는 메서드 선언
+        List<ItemImg> itemImgList = itemImgRepository.findByItemIdOrderByIdAsc(itemId);
+        // 해당삼품에 연결된 이미지 정보를 id 순서대로 가져온다.
+        List<ItemImgDto> itemImgDtoList = new ArrayList<>();
+        //ItemImgDto 객체 리스트를 초기화합니다.
+        for(ItemImg itemImg : itemImgList)    {
+            ItemImgDto itemImgDto = ItemImgDto.of(itemImg);
+            // ItemImgDto 클래스에 정의된 of 메서드를 호출  ItemImg -> ItemImgDto 로 변환하여 반환
+            itemImgDtoList.add(itemImgDto);
+            //리스트에 추가
+        }
         Item item = itemRepository.findById(itemId)
                 .orElseThrow(EntityNotFoundException::new);
         // 해당 id의 상품정보를 데이터베이스에서 가져옵니다. 없으면 예외처리
@@ -80,8 +81,8 @@ public class ItemService {
         // 이미지 등록
         for(int i=0 ; i <  itemImgFileList.size(); i++){
             itemImgService.updateItemImg(itemImgIds.get(i), itemImgFileList.get(i));
-        //itemImgIds.get(i) -> 상품에 연결된 각이미지 id
-        //itemImgFileList.get(i) -> 새로운 이미지 파일
+            //itemImgIds.get(i) -> 상품에 연결된 각이미지 id
+            //itemImgFileList.get(i) -> 새로운 이미지 파일
         }
         return item.getId();
     }
@@ -92,8 +93,12 @@ public class ItemService {
         return itemRepository.getAdminItemPage(itemSearchDto, pageable);
     }
 
-}
+    @Transactional(readOnly = true)
+    public Page<MainItemDto> getMainItemPage(ItemSearchDto itemSearchDto, Pageable pageable){
+        return itemRepository.getMainItemPage(itemSearchDto, pageable);
+    }
 
+}
 
 
 
