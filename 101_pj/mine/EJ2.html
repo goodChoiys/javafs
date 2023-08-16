@@ -43,6 +43,12 @@
 
     }
 
+    .common {
+      width: 100%;
+      height: 100vh;
+      border: 10px solid rebeccapurple;
+    }
+
     .mother {
       position: relative;
     }
@@ -59,20 +65,27 @@
     /* 상단바 탭 메뉴 */
     .allb {
       display: flex;
-      justify-content: center;
+      /* justify-content: space-evenly; */
+      justify-content: space-between;
       position: relative;
       top: 100px;
       left: 50%;
       bottom: 10%;
       transform: translateX(-50%);
       width: 100%;
-
+     
     }
 
+    /* .allb > button:not(:first-of-type) {
+      margin-left: 50px;
+      
+    } */
+    
+    
     button {
       box-shadow: 0 0 5px #8ED3FF;
       background-color: #ffffff;
-      border: 2px solid #0065BA;
+      border: 0;
       cursor: pointer;
 
     }
@@ -80,13 +93,15 @@
     button:hover {
       background: #8ED3FF;
     }
-
+ 
+    button:focus {
+      background:  #8ED3FF;
+    }
 
 
     .allb .Allbtn {
       align-items: center;
-      margin-left: 10px;
-      width: 150px;
+      width: 200px;
       height: 50px;
       font-size: 1.5rem;
       border-radius: 10px;
@@ -98,10 +113,9 @@
     .big {
       position: absolute;
       display: flex;
-
       top: 150px;
-      left: 10px;
-      justify-content: center;
+      left: 0px;
+      justify-content: space-between;
       align-items: center;
 
     }
@@ -112,18 +126,19 @@
       position: relative;
       left: 0;
       top: 0;
+      
     }
 
-    .big>div:not(:nth-last-of-type(1)) {
+    /* .big>div:not(:nth-last-of-type(1)) {
       margin-right: 20px;
-    }
+    } */
 
 
-    
+
     .big>div>img {
       width: 400px;
       height: 500px;
-      margin: 0 12px;
+      /* margin: 0 12px; */
       border-radius: 10px;
       text-align: center;
       /* overflow: hidden; */
@@ -298,15 +313,15 @@
 
 <body>
 
-
+<div class="common">
   <!-- 상단바 탭 메뉴 -->
   <div class="allb">
-    <button class="Allbtn hover1">#황금연휴</button>
-    <button class="Allbtn hover2">#틈새여행</button>
-    <button class="Allbtn hover3">#자유연휴</button>
-    <button class="Allbtn hover4">#지금뜨는그곳</button>
-    <button class="Allbtn hover5">#프리미엄</button>
-    <button class="Allbtn hover6">#황금연휴</button>
+    <button class="Allbtn">#황금연휴</button>
+    <button class="Allbtn">#틈새여행</button>
+    <button class="Allbtn">#자유연휴</button>
+    <button class="Allbtn">#지금뜨는그곳</button>
+    <button class="Allbtn">#프리미엄</button>
+    <button class="Allbtn">#황금연휴</button>
   </div>
 
 
@@ -818,6 +833,7 @@
 
 
   </div>
+</div>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -837,24 +853,19 @@
         btns[j].onclick = function () {
           for (let i = 0; i < childs.length; i++) {
             childs[i].style.zIndex = 0;
-            btns[j].classList.remove('on');
           }
           childs[j].style.zIndex = 1;
-
-          this.classList.add('on');
-        }
-
+        };
       }
     }
+
+    
     // window.onload = function () {
     //   change();
     // };
     document.addEventListener('DOMContentLoaded', function () {
       change();
     });
-
-    
-
   </script>
 
 
