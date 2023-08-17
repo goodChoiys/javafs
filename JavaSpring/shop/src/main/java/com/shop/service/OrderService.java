@@ -14,6 +14,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.util.StringUtils;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
@@ -63,7 +64,7 @@ public class OrderService {
         List<OrderHistoryDto> orderHistoryDtos = new ArrayList<>();
 
         for(Order order : orders){
-            // 조회된 주문 목록을 순회하면서 각 주문에 대한 정보를 OrderHistDto 로 변환
+            // 조회된 주문 목록을 순회하면서 각 주문에 대한 정보를 OrderHistoryDto 로 변환
             OrderHistoryDto orderHistoryDto = new OrderHistoryDto(order);
             List<OrderItem> orderItems = order.getOrderItems();
             // 해당 주문에 속한 모든 주문 항목을 조회
@@ -78,11 +79,56 @@ public class OrderService {
                 orderHistoryDto.addOrderItemDto(orderItemDto);
                 // 생성된 orderItemDto 를 orderHistDto 리스트에 추가
             }
-            orderHistoryDtos.add(orderHistoryDto);    // orderHistDto 리스트에 추가
+            orderHistoryDtos.add(orderHistoryDto);    // orderHistoryDto 리스트에 추가
         }
 
         return new PageImpl<OrderHistoryDto>(orderHistoryDtos, pageable, totalCount);
-        // 생성된 orderHistDtos 리스트를 페이징 처리하여 반환
+        // 생성된 orderHistoryDtos 리스트를 페이징 처리하여 반환
     }
 
+    @Transactional(readOnly = true)
+    public boolean validateOrder(Long orderId, String email){
+        Member currentMember = memberRepository.findByEmail(email);
+        Order order = orderRepository.findById(orderId).
+                /* findById가 repository 에 optional 로 처리되어있어 무조건 예외 처리를 해줘야한다. 안그럼 에러발생 */
+                orElseThrow(EntityNotFoundException::new);
+        Member savedMember = order.getMember();
+        if(!StringUtils.equals(currentMember.getEmail(), savedMember.getEmail())){
+            return false;
+        }
+        return true;
+    }
+    public void cancelOrder(Long orderId){
+        Order order = orderRepository.findById(orderId).
+                orElseThrow(EntityNotFoundException::new);
+        order.cancelOrder();
+    }
+
+    /*
+        Optional을 사용하여 처리하면, orderRepository.findById(orderId)의 반환값이
+        Optional<Order> 타입이 되므로, 주문을 찾지 못한 경우에도 예외 대신에 Optional 객체를 반환할 수 있습니다.
+        이 경우에는 예외를 직접 던지지 않고, 반환된 Optional 객체를 가지고 원하는 처리를 수행할 수 있습니다.
+
+        예를 들어, Optional을 사용하여 처리한 코드는 다음과 같을 수 있습니다:
+
+        java
+        Copy code
+        Optional<Order> orderOptional = orderRepository.findById(orderId);
+
+        if (orderOptional.isPresent()) {
+            Order order = orderOptional.get();
+            // 주문을 찾은 경우에 수행할 로직
+        } else {
+            // 주문을 찾지 못한 경우에 수행할 로직
+        }
+    */
+    /*
+        // 주문을 찾은 경우에 수행할 로직
+        orderOptional.ifPresent(order -> {});
+
+        // 주문을 찾지 못한 경우에 수행할 로직
+        if (!orderOptional.isPresent()) {}
+        이 방식은 예외를 사용하지 않고도 Optional 객체의 존재 여부에 따라 다른 동작을 수행할 수 있습니다.
+        주로 예외를 사용하지 않는 경우에 사용되며, 코드의 가독성을 높일 수 있습니다.
+    */
 }

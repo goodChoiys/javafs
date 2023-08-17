@@ -28,5 +28,7 @@ public class Cart extends BaseEntity{
         cart.setMember(member);
         return cart;
     }
+    // 회원 한명당 1개의 장바구니를 가지기 때문에 상품을 장바구니에 담을때 해당회원의 장바구니를 만든다.
+    // Cart 엔티티에 히원 엔티티를 파라미터로 받아서 장바구니 엔티티를 생성 로직 추가
 
 }
