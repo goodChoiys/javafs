@@ -37,16 +37,14 @@ public class ItemImgService {
         itemImg.updateItemImg(oriImgName, imgName, imgUrl);
         itemImgRepository.save(itemImg);
     }
-        //saveItemImg(ItemImg itemImg - 업로드된 이미지와 관련된 상품이미지 정보를 가진
-        //ItemImg 객체입니다.
+        // saveItemImg(ItemImg itemImg - 업로드된 이미지와 관련된 상품이미지 정보를 가진
+        // ItemImg 객체입니다.
         // MultipartFile itemImgFile - 업로드할 상품 이미지 파일 나타내는 MultipartFile
-        //oriImgName  - 업로드된 이미지 파일의 원래 파일명을 저장
+        // oriImgName  - 업로드된 이미지 파일의 원래 파일명을 저장
 
-
-        //   itemImg.updateItemImg(oriImgName, imgName, imgUrl);
+        // itemImg.updateItemImg(oriImgName, imgName, imgUrl);
         // 업로드된 이미지 파일의 원래파일명, 저장된파일명, 이미지 url을 업데이트
         // 업데이트된 상품 이미지 정보를 데이터베이스에 저장
-
 
     public void updateItemImg(Long itemImgId, MultipartFile itemImgFile) throws Exception{
         if(!itemImgFile.isEmpty()){

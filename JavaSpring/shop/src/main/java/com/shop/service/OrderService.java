@@ -131,4 +131,23 @@ public class OrderService {
         이 방식은 예외를 사용하지 않고도 Optional 객체의 존재 여부에 따라 다른 동작을 수행할 수 있습니다.
         주로 예외를 사용하지 않는 경우에 사용되며, 코드의 가독성을 높일 수 있습니다.
     */
+
+    public Long orders(List<OrderDto> orderDtoList, String email){
+
+        Member member = memberRepository.findByEmail(email);
+        List<OrderItem> orderItemList = new ArrayList<>();
+
+        for (OrderDto orderDto : orderDtoList) {
+            Item item = itemRepository.findById(orderDto.getItemId())
+                    .orElseThrow(EntityNotFoundException::new);
+
+            OrderItem orderItem = OrderItem.createOrderItem(item, orderDto.getCount());
+            orderItemList.add(orderItem);
+        }
+
+        Order order = Order.createOrder(member, orderItemList);
+        orderRepository.save(order);
+
+        return order.getId();
+    }
 }
