@@ -23,7 +23,6 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.shop.entity.QCartItem.cartItem;
 
 @Service
 @Transactional
@@ -121,7 +120,7 @@ public class CartService {
                     .findById(cartOrderDto.getCartItemId())
                     .orElseThrow(EntityNotFoundException::new);
             cartItemRepository.delete(cartItem);
-        } // 장바구니에 담긴 상품을 주문하고 장바구니 비우기(삭제)
+        } // 장바구니 주문을 실행하고 장바구니 비우기 (삭제)
 
         return orderId;
     }

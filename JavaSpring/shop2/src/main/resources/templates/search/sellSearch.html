@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+    <style>
+
+    </style>
+</th:block>
+
+<div class="selectQuery">
+
+</div>
+<tr th:each="cartItem : ${cartItems}">
+    <td class="text-center align-middle">
+<input type="checkbox" name="cartChkBox" th:value="${Car.carId}">
+
+
+
+
+
+
+
+<div th:with="start=${(items.number/maxPage)*maxPage + 1}, end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})" >
+    <ul class="pagination justify-content-center">
+
+        <!--첫번째 li : 이전버튼(prev) 생성-->
+        <li class="page-item" th:classappend="${items.number eq 0}?'disabled':''">
+            <a th:href="@{'/' + '?searchQuery=' + ${itemSearchDto.searchQuery}
+            + '&page=' + ${items.number-1}}" aria-label='Previous' class="page-link">
+                <span aria-hidden='true'>Previous</span>
+            </a>
+        </li>
+
+        <li class="page-item" th:each="page: ${#numbers.sequence(start, end)}" th:classappend="${items.number eq page-1}?'active':''">
+            <a th:href="@{'/' +'?searchQuery=' + ${itemSearchDto.searchQuery} + '&page=' + ${page-1}}" th:inline="text" class="page-link">[[${page}]]</a>
+        </li>
+
+        <!--다음버튼 생성-->
+        <li class="page-item" th:classappend="${items.number+1 ge items.totalPages}?'disabled':''">
+            <a th:href="@{'/' +'?searchQuery=' + ${itemSearchDto.searchQuery} + '&page=' + ${items.number+1}}" aria-label='Next' class="page-link">
+                <span aria-hidden='true'>Next</span>
+            </a>
+        </li>
+
+    </ul>
+</div>

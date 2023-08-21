@@ -23,7 +23,6 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.shop.entity.QCartItem.cartItem;
 
 @Service
 @Transactional

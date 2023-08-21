@@ -7,7 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MainItemDto {
-
     private Long id;
 
     private String itemNm;
@@ -17,7 +16,6 @@ public class MainItemDto {
     private String imgUrl;
 
     private Integer price;
-
     @QueryProjection
     public MainItemDto(Long id, String itemNm, String itemDetail, String imgUrl, Integer price) {
         this.id = id;
@@ -26,5 +24,5 @@ public class MainItemDto {
         this.imgUrl = imgUrl;
         this.price = price;
     }
-    // Querydsl 과 같은 쿼리 프레임워크와 함께 사용 - 쿼리에 특화된 프로젝션 생성자를 생성
+    // QueryDsl 과 같은 쿼리 프레임워크와 함께 사용 - 쿼리에 특화된 프로젝션 생성자를 생성
 }

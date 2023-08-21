@@ -1,4 +1,4 @@
-package EndGame.teamPJ;
+package EndGame.TeamPj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

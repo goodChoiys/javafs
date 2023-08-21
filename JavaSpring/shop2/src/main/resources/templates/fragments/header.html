@@ -16,9 +16,6 @@
                 <li class="nav-item" sec:authorize="isAuthenticated()"> <!--hasAnyAuthority('ROLE_ADMIN')-->
                     <a class="nav-link" href="/user/item/new">내차 등록</a>
                 </li>
-                <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" href="/members/search">차량 검색</a>
-                </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()"> <!--hasAnyAuthority('ROLE_ADMIN')-->
                     <a class="nav-link" href="/user/items">차량 관리</a>
                 </li>
@@ -31,15 +28,15 @@
 
                 <!--내가 추가한 부분 : 구매하기-->
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" href="/members/buy">Buy</a>
+                    <a class="nav-link" href="/members/buy">내차등록</a>
                 </li>
                 <!--내가 추가한 부분 : 판매하기-->
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" href="/members/sell">Sell</a>
+                    <a class="nav-link" href="/search/sellSearch">차량검색</a>
                 </li>
                 <!--내가 추가한 부분 : 공지사항-->
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link" href="/members/notice">Notice</a>
+                    <a class="nav-link" href="/members/notice">공지사항</a>
                 </li>
 
                 <li class="nav-item" sec:authorize="isAnonymous()">
