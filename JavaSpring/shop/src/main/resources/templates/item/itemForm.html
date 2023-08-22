@@ -76,6 +76,18 @@
         </div>
         <p th:if="${#fields.hasErrors('itemNm')}" th:errors="*{itemNm}" class="fieldError">Incorrect data</p>
 
+        <!---->
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">차종</span>
+            </div>
+            <input type="text" th:field="*{carType}" class="form-control" placeholder="차종을 입력해주세요">
+        </div>
+        <p th:if="${#fields.hasErrors('carType')}" th:errors="*{carType}" class="fieldError">Incorrect data</p>
+        <!---->
+
+
+
         <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text">가격</span>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+    <style>
+        .carousel-inner > .item {
+            height: 350px;
+        }
+        .margin{
+            margin-bottom:30px;
+        }
+        .banner{
+            height: 300px;
+            position: absolute; top:0; left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .card-text{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        a:hover{
+            text-decoration:none;
+        }
+        .center{
+            text-align:center;
+        }
+
+        .box .innerBox {
+        display: flex;
+        }
+
+        .multiSelect {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 80%;
+        margin-right: 30px;
+        border: 1px solid #ddd;
+        align-item: center;
+        }
+
+        .multiSelect > button {
+        width: 100%
+        }
+
+        .checkOption{
+        border: 1px solid #ddd
+
+        }
+
+        .rightBox {
+        width: 1200px;
+        height: 100vh;
+        background: beige;
+        }
+        .checkedOption{
+        width: 100%;
+        height: 200px;
+        background: orange;
+        }
+
+
+    </style>
+</th:block>
+<div layout:fragment="content">
+    <div class="box">
+        <div class="innerBox">
+            <div class="multiSelect">
+                <button type="button" class="checkOption">차종</button>
+                <button type="button" class="checkOption">브랜드</button>
+                <button type="button" class="checkOption">연식</button>
+                <button type="button" class="checkOption">색상</button>
+            </div>
+            <div class="rightBox">
+                <div class="checkedOption">
+                    <input type="text" placeholder="차량 이름을 검색하세요">
+                </div>
+                <!--사용자가 검색어를 입력하고 검색버튼을 눌렀을때, 검색어가 표시되며, 해당 검색어로 검색된 결과의 제목을 보여주는 부분-->
+                <div class="row">
+                    <th:block th:each="item, status: ${items.getContent()}">
+                        <div class="col-md-4 margin">
+                            <div class="card">
+                                <a th:href="'/item/' +${item.id}" class="text-dark">
+                                    <img th:src="${item.imgUrl}" class="card-img-top" th:alt="${item.itemNm}"
+                                         height="300">
+                                    <div class="card-body">
+                                        <h4 class="card-title">[[${item.itemNm}]]</h4>
+                                        <p class="card-text">[[${item.itemDetail}]]</p>
+                                        <h3 class="card-title text-danger">[[${item.price}]]원</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </th:block>
+                    <!--Spring Data JPA 에서 Page 객체를 사용할 때 getContent() 메서드는 현재 페이지 포함된 데이터(아이템들)을 가져오는 역할-->
+                </div>
+            </div>
+        </div>
+        <div th:with="start=${(items.number/maxPage)*maxPage + 1}, end=(${(items.totalPages == 0) ? 1 : (start + (maxPage - 1) < items.totalPages ? start + (maxPage - 1) : items.totalPages)})">
+            <ul class="pagination justify-content-center">
+                <li class="page-item" th:classappend="${items.number eq 0}?'disabled':''">
+                    <a th:href="@{'/' + '?searchQuery=' + ${itemSearchDto.searchQuery}
+            + '&page=' + ${items.number-1}}" aria-label='Previous' class="page-link">
+                        <span aria-hidden='true'>Previous</span>
+                    </a>
+                </li>
+
+                <li class="page-item" th:each="page: ${#numbers.sequence(start, end)}"
+                    th:classappend="${items.number eq page-1}?'active':''">
+                    <a th:href="@{'/' +'?searchQuery=' + ${itemSearchDto.searchQuery} + '&page=' + ${page-1}}"
+                       th:inline="text" class="page-link">[[${page}]]</a>
+                </li>
+
+                <li class="page-item" th:classappend="${items.number+1 ge items.totalPages}?'disabled':''">
+                    <a th:href="@{'/' +'?searchQuery=' + ${itemSearchDto.searchQuery} + '&page=' + ${items.number+1}}"
+                       aria-label='Next' class="page-link">
+                        <span aria-hidden='true'>Next</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</html>
