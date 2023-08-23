@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="EndGame">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/project1예제.zip!/" />
+      <root url="jar://$PROJECT_DIR$/project1로딩바.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
