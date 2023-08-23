@@ -30,6 +30,9 @@
             text-align:center;
         }
 
+        .carousel {
+        margin-bottom: 30px;
+        }
     </style>
 </th:block>
 <div layout:fragment="content">
@@ -60,6 +63,7 @@
     <div th:if="${not #strings.isEmpty(itemSearchDto.searchQuery)}" class="center">
         <p class="h3 font-weight-bold" th:text="${itemSearchDto.searchQuery} + '검색 결과'"></p>
     </div>
+
     <!--사용자가 검색어를 입력하고 검색버튼을 눌렀을때, 검색어가 표시되며, 해당 검색어로 검색된 결과의 제목을 보여주는 부분-->
     <div class="row">
         <th:block th:each="item, status: ${items.getContent()}">
@@ -85,7 +89,7 @@
             <li class="page-item" th:classappend="${items.number eq 0}?'disabled':''">
                 <a th:href="@{'/' + '?searchQuery=' + ${itemSearchDto.searchQuery}
             + '&page=' + ${items.number-1}}" aria-label='Previous' class="page-link">
-                    <span aria-hidden='true'>Previous</span>
+                    <span aria-hidden='true'>Prev</span>
                 </a>
             </li>
 
@@ -104,22 +108,4 @@
         </ul>
     </div>
 </div>
-
-<!--1. 페이지번호의 범위(start 부터 end 계산) items 는 Page<MainItemDto> 객체로서-->
-<!--number 는 현재 페이지 번호-->
-<!--totalPage 는 전체 페이지 수-->
-<!--maxPage 는 한 번에 보여줄 최대 페이지 수-->
-
-<!--li 첫번째 요소는 이전버튼 생성 현재 페이지가 첫번째 페이지면 disabled 클래스 추가 -->
-<!--http://localhost/?searchQuery=&page=1 이면 items.number -1 를 사용해서 페이지 번호 조정-->
-
-<!--두번째 li-->
-<!--"page: ${#numbers.sequence(start, end)} 1~5가지 순차적인 숫자 시퀀스를 생성-->
-<!--이 시퀀스를 page 변수에 할당해서 각 페이지 번호에 대한 반복 처리-->
-<!--th:classappend="${items.number eq page-1}?'active':''"-->
-<!--현재 페이지와 클릭할(해당) 페이지 번호가 같으면 active 클래스를 추가-->
-<!--파란색상에 흰색글씨-->
-<!--th:inline="text"를 사용하여 타임리프 인라인 텍스트 표현식 [[{page}]] 를 사용하여 페이지 번호를 반영-->
-
-
 </html>

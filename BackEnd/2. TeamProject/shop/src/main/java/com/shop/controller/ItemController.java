@@ -52,7 +52,7 @@ public class ItemController {
         return "redirect:/";
     }
 
-    @GetMapping(value = "/admin/item/{itemId}")
+    @GetMapping(value = "/members/item/{itemId}")
     public String itemDtl(@PathVariable("itemId") Long itemId, Model model) {
         try {
             ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
@@ -65,7 +65,7 @@ public class ItemController {
         return "item/itemForm";
     }
 
-    @PostMapping(value = "/admin/item/{itemId}")
+    @PostMapping(value = "/members/item/{itemId}")
     public String itemUpdate(@Valid ItemFormDto itemFormDto, BindingResult bindingResult,
                              @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model) {
         if (bindingResult.hasErrors()) {
@@ -83,7 +83,7 @@ public class ItemController {
         }
         return "redirect:/";
     }
-    @GetMapping(value = {"/admin/items", "/admin/items/{page}"})
+    @GetMapping(value = {"/members/items", "/members/items/{page}"})
     public String itemManage(ItemSearchDto itemSearchDto,
                              @PathVariable("page")Optional<Integer> page, Model model){
         Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0, 3);
