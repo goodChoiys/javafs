@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+            width: 100%;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            vertical-align: bottom;
+        }
+
+        .header, .footer {
+            width: 100%;
+            height: 150px;
+            border-bottom: 1px solclass #eee;
+            background: skyblue;
+        }
+
+        .header .navBar {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .header .navBar .navLeft {
+            width: 110px;
+            height: 64px;
+        }
+
+        .header .navBar .navLeft a {
+            cursor: pointer;
+        }
+
+        .header .navBar .navCenter .navList {
+            display: flex;
+            width: 500px;
+            justify-content: space-between;
+        }
+
+        .header .navBar .navCenter .navList a {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navRight input {
+          width: 200px;
+          height: 32px;
+          font-size: 1.5rem;
+          border: 0;
+          border-radius: 15px;
+          outline: none;
+          background: azure;
+          text-align: center;
+        }
+
+
+        .section {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: azure;
+            overflow: hidden;
+
+
+        }
+
+
+
+        /* 이미지 중앙 글씨 설정 */
+        .section h2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            color: #ffffff;
+            font-size: 5rem;
+            text-shadow: 1px 1px 3px #000;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /* 이미지 중앙하단 서브 글자 설정 */
+        .section p {
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            z-index: 99;
+            color: #ffffff;
+            font-size: large;
+            text-shadow: 1px 1px 3px #000;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 슬라이드 이미지 가로 정렬, 애니메이션 설정 */
+        .section ul {
+            position: relative;
+            display: flex;
+            left: 0;
+            top: 0;
+            width: 400%;
+            animation: slide 9s infinite;
+
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: -100%;
+            }
+
+            33.33333% {
+                left: -100%;
+            }
+
+            38% {
+                left: -200%;
+            }
+
+            66.66666% {
+                left: -200%;
+            }
+
+            71% {
+                left: -300%;
+            }
+
+            99.99999% {
+                left: -300%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+
+
+
+
+        .footer {
+            text-align: center;
+            line-height: 150px;
+            background: rgb(142, 214, 255);
+            background: rgb;
+        }
+
+        .footer div {
+        color: #fff;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="header">
+    <div class="navBar">
+        <div class="navLeft">
+            <a href="/"><img src="img/logo3.png" alt="로고"></a>
+        </div>
+        <div class="navCenter">
+            <ul class="navList">
+                <li><a href="/members/item/new">차량등록</a></li>
+                <li><a href="/item/search">차량검색</a></li>
+                <li><a href="/item/login">로그인</a></li>
+            </ul>
+        </div>
+        <div class="navRight">
+            <input type="text" placeholder="차량 이름을 검색하세요">
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div>
+        <h2>EndCar</h2>
+        <p id="p">중고차 거래에 필요한 모든것</p>
+    </div>
+    <ul>
+        <li><img src="image/Group 5.png" alt="1"></li>
+        <li><img src="image/Group 6.png" alt="2"></li>
+        <li><img src="image/Group 7.png" alt="3"></li>
+        <li><img src="image/Group 5.png" alt="1"></li>
+    </ul>
+</div>
+<div class="footer">
+        <div>
+            2023 Java-based Full Stack Web Developer Training Course
+            Project Team <b>EndGame</b>
+        </div>
+</div>
+</body>
+
+</html>
