@@ -1,244 +1,258 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인페이지</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 10px;
-        }
-
-        body {
-            font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
-            width: 100%;
-        }
-
-        li {
-            list-style: none;
-        }
-
-        a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        img {
-            vertical-align: top;
-        }
-
-        .header{
-            border-bottom: 1px solid #444;
-        }
-
-        .header,
-        .footer {
-            width: 100%;
-            height: 150px;
-            background: rgb(29, 29, 29);
-        }
-
-        .header .navBar {
-            width: 100%;
-            height: 150px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        .header .navBar .navLeft {
-            width: 110px;
-            height: 64px;
-        }
-
-        .header .navBar .navLeft a {
-            cursor: pointer;
-        }
-
-        .header .navBar .navCenter .navList {
-            display: flex;
-            width: 500px;
-            justify-content: space-between;
-        }
-
-        .header .navBar .navCenter .navList a {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .navRight input {
-            width: 200px;
-            height: 32px;
-            font-size: 1.5rem;
-            border: 1px solid #444;
-            border-radius: 15px;
-            outline: none;
-            background: rgba(100, 100, 100, 0.5);
-            text-align: center;
-        }
-
-        .navRight input::placeholder {
-            color: #fff;
-            font-weight: 500;
-
-        }
-
-        .section {
-            position: relative;
-            width: 100%;
-            height: 630px;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .section>div {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            width: 400px;
-            height: 300px;
-            border: 10px solid #fff;
-        }
-
-        .section h2, .section p, .section .line {
-            position: absolute;
-            color: #ffffff;
-        }
-
-        /* 이미지 중앙 글씨 설정 */
-        .section h2 {
-            font-size: 7rem;
-            width: 100%;
-            top: 10%;
-        }
-
-        /* 이미지 중앙하단 서브 글자 설정 */
-        .section p {
-            top: 45%;
-            font-size: 3rem;
-            font-weight: bold;
-            width: 100%;
-        }
-
-        /* 라인 */
-        .section .line {
-            width: 80%;
-            border: 5px solid #fff;
-            top: 65%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-
-        /* 슬라이드 이미지 가로 정렬, 애니메이션 설정 */
-        .section ul {
-            position: relative;
-            display: flex;
-            left: 0;
-            top: 0;
-            width: 400%;
-            animation: slide 18s infinite;
-
-        }
-
-        @keyframes slide {
-            0% {
-                left: 0;
-                
+    <title>Document</title>
+    <th:block layout:fragment="css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
-            5% {
-                left: -100%;
+            html {
+                font-size: 10px;
             }
 
-            33.33333% {
-                left: -100%;
+            body {
+                font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+                width: 100%;
             }
 
-            38% {
-                left: -200%;
+            li {
+                list-style: none;
             }
 
-            66.66666% {
-                left: -200%;
+            a {
+                text-decoration: none;
+                color: #000;
             }
 
-            71% {
-                left: -300%;
+            img {
+                vertical-align: top;
             }
 
-            99.99999% {
-                left: -300%;
+            .header {
+                border-bottom: 1px solid #444;
             }
 
-            100% {
-                left: 0;
+            .header,
+            .footer {
+                width: 100%;
+                height: 150px;
+                background: rgb(29, 29, 29);
             }
-        }
+
+            .header .navBar {
+                width: 100%;
+                height: 150px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            .header .navBar .navLeft {
+                width: 110px;
+                height: 64px;
+            }
+
+            .header .navBar .navLeft a {
+                cursor: pointer;
+            }
+
+            .header .navBar .navCenter .navList {
+                display: flex;
+                width: 500px;
+                justify-content: space-between;
+            }
+
+            .header .navBar .navCenter .navList li a {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .navRight input {
+                width: 200px;
+                height: 32px;
+                font-size: 1.5rem;
+                border: 1px solid #444;
+                border-radius: 15px;
+                outline: none;
+                background: rgba(100, 100, 100, 0.5);
+                text-align: center;
+            }
+
+            .navRight input::placeholder {
+                color: #fff;
+                font-weight: 500;
+
+            }
 
 
 
+            .footer {
+                border-top: 1px solid #444;
+                text-align: center;
+                line-height: 150px;
+            }
+
+            .footer div {
+                color: #fff;
+            }
 
 
-        .footer {
-            text-align: center;
-            line-height: 150px;
-        }
 
-        .footer div {
-            color: #fff;
-        }
-    </style>
+            .fieldError {
+                color: #bd2130;
+            }
+
+            .section {
+                width: 100%;
+                height: 630px;
+            }
+
+
+            .btn {
+                width: 200px;
+                height: 50px;
+                border-radius: 15px;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+
+            .loginForm {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                background: #dddddd5b;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+
+
+            .loginForm .loginFormBox {
+
+                width: 500px;
+                height: 500px;
+                margin: 0 auto;
+                border: 10px solid teal;
+            }
+
+            .loginForm .loginFormBox p {
+                font-size: 6rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            .loginFormBoxTop {
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 80%;
+                height: 100px;
+            }
+
+            .loginForm .loginFormBox label {
+                display: inline-block;
+                width: 100px;
+                height: 20px;
+                font-size: 1.5rem;
+                background: red;
+
+            }
+
+            .loginForm .loginFormBox .loginFormBoxInnerTab {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .loginForm .loginFormBox .loginFormBoxInnerTab input {
+                padding: 8px;
+            }
+        </style>
+    </th:block>
 </head>
 
 <body>
-    <div class="header">
+
+
+    <!-- 사용자 스크립트 추가 -->
+    <th:block layout:fragment="script">
+
+        <script th:inline="javascript">
+            $(document).ready(function () {
+                var errorMessage = [[${ errorMessage }]];
+                if (errorMessage != null) {
+                    alert(errorMessage);
+                }
+            });
+
+
+        </script>
+
+    </th:block>
+    <div th:fragment="header" class="header">
         <div class="navBar">
             <div class="navLeft">
                 <a href="/"><img src="img/logo3.png" alt="로고"></a>
             </div>
             <div class="navCenter">
                 <ul class="navList">
-                    <li><a href="/members/item/new">차량등록</a></li>
-                    <li><a href="/item/search">차량검색</a></li>
-                    <li><a href="/item/login">로그인</a></li>
+                    <li><a href="/members/item/new" sec:authorize="hasAnyAuthority('ROLE_USER')">차량등록</a></li>
+                    <li><a href="/item/search" sec:authorize="isAnonymous()">차량검색</a></li>
+                    <li><a href="/members/login" sec:authorize="isAnonymous()">로그인</a></li>
+                    <li><a href="/members/new" sec:authorize="isAnonymous()">회원가입</a></li>
                 </ul>
             </div>
-            <div class="navRight">
-                <input type="text" placeholder="차량 이름을 검색하세요">
+            <div class="navRight" th:action="@{/}" method="get">
+                <input type="search" placeholder="차량 이름을 검색하세요">
             </div>
         </div>
     </div>
-    <div class="section">
-        <div>
-            <h2>EndCar</h2>
-            <p>중고차 거래의 모든것</p>
-            <div class="line"></div>
+    <div layout:fragment="content" class="section">
+        <div class="loginForm">
+            <form role="form" method="post" action="/members/login">
+                <div class="loginFormBox">
+                    <p>E N D C A R</p>
+                    <div class="loginFormBoxTop">
+                        <div class="loginFormBoxInnerTab">
+                            <label th:for="email">이메일주소</label>
+                            <input type="email" class="form" placeholder="이메일을 입력해주세요">
+                        </div>
+                        <div class="loginFormBoxInnerTab">
+                            <label th:for="password">비밀번호</label>
+                            <input type="password" class="form" placeholder="비밀번호 입력">
+                        </div>
+                    </div>
+
+
+                    <p th:if="${loginErrorMsg}" class="error" th:text="${loginErrorMsg}"></p>
+                    <div class="btnTab">
+                        <button class="btn">로그인</button>
+                        <button type="button" class="btn" onClick="location.href='/members/new'">회원가입</button>
+                        <button class="btn">카카오</button>
+                    </div>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                </div>
+            </form>
         </div>
-        <ul>
-            <li><img src="img/img1.png" alt="배너이미지1"></li>
-            <li><img src="img/img2.png" alt="배너이미지2"></li>
-            <li><img src="img/img3.png" alt="배너이미지3"></li>
-            <li><img src="img/img1.png" alt="배너이미지1"></li>
-        </ul>
     </div>
-    <div class="footer">
-        <div>
-            2023 Java-based Full Stack Web Developer Training Course
-            Project Team <b>EndGame</b>
-        </div>
+    <div th:fragment="footer" class="footer">
+        <footer>
+            <div>
+                2023 Java-based Full Stack Web Developer Training Course
+                Project Team Endgame
+            </div>
+        </footer>
     </div>
-</body>
+
 
 </html>
